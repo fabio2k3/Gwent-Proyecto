@@ -360,6 +360,8 @@
 -r:"Library/PackageCache/com.unity.ext.nunit@2.0.5/net40/unity-custom/nunit.framework.dll"
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.5/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
@@ -388,6 +390,7 @@
 "Assets/Forst/CTI Runtime Components/CTI Runtime Components BIRP/Scripts/CTI_CustomWind.cs"
 "Assets/Forst/CTI Runtime Components/CTI Runtime Components BIRP/Scripts/CTI_Utils.cs"
 "Assets/Grass And Flowers Pack 1/Example Scene/SimpleTextureDrawing.cs"
+"Assets/Scripts/PlayerMove.cs"
 -langversion:9.0
 
 /deterministic

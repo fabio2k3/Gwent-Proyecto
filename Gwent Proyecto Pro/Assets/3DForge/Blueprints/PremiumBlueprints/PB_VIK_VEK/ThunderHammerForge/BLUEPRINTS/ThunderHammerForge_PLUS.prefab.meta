@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc14a93570add214a863780431bd2c74
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 160442
+  packageName: PB Thunder Hammer Forge
+  packageVersion: 1.1
+  assetPath: Assets/3DForge/Blueprints/PremiumBlueprints/PB_VIK_VEK/ThunderHammerForge/BLUEPRINTS/ThunderHammerForge_PLUS.prefab
+  uploadId: 361241

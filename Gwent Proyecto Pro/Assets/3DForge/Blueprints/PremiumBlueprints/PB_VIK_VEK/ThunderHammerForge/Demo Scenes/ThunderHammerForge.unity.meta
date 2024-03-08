@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d99c0bc78bac8494e8cfed2c939667b0
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 160442
+  packageName: PB Thunder Hammer Forge
+  packageVersion: 1.1
+  assetPath: Assets/3DForge/Blueprints/PremiumBlueprints/PB_VIK_VEK/ThunderHammerForge/Demo
+    Scenes/ThunderHammerForge.unity
+  uploadId: 361241

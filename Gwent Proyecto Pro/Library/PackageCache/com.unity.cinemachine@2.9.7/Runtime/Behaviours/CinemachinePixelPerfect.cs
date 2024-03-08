@@ -36,7 +36,7 @@ namespace Cinemachine
                 return;
 
 #if CINEMACHINE_URP
-            UnityEngine.Experimental.Rendering.Universal.PixelPerfectCamera pixelPerfectCamera;
+            UnityEngine.Rendering.Universal.PixelPerfectCamera pixelPerfectCamera;
 #elif CINEMACHINE_PIXEL_PERFECT_2_0_3
             UnityEngine.U2D.PixelPerfectCamera pixelPerfectCamera;
 #endif

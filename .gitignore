@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Gwent Proyecto Pro/Library/APIUpdater/ConfigurationCache/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll.0162493DDF1A12BB37EDE2DC88F24B9091964A9479DAEA997BB0D00707DE701B.apiupaterconfigs
+Gwent Proyecto Pro/Library/APIUpdater/ConfigurationCache/UnityEngine.ScreenCaptureModule.dll.AAF5986F1602C2B028E200F4B07F5CDFBD704F191BC726058A039BD2870646A2.apiupaterconfigs
+Gwent Proyecto Pro/Library/PackageCache/com.unity.collections@1.4.0/Unity.Collections.LowLevel.ILSupport/source~/Unity.Collections.LowLevel.ILSupport.CodeGen/CollectionsUnsafeUtilityPostProcessor.cs.meta

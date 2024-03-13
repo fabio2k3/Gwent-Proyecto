@@ -418,6 +418,7 @@
 "Assets/Grass And Flowers Pack 1/Example Scene/SimpleTextureDrawing.cs"
 "Assets/Herramientas Escenario/Forst/CTI Runtime Components/CTI Runtime Components BIRP/Scripts/CTI_CustomWind.cs"
 "Assets/Herramientas Escenario/Forst/CTI Runtime Components/CTI Runtime Components BIRP/Scripts/CTI_Utils.cs"
+"Assets/Scripts/CameraOfGame.cs"
 "Assets/Scripts/DetectProximity.cs"
 "Assets/Scripts/PlayerMove.cs"
 "Assets/Scripts/ScenceLoader.cs"

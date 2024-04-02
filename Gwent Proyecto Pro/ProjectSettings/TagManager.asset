@@ -5,6 +5,24 @@ TagManager:
   serializedVersion: 2
   tags:
   - TablePlayer1
+  - MO1
+  - MO2
+  - MO3
+  - MO4
+  - MO5
+  - RO1
+  - RO2
+  - RO3
+  - RO4
+  - RO5
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+  - CO1
+  - CO2
+  - CO3
   layers:
   - Default
   - TransparentFX
@@ -12,7 +30,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Unit
   - 
   - 
   - 

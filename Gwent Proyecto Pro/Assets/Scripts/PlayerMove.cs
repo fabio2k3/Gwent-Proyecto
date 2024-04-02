@@ -20,12 +20,12 @@ public class PlayerMove : MonoBehaviour
 
         y = Input.GetAxis("Vertical"); // saber si nos movemos hacia delante o hacia atrás
 
-        transform.Rotate(0,x*Time.deltaTime*rotationSpeed,0);
+        transform.Rotate(0, x * Time.deltaTime * rotationSpeed, 0);
 
-        transform.Translate(0,0,y*Time.deltaTime*runSpeed);
+        transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
 
 
         animator.SetFloat("VelX", x);
-        animator.SetFloat("VelY",y);
+        animator.SetFloat("VelY", y);
     }
 }

@@ -456,8 +456,11 @@
 "Assets/Scripts/DetectProximity.cs"
 "Assets/Scripts/DistribteCards.cs"
 "Assets/Scripts/DragAndDrop.cs"
+"Assets/Scripts/GameFlow.cs"
 "Assets/Scripts/PlayerMove.cs"
+"Assets/Scripts/PositionOfCards.cs"
 "Assets/Scripts/SceneLoader.cs"
+"Assets/Scripts/VerifyPosition.cs"
 -langversion:9.0
 
 /deterministic

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2614274797100601356}
   - component: {fileID: 2518730437010715897}
   - component: {fileID: 5515181562192938373}
-  - component: {fileID: 9124435795787835922}
+  - component: {fileID: -2015719695496196585}
   m_Layer: 5
   m_Name: UnitSilverW2
   m_TagString: Untagged
@@ -90,6 +90,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MW1
+  - MW2
+  - MW3
+  - MW4
+  - MW5
+  - RW1
+  - RW2
+  - RW3
+  - RW4
+  - RW5
 --- !u!65 &5515181562192938373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +122,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 101.956345, y: 99.53613, z: 1}
   m_Center: {x: -0.20165396, y: -0.85073, z: 0}
---- !u!114 &9124435795787835922
+--- !u!114 &-2015719695496196585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +131,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2673336856566029002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  name: UnitSilverW2
+  type: Unit
+  attack: 8

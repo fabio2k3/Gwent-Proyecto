@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5119079853929472787}
   - component: {fileID: 8098026595872084122}
   - component: {fileID: -5252105166828502565}
-  - component: {fileID: 1225143533144537540}
   - component: {fileID: -8223803491619443691}
+  - component: {fileID: 7057900892276505955}
   m_Layer: 5
   m_Name: Increase6
   m_TagString: Untagged
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 102.59051, y: 99.110825, z: 1}
   m_Center: {x: 0.0021210785, y: -0.23299113, z: 0}
---- !u!114 &1225143533144537540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012734971527928616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &-8223803491619443691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MO1
+  - MO2
+  - MO3
+  - MO4
+  - MO5
+  - RO1
+  - RO2
+  - RO3
+  - RO4
+  - RO5
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+--- !u!114 &7057900892276505955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012734971527928616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Increase6
+  type: Increase
+  attack: 0

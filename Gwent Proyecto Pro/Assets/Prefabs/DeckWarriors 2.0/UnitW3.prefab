@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6554703079268902949}
   - component: {fileID: 5983179450479266212}
   - component: {fileID: 6952933855518732010}
-  - component: {fileID: 5464163641143139798}
+  - component: {fileID: -4399542328932086650}
   m_Layer: 5
   m_Name: UnitW3
   m_TagString: Untagged
@@ -90,6 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - SW1
+  - SW2
+  - SW3
+  - SW4
+  - SW5
 --- !u!65 &6952933855518732010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +117,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 102.47519, y: 101.06526, z: 1}
   m_Center: {x: 0.43845722, y: -0.35084912, z: 0}
---- !u!114 &5464163641143139798
+--- !u!114 &-4399542328932086650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +126,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 756554788032180216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  name: UnitW3
+  type: Unit
+  attack: 6

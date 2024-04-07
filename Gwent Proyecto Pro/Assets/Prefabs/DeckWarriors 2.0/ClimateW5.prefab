@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5263412966806385808}
   - component: {fileID: 5679328322001058905}
   - component: {fileID: 2997382896842358538}
-  - component: {fileID: 6967479747925892945}
+  - component: {fileID: -4126220193974286221}
   m_Layer: 5
   m_Name: ClimateW5
   m_TagString: Untagged
@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - CW1
+  - CW2
+  - CW3
 --- !u!65 &2997382896842358538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +115,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 101.189125, y: 98.242485, z: 1}
   m_Center: {x: -0.17652568, y: 0.44685224, z: 0}
---- !u!114 &6967479747925892945
+--- !u!114 &-4126220193974286221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +124,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2495269324635218737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  name: ClimateW5
+  type: Climate
+  attack: 0

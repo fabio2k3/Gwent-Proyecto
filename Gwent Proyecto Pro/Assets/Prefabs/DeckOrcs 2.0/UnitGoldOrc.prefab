@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5453913155551022001}
   - component: {fileID: 7203188771100706730}
   - component: {fileID: 8680498106590845590}
-  - component: {fileID: 3564496854626917315}
   - component: {fileID: -2974057841443135878}
+  - component: {fileID: 4313788263422554367}
   m_Layer: 5
   m_Name: UnitGoldOrc
   m_TagString: Untagged
@@ -99,51 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 101.63823, y: 99.48667, z: 1}
   m_Center: {x: 0.107763775, y: -0.051942416, z: 0}
---- !u!114 &3564496854626917315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4279075839283003971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnMouseDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: DragAndDrop, Assembly-CSharp
-          m_MethodName: OnMouseUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &-2974057841443135878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,3 +111,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MO1
+  - MO2
+  - MO3
+  - MO4
+  - MO5
+  - RO1
+  - RO2
+  - RO3
+  - RO4
+  - RO5
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+--- !u!114 &4313788263422554367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279075839283003971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: UnitGoldorc
+  type: Unit
+  attack: 10

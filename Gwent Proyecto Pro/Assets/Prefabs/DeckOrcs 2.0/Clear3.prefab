@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5846757432584197525}
   - component: {fileID: 8731990209575487939}
   - component: {fileID: 5634683313305744086}
-  - component: {fileID: 5304444083351084900}
   - component: {fileID: -8391921165528501106}
+  - component: {fileID: 7882682291517587099}
   m_Layer: 5
   m_Name: Clear3
   m_TagString: Untagged
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 98.60452, y: 101.75452, z: 1}
   m_Center: {x: 0.33919942, y: 0.2560942, z: 0}
---- !u!114 &5304444083351084900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2986160154999664737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &-8391921165528501106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MO1
+  - MO2
+  - MO3
+  - MO4
+  - MO5
+  - RO1
+  - RO2
+  - RO3
+  - RO4
+  - RO5
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+--- !u!114 &7882682291517587099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986160154999664737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Clear3
+  type: Clear
+  attack: 0

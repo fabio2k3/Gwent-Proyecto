@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4566514401367218051}
   - component: {fileID: 7539477015460120004}
   - component: {fileID: -4680093784043106356}
-  - component: {fileID: -4816277050077692483}
   - component: {fileID: -4535608553489643720}
+  - component: {fileID: 5243703309727162971}
   m_Layer: 5
   m_Name: Climate2
   m_TagString: Untagged
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.76578, y: 99.01427, z: 1}
   m_Center: {x: 0.1518519, y: 0.3020926, z: 0}
---- !u!114 &-4816277050077692483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4152614865584620954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &-4535608553489643720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - CO1
+  - CO2
+  - CO3
+--- !u!114 &5243703309727162971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152614865584620954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Climate2
+  type: Climate
+  attack: 0

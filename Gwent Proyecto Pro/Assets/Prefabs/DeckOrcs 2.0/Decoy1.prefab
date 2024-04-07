@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5398079698940177987}
   - component: {fileID: 581768163332254120}
   - component: {fileID: -3038765314432776633}
-  - component: {fileID: -1910008370742331662}
   - component: {fileID: -8491829141357760616}
+  - component: {fileID: 6267996063914735881}
   m_Layer: 5
   m_Name: Decoy1
   m_TagString: Untagged
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 102.650604, y: 100.106766, z: 1}
   m_Center: {x: -1.3288827, y: -0.3179931, z: 0}
---- !u!114 &-1910008370742331662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6118091284671829875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &-8491829141357760616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MO1
+  - MO2
+  - MO3
+  - MO4
+  - MO5
+  - RO1
+  - RO2
+  - RO3
+  - RO4
+  - RO5
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+--- !u!114 &6267996063914735881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118091284671829875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Decoy1
+  type: Decoy
+  attack: 0

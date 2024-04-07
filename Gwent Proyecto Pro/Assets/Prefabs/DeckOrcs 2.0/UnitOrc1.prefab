@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8158647791700827733}
   - component: {fileID: 2973779386529170811}
   - component: {fileID: -5463390382436946674}
-  - component: {fileID: -8062880720011589759}
   - component: {fileID: 547288313668452594}
+  - component: {fileID: -1385435712711643259}
   m_Layer: 5
   m_Name: UnitOrc1
   m_TagString: Untagged
@@ -99,19 +99,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 102.12084, y: 101.47584, z: 1}
   m_Center: {x: 0.26907396, y: 0.2587775, z: 0}
---- !u!114 &-8062880720011589759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2914031045066159033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &547288313668452594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - SO1
+  - SO2
+  - SO3
+  - SO4
+  - SO5
+--- !u!114 &-1385435712711643259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2914031045066159033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: UnitOrc1
+  type: Unit
+  attack: 5

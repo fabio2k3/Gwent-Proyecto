@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1007360667397904261}
   - component: {fileID: 7600901669811775205}
   - component: {fileID: 8828652522630550427}
-  - component: {fileID: 5157268071297476389}
+  - component: {fileID: 4630738772977667530}
   m_Layer: 5
   m_Name: UnitW7
   m_TagString: Untagged
@@ -90,6 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MW1
+  - MW2
+  - MW3
+  - MW4
+  - MW5
 --- !u!65 &8828652522630550427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +117,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.2827, y: 99.41947, z: 1}
   m_Center: {x: 0.7733658, y: 1.0751021, z: 0}
---- !u!114 &5157268071297476389
+--- !u!114 &4630738772977667530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +126,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 543987629233665822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  name: UnitW7
+  type: Unit
+  attack: 5

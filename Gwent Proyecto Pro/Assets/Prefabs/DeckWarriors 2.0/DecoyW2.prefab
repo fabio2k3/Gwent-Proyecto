@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9206461827755427959}
   - component: {fileID: 6935093854122204966}
   - component: {fileID: 4193838468120292124}
-  - component: {fileID: 8842887943803618341}
+  - component: {fileID: -2924534749130928529}
   m_Layer: 5
   m_Name: DecoyW2
   m_TagString: Untagged
@@ -90,6 +90,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5006a2cfb544cc74da8242b6ec9be839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  validPositions:
+  - MW1
+  - MW2
+  - MW3
+  - MW4
+  - MW5
+  - RW1
+  - RW2
+  - RW3
+  - RW4
+  - RW5
+  - SW1
+  - SW2
+  - SW3
+  - SW4
+  - SW5
 --- !u!65 &4193838468120292124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,7 +127,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100.973724, y: 99.59087, z: 1}
   m_Center: {x: 0.0720301, y: 0.7151065, z: 0}
---- !u!114 &8842887943803618341
+--- !u!114 &-2924534749130928529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +136,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7245769911798171046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  name: DecoyW1
+  type: Decoy
+  attack: 0

@@ -5,10 +5,25 @@ using UnityEngine;
 public class Cards : MonoBehaviour
 {
     public string name;
+
     public string type;
+
     public int attack;
 
+    public string row;
 
+    public bool activated;
+
+    public void AssignAttack(string newName, string newType, int newAttack)
+    {
+        name = newName;
+        type = newType;
+
+        if(type == "Unit")
+        {
+            attack = newAttack;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

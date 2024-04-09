@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class GameFlow : MonoBehaviour
 {
-    public static GameObject[,] cardsOnBoard = new GameObject[6, 6];
+    public Cards[,] cardsOnBoard = new Cards[6, 6];
     private bool[,] effectActivatedOnTheCard = new bool[6, 6];
+
     // Start is called before the first frame update
     void Start()
     {

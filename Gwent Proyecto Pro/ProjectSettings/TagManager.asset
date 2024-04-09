@@ -23,14 +23,39 @@ TagManager:
   - CO1
   - CO2
   - CO3
+  - MO
+  - RO
+  - SO
+  - MW
+  - RW
+  - SW
+  - Empty
+  - MW1
+  - MW2
+  - MW3
+  - MW4
+  - MW5
+  - RW1
+  - RW2
+  - RW3
+  - RW4
+  - RW5
+  - SW1
+  - SW2
+  - SW3
+  - SW4
+  - SW5
+  - CW1
+  - CW2
+  - CW3
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Empty
   - Water
   - UI
-  - Unit
+  - 
   - 
   - 
   - 

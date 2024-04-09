@@ -142,3 +142,5 @@ MonoBehaviour:
   name: Clear1
   type: Clear
   attack: 0
+  row: 
+  activated: 0

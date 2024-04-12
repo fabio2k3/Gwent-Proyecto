@@ -48,6 +48,8 @@ TagManager:
   - CW1
   - CW2
   - CW3
+  - OrcCamp
+  - WCamp
   layers:
   - Default
   - TransparentFX

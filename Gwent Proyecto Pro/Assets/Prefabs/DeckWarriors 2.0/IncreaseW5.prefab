@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6254906996988708535}
   - component: {fileID: 104604006023697252}
   - component: {fileID: -4513206733361550513}
+  - component: {fileID: 2058234862750834639}
   m_Layer: 5
   m_Name: IncreaseW5
   m_TagString: Untagged
@@ -91,21 +92,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validPositions:
-  - MW1
-  - MW2
-  - MW3
-  - MW4
-  - MW5
-  - RW1
-  - RW2
-  - RW3
-  - RW4
-  - RW5
-  - SW1
-  - SW2
-  - SW3
-  - SW4
-  - SW5
+  - CW1
+  - CW2
+  - CW3
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 2058234862750834639}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
 --- !u!65 &104604006023697252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,3 +135,17 @@ MonoBehaviour:
   name: IncreaseW5
   type: Increase
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+--- !u!114 &2058234862750834639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420267170804361658}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e9c171f89c1fa48a1c16c8e73d8fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

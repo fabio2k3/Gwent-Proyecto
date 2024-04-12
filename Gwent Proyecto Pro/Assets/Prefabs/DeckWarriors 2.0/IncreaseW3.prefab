@@ -91,21 +91,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validPositions:
-  - MW1
-  - MW2
-  - MW3
-  - MW4
-  - MW5
-  - RW1
-  - RW2
-  - RW3
-  - RW4
-  - RW5
-  - SW1
-  - SW2
-  - SW3
-  - SW4
-  - SW5
+  - CW1
+  - CW2
+  - CW3
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
 --- !u!65 &116708050563293607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,3 +132,5 @@ MonoBehaviour:
   name: IncreaseW3
   type: Increase
   attack: 0
+  invocated: 0
+  rowInvocated: 0

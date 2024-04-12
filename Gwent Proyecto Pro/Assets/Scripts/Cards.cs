@@ -10,6 +10,10 @@ public class Cards : MonoBehaviour
 
     public int attack;
 
+    public bool invocated;
+
+    public int rowInvocated;
+
     public void AssignAttack(string newName, string newType, int newAttack)
     {
         name = newName;

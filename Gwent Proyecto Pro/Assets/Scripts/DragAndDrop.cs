@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -13,31 +14,40 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     private RectTransform canvasRectTransform;
     private bool moveCard = false;
     private Vector3 position;
+    private Vector3 originalCanvasPosition;
     public List<string> validPositions = new List<string>();
-    public static bool[,] ocupedPosition = new bool[6, 6];
-    public GameObject[,] gameObjectsCards = new GameObject[6, 6];
+
+    public static bool invocated;
+    public static GameObject[,] gameObjectsCards = new GameObject[6, 6];
+    public static int rowInvocated = 0;
 
     public GameObject cardInvocated;
+    
+    private bool originalOrcCardPosition;
+
+    #region Effects
+    public PlusTwo plusTwo;
+    public PlusOne plusOne;
+    public MultiplicateTwo multiplicateTwo;
+    #endregion
 
 
-    private bool ocuped = false;
-    private int rowOcuped;
-    private int colOcuped;
-   
     void Start()
     {
         canvasRectTransform = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+
+        originalCanvasPosition = transform.localPosition;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         moveCard = true;
-        position  = transform.position;
+        position = transform.position;
         Vector3 pointerPos = eventData.pointerCurrentRaycast.screenPosition;
         RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, pointerPos, eventData.enterEventCamera, out pointerOffset);
         pointerOffset -= transform.position;
+
         dragging = true;
-        
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -52,221 +62,127 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     void OnTriggerStay(Collider pos)
     {
-        int row = pos.GetComponent<PositionOfCards>().row;
-        int col = pos.GetComponent<PositionOfCards>().col;
+        if(GameFlow.avoidCampOrc)
+        {
+            if (pos.CompareTag("WCamp")) // Verifica si colisiona con un WCamp
+            {
+                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true);
 
-        if (ocupedPosition[row, col])
-        {
-            transform.position = position;
-        }
-        else
-        {
+                return;
+            }
+
+            if (pos.CompareTag("OrcCamp")) // Verifica si colisiona con un OrcCamp
+            {          
+                // Restaura la posición original del objeto
+                originalOrcCardPosition = true;
+
+                return;
+            }
+
+            int row = pos.GetComponent<PositionOfCards>().row;
+            int col = pos.GetComponent<PositionOfCards>().col;
+
             if (validPositions.Contains(pos.tag))
             {
-                cardInvocated = gameObject;
+
                 Vector3 coordenas = pos.transform.position;
                 transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                gameObjectsCards[row, col] = gameObject;
 
-                ocuped = true;
-                rowOcuped = row;
-                colOcuped = col;
+                gameObject.GetComponent<Cards>().invocated = true;
+                gameObject.GetComponent<Cards>().rowInvocated = row;
 
-                gameObjectsCards[row, col] = cardInvocated;
+                //if (gameObjectsCards[row, col] is null)
+                //{
+                //    Vector3 coordenas = pos.transform.position;
+                //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                //    gameObjectsCards[row, col] = gameObject;
 
-                Effects(cardInvocated, row, ocupedPosition, gameObjectsCards);
+                //    gameObject.GetComponent<Cards>().invocated = true;
+                //    gameObject.GetComponent<Cards>().rowInvocated = row;
+                //}
+                //else
+                //    transform.localPosition = originalCanvasPosition;
             }
             else
             {
-                transform.position = position;
-                
+                transform.localPosition = originalCanvasPosition;
             }
         }
 
+        if (GameFlow.avoidCampWarrior)
+        {
+            if (pos.CompareTag("OrcCamp")) 
+            {
+                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true);
+
+                return;
+            }
+
+            if (pos.CompareTag("WCamp")) 
+            {
+                
+                originalOrcCardPosition = true;
+
+                return;
+            }
+
+            int row = pos.GetComponent<PositionOfCards>().row;
+            int col = pos.GetComponent<PositionOfCards>().col;
+
+
+
+            if (validPositions.Contains(pos.tag))
+            {
+                Vector3 coordenas = pos.transform.position;
+                transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                gameObjectsCards[row, col] = gameObject;
+
+                gameObject.GetComponent<Cards>().invocated = true;
+                gameObject.GetComponent<Cards>().rowInvocated = row;
+
+
+                //if (gameObjectsCards[row, col] is null)
+                //{ 
+                //    Vector3 coordenas = pos.transform.position;
+                //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                //    gameObjectsCards[row, col] = gameObject;
+                    
+                //}
+                //else
+                //    transform.localPosition = originalCanvasPosition;
+            }
+            else
+            {
+                
+                transform.localPosition = originalCanvasPosition;
+            }
+        }
+        
     }
+
+
 
     public void OnPointerUp(PointerEventData eventData)
     {
         dragging = false;
         moveCard = false;
 
-        if (ocuped)
-        {
-            ocupedPosition[rowOcuped, colOcuped] = true;
-            Debug.Log(ocupedPosition[rowOcuped, colOcuped]);
-        }
-    }
+        if (originalOrcCardPosition)
+            transform.localPosition = originalCanvasPosition;
 
-    public void Effects(GameObject cardWithEffect, int row, bool[,] cardInvocatedBool, GameObject[,] cardInvocated)
-    {
-        Cards card = cardWithEffect.GetComponent<Cards>();
 
-        #region Increase
-        if(card.name == "Increase4" || card.name == "Increase5" || card.name == "IncreaseW4" || card.name == "IncreaseW6")
-        {
-            for(int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row,col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack *= 2;
-            }
-        }
-        else if(card.name == "Increase2" || card.name == "IncreaseW5")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 2;
-            }
-        }
-        else if(card.name == "Increase3")
-        {
-            if(row == 2)
-            {
-                for (int col = 0; col < 6; col++)
-                {
-                    if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                        cardInvocated[row, col].GetComponent<Cards>().attack += 2;
-                }
-            }
-            else
-            {
-                for (int col = 0; col < 6; col++)
-                {
-                    if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                        cardInvocated[row, col].GetComponent<Cards>().attack += 1;
-                }
-            }
-        }
-        else if(card.name == "IncreaseW1")
-        {
-            if (row == 4)
-            {
-                for (int col = 0; col < 6; col++)
-                {
-                    if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                        cardInvocated[row, col].GetComponent<Cards>().attack += 3;
-                }
-            }
-            else
-            {
-                for (int col = 0; col < 6; col++)
-                {
-                    if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                        cardInvocated[row, col].GetComponent<Cards>().attack += 1;
-                }
-            }
-        }
-        else if( card.name == "IncreaseW3")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack *= 3;
-            }
-        }
-        else if(card.name == "Increase1")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && (cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc1" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc2" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc3") && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 5;
+        invocated = true;
 
-                else if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 2;
-            }
-        }
-        else if (card.name == "Increase6")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && (cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc1" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc2" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverOrc3") && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 2;
+        Debug.Log(invocated);
 
-                else if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack *= 3;
-            }
-        }
-        else if(card.name == "IncreaseW2")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && (cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverW1" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverW2" || cardInvocated[row, col].GetComponent<Cards>().name == "UnitSilverW3") && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 2;
+        if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase1" || gameObject.GetComponent<Cards>().name == "Increase2" || gameObject.GetComponent<Cards>().name == "IncreaseW5"))
+            plusTwo.enabled = true;
 
-                else if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack += 1;
-            }
-        }
-        #endregion
+        if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase5" || gameObject.GetComponent<Cards>().name == "Increase4" || gameObject.GetComponent<Cards>().name == "IncreaseW6" || gameObject.GetComponent<Cards>().name == "IncreaseW4"))
+            multiplicateTwo.enabled = true;
 
-        #region Climate
-        else if(card.name == "Increase3" || card.name == "IncreaseW4" || card.name == "IncreaseW5")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack -= 2;
-
-                if (cardInvocated[row, col].GetComponent<Cards>().attack < 0)
-                    cardInvocated[row, col].GetComponent<Cards>().attack = 0;
-            }
-        }
-
-        else if( card.name == "Increase4"  || card.name == "IncreaseW1")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack -= 3;
-
-                if (cardInvocated[row, col].GetComponent<Cards>().attack < 0)
-                    cardInvocated[row, col].GetComponent<Cards>().attack = 0;
-            }
-        }
-
-        else if(card.name == "Increase1")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[0, col] && cardInvocated[0, col].GetComponent<Cards>().type == "Unit" && cardInvocated[0, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[0, col].GetComponent<Cards>().attack = 0;
-
-                if (cardInvocatedBool[1, col] && cardInvocated[1, col].GetComponent<Cards>().type == "Unit" && cardInvocated[1, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[1, col].GetComponent<Cards>().attack = 0;
-
-                if (cardInvocatedBool[4, col] && cardInvocated[4, col].GetComponent<Cards>().type == "Unit" && cardInvocated[4, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[4, col].GetComponent<Cards>().attack = 0;
-
-                if (cardInvocatedBool[5, col] && cardInvocated[5, col].GetComponent<Cards>().type == "Unit" && cardInvocated[5, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[5, col].GetComponent<Cards>().attack = 0;
-            }
-        }
-
-        else if (card.name == "IncreaseW3")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[0, col] && cardInvocated[0, col].GetComponent<Cards>().type == "Unit" && cardInvocated[0, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[0, col].GetComponent<Cards>().attack = 0;
-                
-                if (cardInvocatedBool[2, col] && cardInvocated[2, col].GetComponent<Cards>().type == "Unit" && cardInvocated[2, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[2, col].GetComponent<Cards>().attack = 0;
-
-                if (cardInvocatedBool[3, col] && cardInvocated[3, col].GetComponent<Cards>().type == "Unit" && cardInvocated[4, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[3, col].GetComponent<Cards>().attack = 0;
-
-                if (cardInvocatedBool[5, col] && cardInvocated[5, col].GetComponent<Cards>().type == "Unit" && cardInvocated[5, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[5, col].GetComponent<Cards>().attack = 0;
-            }
-        }
-
-        else if(card.name == "Increase5" || card.name == "IncreaseW2" || card.name == "Increase2")
-        {
-            for (int col = 0; col < 6; col++)
-            {
-                if (cardInvocatedBool[row, col] && cardInvocated[row, col].GetComponent<Cards>().type == "Unit" && cardInvocated[row, col].GetComponent<Cards>().name != "UnitGoldOrc")
-                    cardInvocated[row, col].GetComponent<Cards>().attack = 0;
-            }
-        }
-        #endregion
+        if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase3" || gameObject.GetComponent<Cards>().name == "IncreaseW2" || gameObject.GetComponent<Cards>().name == "IncreaseW1"))
+            plusOne.enabled = true;
     }
 }

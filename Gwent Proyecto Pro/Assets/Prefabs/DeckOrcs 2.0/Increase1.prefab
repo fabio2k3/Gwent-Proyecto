@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5754978944516121173}
   - component: {fileID: 2926175403034608950}
   - component: {fileID: 7934819385625157785}
+  - component: {fileID: -7015263798009722548}
   m_Layer: 5
   m_Name: Increase1
   m_TagString: Untagged
@@ -112,21 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validPositions:
-  - MO1
-  - MO2
-  - MO3
-  - MO4
-  - MO5
-  - RO1
-  - RO2
-  - RO3
-  - RO4
-  - RO5
-  - SO1
-  - SO2
-  - SO3
-  - SO4
-  - SO5
+  - CO1
+  - CO2
+  - CO3
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: -7015263798009722548}
 --- !u!114 &7934819385625157785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +133,17 @@ MonoBehaviour:
   name: Increase1
   type: Increase
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+--- !u!114 &-7015263798009722548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608205563117791398}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e9c171f89c1fa48a1c16c8e73d8fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

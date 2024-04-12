@@ -112,21 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validPositions:
-  - MO1
-  - MO2
-  - MO3
-  - MO4
-  - MO5
-  - RO1
-  - RO2
-  - RO3
-  - RO4
-  - RO5
-  - SO1
-  - SO2
-  - SO3
-  - SO4
-  - SO5
+  - CO1
+  - CO2
+  - CO3
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
 --- !u!114 &7057900892276505955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +132,5 @@ MonoBehaviour:
   name: Increase6
   type: Increase
   attack: 0
+  invocated: 0
+  rowInvocated: 0

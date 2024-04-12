@@ -96,6 +96,8 @@ MonoBehaviour:
   - SW3
   - SW4
   - SW5
+  cardInvocated: {fileID: 756554788032180216}
+  plusTwo: {fileID: 0}
 --- !u!65 &6952933855518732010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,3 +134,5 @@ MonoBehaviour:
   name: UnitW3
   type: Unit
   attack: 6
+  invocated: 0
+  rowInvocated: 0

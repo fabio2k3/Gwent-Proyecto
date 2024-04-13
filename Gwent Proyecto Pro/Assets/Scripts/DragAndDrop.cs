@@ -29,6 +29,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public PlusTwo plusTwo;
     public PlusOne plusOne;
     public MultiplicateTwo multiplicateTwo;
+    public MultiplicateThree multiplicateThree;
     #endregion
 
 
@@ -184,5 +185,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase3" || gameObject.GetComponent<Cards>().name == "IncreaseW2" || gameObject.GetComponent<Cards>().name == "IncreaseW1"))
             plusOne.enabled = true;
+
+        if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "IncreaseW3"))
+            multiplicateThree.enabled = true;
     }
 }

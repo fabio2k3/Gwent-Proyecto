@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 128822391637718176}
   - component: {fileID: 116708050563293607}
   - component: {fileID: 339914560142342794}
+  - component: {fileID: -4495461288247634028}
   m_Layer: 5
   m_Name: IncreaseW3
   m_TagString: Untagged
@@ -96,6 +97,9 @@ MonoBehaviour:
   - CW3
   cardInvocated: {fileID: 0}
   plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: -4495461288247634028}
 --- !u!65 &116708050563293607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -134,3 +138,15 @@ MonoBehaviour:
   attack: 0
   invocated: 0
   rowInvocated: 0
+--- !u!114 &-4495461288247634028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784899048852854860}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990110bf6bb52954e887f1fb37ec5ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

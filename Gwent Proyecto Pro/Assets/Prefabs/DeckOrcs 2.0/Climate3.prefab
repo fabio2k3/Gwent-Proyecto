@@ -112,9 +112,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validPositions:
-  - CO1
-  - CO2
-  - CO3
+  - Climate1
+  - Climate2
+  - Climate3
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
 --- !u!114 &-6881525293521191239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +135,5 @@ MonoBehaviour:
   name: Climate3
   type: Climate
   attack: 0
+  invocated: 0
+  rowInvocated: 0

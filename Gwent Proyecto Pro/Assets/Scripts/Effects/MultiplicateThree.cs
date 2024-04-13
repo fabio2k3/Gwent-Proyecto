@@ -7,7 +7,7 @@ public class MultiplicateThree : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(gameObject.GetComponent<Cards>().name == "IncreaseW3")
+        if (gameObject.GetComponent<Cards>().name == "IncreaseW3")
         {
             for (int col = 0; col < 5; col++)
             {
@@ -18,6 +18,26 @@ public class MultiplicateThree : MonoBehaviour
                     Cards currentCard = currentCardObject.GetComponent<Cards>();
 
                     if (currentCard.type == "Unit")
+                    {
+                        currentCard.attack *= 3;
+                    }
+                }
+            }
+        }
+        else if (gameObject.GetComponent<Cards>().name == "Increase6")
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[gameObject.GetComponent<Cards>().rowInvocated, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.name == "UnitSIlverOrc1" || currentCard.name == "UnitSIlverOrc1" || currentCard.name == "UnitSIlverOrc1")
+                        currentCard.attack += 2;
+
+                    else if (currentCard.type == "Unit")
                     {
                         currentCard.attack *= 3;
                     }

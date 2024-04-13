@@ -50,6 +50,9 @@ TagManager:
   - CW3
   - OrcCamp
   - WCamp
+  - Climate1
+  - Climate2
+  - Climate3
   layers:
   - Default
   - TransparentFX

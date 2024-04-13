@@ -63,6 +63,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     void OnTriggerStay(Collider pos)
     {
+        GameFlow checkClimate = new GameFlow();
+
         if(GameFlow.avoidCampOrc)
         {
             if (pos.CompareTag("WCamp")) // Verifica si colisiona con un WCamp
@@ -83,32 +85,65 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             int row = pos.GetComponent<PositionOfCards>().row;
             int col = pos.GetComponent<PositionOfCards>().col;
 
-            if (validPositions.Contains(pos.tag))
+            if(checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
             {
+                if (validPositions.Contains(pos.tag))
+                {
 
-                Vector3 coordenas = pos.transform.position;
-                transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                gameObjectsCards[row, col] = gameObject;
+                    Vector3 coordenas = pos.transform.position;
+                    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    gameObjectsCards[row, col] = gameObject;
 
-                gameObject.GetComponent<Cards>().invocated = true;
-                gameObject.GetComponent<Cards>().rowInvocated = row;
+                    gameObject.GetComponent<Cards>().invocated = true;
+                    gameObject.GetComponent<Cards>().rowInvocated = row;
 
-                //if (gameObjectsCards[row, col] is null)
-                //{
-                //    Vector3 coordenas = pos.transform.position;
-                //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                //    gameObjectsCards[row, col] = gameObject;
+                    //if (gameObjectsCards[row, col] is null)
+                    //{
+                    //    Vector3 coordenas = pos.transform.position;
+                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    //    gameObjectsCards[row, col] = gameObject;
 
-                //    gameObject.GetComponent<Cards>().invocated = true;
-                //    gameObject.GetComponent<Cards>().rowInvocated = row;
-                //}
-                //else
-                //    transform.localPosition = originalCanvasPosition;
+                    //    gameObject.GetComponent<Cards>().invocated = true;
+                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
+                    //}
+                    //else
+                    //    transform.localPosition = originalCanvasPosition;
+                }
+                else
+                {
+                    transform.localPosition = originalCanvasPosition;
+                }
             }
             else
             {
-                transform.localPosition = originalCanvasPosition;
+                if (validPositions.Contains(pos.tag))
+                {
+
+                    Vector3 coordenas = pos.transform.position;
+                    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    gameObjectsCards[row, col] = gameObject;
+
+                    gameObject.GetComponent<Cards>().invocated = true;
+                    gameObject.GetComponent<Cards>().rowInvocated = row;
+
+                    //if (gameObjectsCards[row, col] is null)
+                    //{
+                    //    Vector3 coordenas = pos.transform.position;
+                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    //    gameObjectsCards[row, col] = gameObject;
+
+                    //    gameObject.GetComponent<Cards>().invocated = true;
+                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
+                    //}
+                    //else
+                    //    transform.localPosition = originalCanvasPosition;
+                }
+                else
+                {
+                    transform.localPosition = originalCanvasPosition;
+                }
             }
+            
         }
 
         if (GameFlow.avoidCampWarrior)
@@ -131,32 +166,63 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             int row = pos.GetComponent<PositionOfCards>().row;
             int col = pos.GetComponent<PositionOfCards>().col;
 
-
-
-            if (validPositions.Contains(pos.tag))
+            if (checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
             {
-                Vector3 coordenas = pos.transform.position;
-                transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                gameObjectsCards[row, col] = gameObject;
+                if (validPositions.Contains(pos.tag))
+                {
 
-                gameObject.GetComponent<Cards>().invocated = true;
-                gameObject.GetComponent<Cards>().rowInvocated = row;
+                    Vector3 coordenas = pos.transform.position;
+                    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    gameObjectsCards[row, col] = gameObject;
 
+                    gameObject.GetComponent<Cards>().invocated = true;
+                    gameObject.GetComponent<Cards>().rowInvocated = row;
 
-                //if (gameObjectsCards[row, col] is null)
-                //{ 
-                //    Vector3 coordenas = pos.transform.position;
-                //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                //    gameObjectsCards[row, col] = gameObject;
-                    
-                //}
-                //else
-                //    transform.localPosition = originalCanvasPosition;
+                    //if (gameObjectsCards[row, col] is null)
+                    //{
+                    //    Vector3 coordenas = pos.transform.position;
+                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    //    gameObjectsCards[row, col] = gameObject;
+
+                    //    gameObject.GetComponent<Cards>().invocated = true;
+                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
+                    //}
+                    //else
+                    //    transform.localPosition = originalCanvasPosition;
+                }
+                else
+                {
+                    transform.localPosition = originalCanvasPosition;
+                }
             }
             else
             {
-                
-                transform.localPosition = originalCanvasPosition;
+                if (validPositions.Contains(pos.tag))
+                {
+
+                    Vector3 coordenas = pos.transform.position;
+                    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    gameObjectsCards[row, col] = gameObject;
+
+                    gameObject.GetComponent<Cards>().invocated = true;
+                    gameObject.GetComponent<Cards>().rowInvocated = row;
+
+                    //if (gameObjectsCards[row, col] is null)
+                    //{
+                    //    Vector3 coordenas = pos.transform.position;
+                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
+                    //    gameObjectsCards[row, col] = gameObject;
+
+                    //    gameObject.GetComponent<Cards>().invocated = true;
+                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
+                    //}
+                    //else
+                    //    transform.localPosition = originalCanvasPosition;
+                }
+                else
+                {
+                    transform.localPosition = originalCanvasPosition;
+                }
             }
         }
         

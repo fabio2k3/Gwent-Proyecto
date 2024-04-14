@@ -92,22 +92,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    gameObjectsCards[row, col] = gameObject;
+                    //gameObjectsCards[row, col] = gameObject;
 
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
-
-                    //if (gameObjectsCards[row, col] is null)
-                    //{
-                    //    Vector3 coordenas = pos.transform.position;
-                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //    gameObjectsCards[row, col] = gameObject;
-
-                    //    gameObject.GetComponent<Cards>().invocated = true;
-                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    //}
-                    //else
-                    //    transform.localPosition = originalCanvasPosition;
+                    gameObject.GetComponent<Cards>().colInvocated = col;
                 }
                 else
                 {
@@ -121,22 +110,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    gameObjectsCards[row, col] = gameObject;
+                    //gameObjectsCards[row, col] = gameObject;
 
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
-
-                    //if (gameObjectsCards[row, col] is null)
-                    //{
-                    //    Vector3 coordenas = pos.transform.position;
-                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //    gameObjectsCards[row, col] = gameObject;
-
-                    //    gameObject.GetComponent<Cards>().invocated = true;
-                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    //}
-                    //else
-                    //    transform.localPosition = originalCanvasPosition;
+                    gameObject.GetComponent<Cards>().colInvocated = col;
                 }
                 else
                 {
@@ -173,22 +151,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    gameObjectsCards[row, col] = gameObject;
+                    //gameObjectsCards[row, col] = gameObject;
 
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
-
-                    //if (gameObjectsCards[row, col] is null)
-                    //{
-                    //    Vector3 coordenas = pos.transform.position;
-                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //    gameObjectsCards[row, col] = gameObject;
-
-                    //    gameObject.GetComponent<Cards>().invocated = true;
-                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    //}
-                    //else
-                    //    transform.localPosition = originalCanvasPosition;
+                    gameObject.GetComponent<Cards>().colInvocated = col;
                 }
                 else
                 {
@@ -202,22 +169,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    gameObjectsCards[row, col] = gameObject;
+                    //gameObjectsCards[row, col] = gameObject;
 
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
-
-                    //if (gameObjectsCards[row, col] is null)
-                    //{
-                    //    Vector3 coordenas = pos.transform.position;
-                    //    transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //    gameObjectsCards[row, col] = gameObject;
-
-                    //    gameObject.GetComponent<Cards>().invocated = true;
-                    //    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    //}
-                    //else
-                    //    transform.localPosition = originalCanvasPosition;
+                    gameObject.GetComponent<Cards>().colInvocated = col;
                 }
                 else
                 {
@@ -239,9 +195,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             transform.localPosition = originalCanvasPosition;
 
 
-        invocated = true;
+        int row = gameObject.GetComponent<Cards>().rowInvocated;
+        int col = gameObject.GetComponent<Cards>().colInvocated;
 
-        Debug.Log(invocated);
+        gameObjectsCards[row,col] = gameObject;
 
         if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase1" || gameObject.GetComponent<Cards>().name == "Increase2" || gameObject.GetComponent<Cards>().name == "IncreaseW5"))
             plusTwo.enabled = true;

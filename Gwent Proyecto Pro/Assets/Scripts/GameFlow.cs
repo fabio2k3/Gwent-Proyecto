@@ -2,106 +2,173 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameFlow : MonoBehaviour
 {
     public Cards[,] cardsOnBoard = new Cards[6, 6];
-    private bool[,] effectActivatedOnTheCard = new bool[6, 6];
 
     public static bool avoidCampOrc;
     public static bool avoidCampWarrior;
 
-    private static int prueba = 0;
+    private static int whoStart;
+    private int orcWinsCount = 0;
+    private int warriorWinsCount = 0;
 
     public TextMeshProUGUI scoreWarrior; // Asegúrate de asignar estos en el inspector
     public TextMeshProUGUI scoreOrc;     // Asegúrate de asignar estos en el inspector
     public GameObject roundOfWarriors;
     public GameObject roundOfOrcs;
+    public GameObject WarriorsWin;
+    public GameObject OrcWin;
 
     public List<string> ClimateCards = new List<string>();
 
     private bool orcGave;
     private bool warriorsGave;
+    private bool weHaveWinner;
 
-    
     void Start()
     {
-        // Obtener las referencias a los componentes TextMeshProUGUI
         scoreWarrior = GameObject.Find("ScoreWarriors").GetComponent<TextMeshProUGUI>(); 
-        scoreOrc = GameObject.Find("ScoreOrcs").GetComponent<TextMeshProUGUI>();         
+        scoreOrc = GameObject.Find("ScoreOrcs").GetComponent<TextMeshProUGUI>();
+
+        whoStart = UnityEngine.Random.Range(0, 2);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Estado actual " + whoStart.ToString());
+
+        #region Winner of the GAME
+
+        if (orcWinsCount >= 2)
+        {
+            OrcWin.SetActive(true);
+
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
+        if (warriorWinsCount >= 2)
+        {
+            WarriorsWin.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
+
+        #endregion
+
+        #region Clear the Board
+        if (weHaveWinner && Input.GetKeyDown(KeyCode.Return))
+        {
+            for (int row = 0; row < DragAndDrop.gameObjectsCards.GetLength(0); row++)
+            {
+                for (int col = 0; col < DragAndDrop.gameObjectsCards.GetLength(1); col++)
+                {
+                    if (DragAndDrop.gameObjectsCards[row, col] != null)
+                    {
+                        DragAndDrop.gameObjectsCards[row, col].transform.position = new Vector3(
+                            DragAndDrop.gameObjectsCards[row, col].transform.position.x,
+                            DragAndDrop.gameObjectsCards[row, col].transform.position.y,
+                            0f
+                        );
+                        DragAndDrop.gameObjectsCards[row, col] = null;
+                    }                    
+                }
+            }
+
+            weHaveWinner = false;
+            roundOfOrcs.SetActive(false);
+            roundOfWarriors.SetActive(false);
+        }
+        #endregion
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             roundOfWarriors.SetActive(false);
             roundOfOrcs.SetActive(false);
         }
 
+        #region Check Winner of the Round
         if (warriorsGave && orcGave)
         {
             if (CalculateScoreOrcs() > CalculateScoreWarriors())
             {
                 Debug.Log("Gana Orcos");
                 roundOfOrcs.SetActive(true);
+                orcWinsCount++;
+                weHaveWinner = true;
+                warriorsGave = false;
+                orcGave = false;
+                Debug.Log(orcWinsCount);
             }
                 
             else if(CalculateScoreOrcs() < CalculateScoreWarriors())
             {
                 Debug.Log("Gana W");
                 roundOfWarriors.SetActive(true);
+                warriorWinsCount++;
+                weHaveWinner = true;
+                warriorsGave = false;
+                orcGave = false;
+                Debug.Log(warriorWinsCount);
             }
                 
         }
+        #endregion
         else
         {
+            #region Pass Turn
             if (Input.GetKeyDown(KeyCode.B))
             {
-                if (prueba == 0)
-                    prueba += 1;
-                else if (prueba == 1)
-                    prueba -= 1;
+                if (orcGave)
+                    warriorsGave = true;
+                else if (warriorsGave)
+                    orcGave = true;
+
+                whoStart = (whoStart == 0) ? 1 : 0;
             }
 
-            if (prueba == 0)
+            if (whoStart == 0)
             {
                 avoidCampOrc = true;
                 avoidCampWarrior = false;
-
-                //if (DragAndDrop.moveACard)
-                //    avoidCampWarrior = true;
             }
-            else if (prueba == 1)
+            else if (whoStart == 1)
             {
-
                 avoidCampOrc = false;
                 avoidCampWarrior = true;
-
-                //if (DragAndDrop.moveACard)
-                //    avoidCampOrc = true;
             }
+            #endregion
 
             scoreWarrior.text = "Score: " + CalculateScoreWarriors();
             scoreOrc.text = "Score: " + CalculateScoreOrcs();
 
+            #region Give Up Turn
             if (Input.GetKeyDown(KeyCode.V) && !avoidCampWarrior)
             {
                 warriorsGave = true;
                 Debug.Log("W cedio");
-                prueba += 1;
+                whoStart = 1;
             }
             if (Input.GetKeyDown(KeyCode.V) && !avoidCampOrc)
             {
                 orcGave = true;
                 Debug.Log("O cedio");
-                prueba -= 1;
+                whoStart = 0;
             }
+            #endregion
         }
-        Debug.Log("Estado actual" + prueba.ToString());
+        
         
     }
 

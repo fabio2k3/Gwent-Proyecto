@@ -13,7 +13,7 @@ public class Cards : MonoBehaviour
     public bool invocated;
 
     public int rowInvocated;
-
+    public int colInvocated;
     public void AssignAttack(string newName, string newType, int newAttack)
     {
         name = newName;

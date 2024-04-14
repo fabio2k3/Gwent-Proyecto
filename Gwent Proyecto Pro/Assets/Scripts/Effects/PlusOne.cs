@@ -19,14 +19,14 @@ public class PlusOne : MonoBehaviour
 
                     if (gameObject.GetComponent<Cards>().rowInvocated == 2)
                     {
-                        if (currentCard.type == "Unit")
+                        if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                         {
                             currentCard.attack += 2;
                         }
                     }
                     else
                     {
-                        if (currentCard.type == "Unit")
+                        if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                         {
                             currentCard.attack += 1;
                         }
@@ -73,14 +73,11 @@ public class PlusOne : MonoBehaviour
 
                     if (currentCard.name == "UnitSilverW1"|| currentCard.name == "UnitSilverW2" || currentCard.name == "UnitSilverW3")
                     {
-                        if (currentCard.type == "Unit")
-                        {
-                            currentCard.attack += 2;
-                        }
+                        currentCard.attack += 2;   
                     }
                     else
                     {
-                        if (currentCard.type == "Unit")
+                        if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                         {
                             currentCard.attack += 1;
                         }

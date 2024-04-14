@@ -17,7 +17,7 @@ public class MultiplicateThree : MonoBehaviour
                 {
                     Cards currentCard = currentCardObject.GetComponent<Cards>();
 
-                    if (currentCard.type == "Unit")
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack *= 3;
                     }
@@ -37,7 +37,7 @@ public class MultiplicateThree : MonoBehaviour
                     if (currentCard.name == "UnitSIlverOrc1" || currentCard.name == "UnitSIlverOrc1" || currentCard.name == "UnitSIlverOrc1")
                         currentCard.attack += 2;
 
-                    else if (currentCard.type == "Unit")
+                    else if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack *= 3;
                     }

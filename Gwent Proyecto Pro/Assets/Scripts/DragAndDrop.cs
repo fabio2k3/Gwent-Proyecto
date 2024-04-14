@@ -19,6 +19,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     public static bool invocated;
     public static GameObject[,] gameObjectsCards = new GameObject[6, 6];
+    public static GameObject[] climateCards = new GameObject[3];
     public static int rowInvocated = 0;
 
     public GameObject cardInvocated;
@@ -30,6 +31,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public PlusOne plusOne;
     public MultiplicateTwo multiplicateTwo;
     public MultiplicateThree multiplicateThree;
+    public ClimateEffects climateEffects;
     #endregion
 
 
@@ -84,6 +86,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
             int row = pos.GetComponent<PositionOfCards>().row;
             int col = pos.GetComponent<PositionOfCards>().col;
+            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate;
 
             if(checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
             {
@@ -97,6 +100,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
+
+                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -115,6 +120,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
+
+                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -143,6 +150,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
             int row = pos.GetComponent<PositionOfCards>().row;
             int col = pos.GetComponent<PositionOfCards>().col;
+            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate;
 
             if (checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
             {
@@ -156,6 +164,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
+
+                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -174,6 +184,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
+
+                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -197,8 +209,12 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         int row = gameObject.GetComponent<Cards>().rowInvocated;
         int col = gameObject.GetComponent<Cards>().colInvocated;
+        int positionCLimateArray = gameObject.GetComponent<Cards>().climateInvocated;
 
-        gameObjectsCards[row,col] = gameObject;
+        if (gameObject.GetComponent<Cards>().name == "Climate1" || gameObject.GetComponent<Cards>().name == "Climate2" || gameObject.GetComponent<Cards>().name == "Climate3" || gameObject.GetComponent<Cards>().name == "Climate4" || gameObject.GetComponent<Cards>().name == "Climate5" || gameObject.GetComponent<Cards>().name == "ClimateW1" || gameObject.GetComponent<Cards>().name == "ClimateW2" || gameObject.GetComponent<Cards>().name == "ClimateW3" || gameObject.GetComponent<Cards>().name == "ClimateW4" || gameObject.GetComponent<Cards>().name == "ClimateW5")
+            climateCards[positionCLimateArray] = gameObject; 
+        else
+            gameObjectsCards[row, col] = gameObject;
 
         if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase1" || gameObject.GetComponent<Cards>().name == "Increase2" || gameObject.GetComponent<Cards>().name == "IncreaseW5"))
             plusTwo.enabled = true;
@@ -211,5 +227,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "IncreaseW3"))
             multiplicateThree.enabled = true;
+
+        if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Climate1" || gameObject.GetComponent<Cards>().name == "Climate2" || gameObject.GetComponent<Cards>().name == "Climate3" || gameObject.GetComponent<Cards>().name == "Climate4" || gameObject.GetComponent<Cards>().name == "Climate5" || gameObject.GetComponent<Cards>().name == "ClimateW1" || gameObject.GetComponent<Cards>().name == "ClimateW2" || gameObject.GetComponent<Cards>().name == "ClimateW3" || gameObject.GetComponent<Cards>().name == "ClimateW4" || gameObject.GetComponent<Cards>().name == "ClimateW5"))
+            climateEffects.enabled = true;
     }
 }

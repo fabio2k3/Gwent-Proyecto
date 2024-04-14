@@ -456,6 +456,7 @@
 "Assets/Scripts/DetectProximity.cs"
 "Assets/Scripts/DistribteCards.cs"
 "Assets/Scripts/DragAndDrop.cs"
+"Assets/Scripts/Effects/ClimateEffects.cs"
 "Assets/Scripts/Effects/MultiplicateThree.cs"
 "Assets/Scripts/Effects/MultiplicateTwo.cs"
 "Assets/Scripts/Effects/PlusOne.cs"

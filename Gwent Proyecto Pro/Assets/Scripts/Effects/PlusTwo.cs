@@ -17,11 +17,11 @@ public class PlusTwo : MonoBehaviour
                 {
                     Cards currentCard = currentCardObject.GetComponent<Cards>();
 
-                    if (currentCard.type == "Unit" && (currentCard.name == "UnitSilverOrc1" || currentCard.name == "UnitSilverOrc2" || currentCard.name == "UnitSilverOrc3"))
+                    if (currentCard.type == "Unit" && (currentCard.name == "UnitSilverOrc1" || currentCard.name == "UnitSilverOrc2" || currentCard.name == "UnitSilverOrc3") && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack += 5;
                     }
-                    else if (currentCard.type == "Unit")
+                    else if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                         currentCard.attack += 2;
                 }
             }
@@ -36,7 +36,7 @@ public class PlusTwo : MonoBehaviour
                 {
                     Cards currentCard = currentCardObject.GetComponent<Cards>();
 
-                    if (currentCard.type == "Unit")
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                         currentCard.attack += 2;
                 }
             }

@@ -127,6 +127,11 @@ MonoBehaviour:
   - SO3
   - SO4
   - SO5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
 --- !u!114 &4313788263422554367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ac9bb96d5bc3c4f901377f5f8ac779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: UnitGoldorc
+  name: UnitGoldOrc
   type: Unit
   attack: 10
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0

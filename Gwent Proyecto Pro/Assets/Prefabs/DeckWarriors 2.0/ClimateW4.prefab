@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6284273078652712195}
   - component: {fileID: 8358947112372281213}
   - component: {fileID: -6762437105394036554}
+  - component: {fileID: 5758599454142827685}
   m_Layer: 5
   m_Name: ClimateW4
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   plusOne: {fileID: 0}
   multiplicateTwo: {fileID: 0}
   multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 5758599454142827685}
 --- !u!65 &8358947112372281213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,3 +139,17 @@ MonoBehaviour:
   attack: 0
   invocated: 0
   rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+--- !u!114 &5758599454142827685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662180042894693054}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bbece2ff6ac834a98cbed39b72e69d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

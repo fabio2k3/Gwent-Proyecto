@@ -15,7 +15,7 @@ public class MultiplicateTwo : MonoBehaviour
             {
                 Cards currentCard = currentCardObject.GetComponent<Cards>();
 
-                if (currentCard.type == "Unit")
+                if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                 {
                     currentCard.attack *= 2;
                 }

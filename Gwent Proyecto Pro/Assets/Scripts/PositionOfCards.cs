@@ -6,4 +6,6 @@ public class PositionOfCards : MonoBehaviour
 {
     public int row;
     public int col;
+
+    public int positionOfClimate;
 }

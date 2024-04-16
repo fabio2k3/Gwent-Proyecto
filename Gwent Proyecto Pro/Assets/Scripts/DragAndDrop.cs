@@ -32,6 +32,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public MultiplicateTwo multiplicateTwo;
     public MultiplicateThree multiplicateThree;
     public ClimateEffects climateEffects;
+    public DecoyEffect decoyEffect;
+    public ClearEffect clearEffect;
     #endregion
 
 
@@ -51,6 +53,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         pointerOffset -= transform.position;
 
         dragging = true;
+
+        gameObject.GetComponent<Cards>().originalPosition = originalCanvasPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -230,5 +234,14 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Climate1" || gameObject.GetComponent<Cards>().name == "Climate2" || gameObject.GetComponent<Cards>().name == "Climate3" || gameObject.GetComponent<Cards>().name == "Climate4" || gameObject.GetComponent<Cards>().name == "Climate5" || gameObject.GetComponent<Cards>().name == "ClimateW1" || gameObject.GetComponent<Cards>().name == "ClimateW2" || gameObject.GetComponent<Cards>().name == "ClimateW3" || gameObject.GetComponent<Cards>().name == "ClimateW4" || gameObject.GetComponent<Cards>().name == "ClimateW5"))
             climateEffects.enabled = true;
+
+        if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Decoy1" || gameObject.GetComponent<Cards>().name == "Decoy2" || gameObject.GetComponent<Cards>().name == "Decoy3" || gameObject.GetComponent<Cards>().name == "Decoy4" || gameObject.GetComponent<Cards>().name == "Decoy5" || gameObject.GetComponent<Cards>().name == "DecoyW1" || gameObject.GetComponent<Cards>().name == "DecoyW2" || gameObject.GetComponent<Cards>().name == "DecoyW3" || gameObject.GetComponent<Cards>().name == "DecoyW4" || gameObject.GetComponent<Cards>().name == "DecoyW5"))
+        {
+            decoyEffect.enabled = true;
+            Debug.Log("Invocated Decoy");
+        } 
+
+        if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Clear1" || gameObject.GetComponent<Cards>().name == "Clear2" || gameObject.GetComponent<Cards>().name == "Clear3" || gameObject.GetComponent<Cards>().name == "ClearW1" || gameObject.GetComponent<Cards>().name == "ClearW2" || gameObject.GetComponent<Cards>().name == "ClearW3" ))
+            clearEffect.enabled = true;
     }
 }

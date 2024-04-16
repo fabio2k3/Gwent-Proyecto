@@ -15,7 +15,7 @@ D:/Fabio_2k3/Escuela/Progamación/Proyectos/Gwent-Proyecto/Gwent Proyecto Pro
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-6361
+9642
 -job-worker-count
 3
 -background-job-worker-count
@@ -58,12 +58,12 @@ D:/Fabio_2k3/Escuela/Progamación/Proyectos/Gwent-Proyecto/Gwent Proyecto Pro
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [142864] Host "[IP] 10.2.0.2 [Port] 0 [Flags] 2 [Guid] 3278770834 [EditorId] 3278770834 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FVCPK9U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
-Player connection [142864] Host "[IP] 10.2.0.2 [Port] 0 [Flags] 2 [Guid] 3278770834 [EditorId] 3278770834 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FVCPK9U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [126616] Host "[IP] 10.2.0.2 [Port] 0 [Flags] 2 [Guid] 3231438207 [EditorId] 3231438207 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FVCPK9U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [126616] Host "[IP] 10.2.0.2 [Port] 0 [Flags] 2 [Guid] 3231438207 [EditorId] 3231438207 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FVCPK9U) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 3
 [Physics::Module] Initialized MultithreadedJobDispatcher with 3 workers.
 Library Redirect Path: Library/
-Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 5.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2023.2.7f1 (0a9195b3d453)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2023.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -79,7 +79,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2023.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2023.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2023.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
 Begin MonoManager ReloadAssembly
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
@@ -93,41 +93,41 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004465 seconds.
-- Loaded All Assemblies, in  0.619 seconds
+Registered in 0.022370 seconds.
+- Loaded All Assemblies, in  0.814 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-- Finished resetting the current domain, in  0.430 seconds
-Domain Reload Profiling: 1048ms
-	BeginReloadAssembly (214ms)
+- Finished resetting the current domain, in  0.619 seconds
+Domain Reload Profiling: 1432ms
+	BeginReloadAssembly (375ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (51ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (66ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (90ms)
 	LoadAllAssembliesAndSetupDomain (272ms)
-		LoadAssemblies (210ms)
+		LoadAssemblies (371ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (268ms)
-			TypeCache.Refresh (266ms)
-				TypeCache.ScanAssembly (243ms)
-			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (431ms)
+		AnalyzeDomain (267ms)
+			TypeCache.Refresh (265ms)
+				TypeCache.ScanAssembly (240ms)
+			BuildScriptInfoCaches (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (620ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (347ms)
+		SetupLoadedEditorAssemblies (522ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
+			InitializePlatformSupportModulesInManaged (12ms)
 			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (10ms)
-			ProcessInitializeOnLoadAttributes (262ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
+			BeforeProcessingInitializeOnLoad (12ms)
+			ProcessInitializeOnLoadAttributes (420ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -150,771 +150,143 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  2.063 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+- Loaded All Assemblies, in  2.374 seconds
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.123 seconds
-Domain Reload Profiling: 3185ms
-	BeginReloadAssembly (470ms)
+- Finished resetting the current domain, in  1.229 seconds
+Domain Reload Profiling: 3594ms
+	BeginReloadAssembly (579ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (43ms)
-	RebuildCommonClasses (94ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (1423ms)
-		LoadAssemblies (638ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (1688ms)
+		LoadAssemblies (1324ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (952ms)
-			TypeCache.Refresh (755ms)
-				TypeCache.ScanAssembly (668ms)
-			BuildScriptInfoCaches (153ms)
-			ResolveRequiredComponents (36ms)
-	FinalizeReload (1124ms)
+		AnalyzeDomain (519ms)
+			TypeCache.Refresh (442ms)
+				TypeCache.ScanAssembly (353ms)
+			BuildScriptInfoCaches (53ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1229ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (866ms)
+		SetupLoadedEditorAssemblies (927ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (720ms)
-			ProcessInitializeOnLoadMethodAttributes (55ms)
-			AfterProcessingInitializeOnLoad (3ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 140 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5510 unused Assets / (5.4 MB). Loaded Objects now: 6166.
-Memory consumption went from 215.1 MB to 209.7 MB.
-Total: 11.129900 ms (FindLiveObjects: 1.530800 ms CreateObjectMapping: 0.728500 ms MarkObjects: 5.217700 ms  DeleteObjects: 3.650000 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 779088.065749 seconds.
-  path: Assets/Pictures/Líder Warrior.jpg
-  artifactKey: Guid(4dbd52ebb81040e409caac7354484789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pictures/Líder Warrior.jpg using Guid(4dbd52ebb81040e409caac7354484789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c4f6f6779f57eed9e06e3349c35a43fe') in 0.0739777 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.255335 seconds.
-  path: Assets/Pictures/Líder Orco.jpg
-  artifactKey: Guid(5b88c7bdac1beee4db5b60c6a06a87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pictures/Líder Orco.jpg using Guid(5b88c7bdac1beee4db5b60c6a06a87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3bd5a1b20e6d97985f7ece4405baabfe') in 0.0214093 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.756207 seconds.
-  path: Assets/Pictures/Líder Warrior.jpg
-  artifactKey: Guid(4dbd52ebb81040e409caac7354484789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pictures/Líder Warrior.jpg using Guid(4dbd52ebb81040e409caac7354484789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa32f0dd2de869a175d8e99809323c62') in 0.0628489 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.254948 seconds.
-  path: Assets/Pictures/Líder Orco.jpg
-  artifactKey: Guid(5b88c7bdac1beee4db5b60c6a06a87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pictures/Líder Orco.jpg using Guid(5b88c7bdac1beee4db5b60c6a06a87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '846c4238a12545d196ce0d23c665ec1c') in 0.0576972 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 257.513228 seconds.
-  path: Assets/Scripts/Effects/PlusTwo.cs
-  artifactKey: Guid(31e9c171f89c1fa48a1c16c8e73d8fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/PlusTwo.cs using Guid(31e9c171f89c1fa48a1c16c8e73d8fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0d0f0be9495b20fce6adaad31ebffeb') in 0.0072467 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 152.413808 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab
-  artifactKey: Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab using Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4c28a5298a11dd3c2d411fc4f143e51e') in 0.6351854 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc6.prefab
-  artifactKey: Guid(3d57ad5e670acf740975dc67957871e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc6.prefab using Guid(3d57ad5e670acf740975dc67957871e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c5f3e4632e28c9be73fb67ad1fe66b85') in 0.020694 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase6.prefab
-  artifactKey: Guid(7226f6790d5088a4ea696265f34cc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase6.prefab using Guid(7226f6790d5088a4ea696265f34cc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e2417024e3e25a953acfee2eaaa18cd') in 0.0107583 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab
-  artifactKey: Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab using Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '92ae7747128425673d8f8f497fd4c08f') in 0.0106637 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase4.prefab
-  artifactKey: Guid(b63100312a5a05345a136eb868617a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase4.prefab using Guid(b63100312a5a05345a136eb868617a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8361ce9d87af15010cd9f4331e94d6c7') in 0.0146178 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc1.prefab
-  artifactKey: Guid(3a61fd352036b9e48a83dcb945004d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc1.prefab using Guid(3a61fd352036b9e48a83dcb945004d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e4833ec3f9587a4039a95e12a7811bd3') in 0.0139115 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase1.prefab
-  artifactKey: Guid(850d3a526090a1642aa5aa58cd0825e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase1.prefab using Guid(850d3a526090a1642aa5aa58cd0825e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c8824cb079c94a95e1cf43ffe872ac11') in 0.0099376 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc7.prefab
-  artifactKey: Guid(6184ccf4c29f6254fa4f35ce97723027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc7.prefab using Guid(6184ccf4c29f6254fa4f35ce97723027) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6bfe3e2d57b2902f5ef5026b6935f953') in 0.0099559 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab
-  artifactKey: Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab using Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62bdddb4cb496e15aa911f23305520be') in 0.0069651 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab
-  artifactKey: Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab using Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab6443caf8707e4c56c33c7f15019bed') in 0.0067307 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab
-  artifactKey: Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab using Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '754fdd36628fe63612d55ac6ac74d782') in 0.0083604 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
-  artifactKey: Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab using Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ba87669ce1803be45836330648c125e') in 0.0082189 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate3.prefab
-  artifactKey: Guid(1e525b8da8f75da4b81dd1afd9fd9be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate3.prefab using Guid(1e525b8da8f75da4b81dd1afd9fd9be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6c8818d8066926aeb38e699dfddde1a') in 0.0068202 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear3.prefab
-  artifactKey: Guid(e9e8658f9e8e05740a3834107e9b19f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear3.prefab using Guid(e9e8658f9e8e05740a3834107e9b19f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '24930a20439f4c9c2b43bf74f9613fa2') in 0.0084034 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab
-  artifactKey: Guid(74deec309ffb58c46b740581a3dd67f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab using Guid(74deec309ffb58c46b740581a3dd67f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d336037909bcae7f6f537e9ec90825b') in 0.0070191 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc8.prefab
-  artifactKey: Guid(8450d094ec4856a4cb821ad23b4a2c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc8.prefab using Guid(8450d094ec4856a4cb821ad23b4a2c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd64e7240c6196ea0a6fd0edae82027fc') in 0.0072865 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc9.prefab
-  artifactKey: Guid(cd47546624d43a74585652b869ffe5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc9.prefab using Guid(cd47546624d43a74585652b869ffe5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b58dec6ba6ffdf4ed51bdb6a0e4cc80b') in 0.0070583 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab
-  artifactKey: Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab using Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bd8735856818cfb6c4310bfd7c7861a2') in 0.0060061 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab
-  artifactKey: Guid(b8d4380c9c8989242a785e8ed0b4987b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab using Guid(b8d4380c9c8989242a785e8ed0b4987b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7a668a7035e1d88b66bd7f7cef17200') in 0.0061578 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab
-  artifactKey: Guid(b98c16b5b459e4d4fb052aa2340ea5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab using Guid(b98c16b5b459e4d4fb052aa2340ea5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '319c6fb430a6bf6a16d2ce1d38c73d00') in 0.0051477 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab
-  artifactKey: Guid(99da99d831ec56849a53b4efdc5372ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab using Guid(99da99d831ec56849a53b4efdc5372ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5f84f13bd0af0fc906b8d91a24de3631') in 0.005498 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase3.prefab
-  artifactKey: Guid(7bf16f8e2eeb53443a2d211bfbeb71c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase3.prefab using Guid(7bf16f8e2eeb53443a2d211bfbeb71c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5fb67ff17dc1124deb4d3df05a873356') in 0.0059123 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc4.prefab
-  artifactKey: Guid(e5a64561f2d54574e9fdee03a31274e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc4.prefab using Guid(e5a64561f2d54574e9fdee03a31274e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2159b595943e6da11faa88f994814f0') in 0.007013 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc2.prefab
-  artifactKey: Guid(d54049aba1432034eafcb20e664a5450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc2.prefab using Guid(d54049aba1432034eafcb20e664a5450) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1e08b5cd4ec88ef56a4bce04dc5c4427') in 0.0061346 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy1.prefab
-  artifactKey: Guid(38213cef62e0e984592370daafbb0d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy1.prefab using Guid(38213cef62e0e984592370daafbb0d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dce4860dc162b1e85672ccfdd3f0143d') in 0.0053389 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc5.prefab
-  artifactKey: Guid(d2c520ee23fa3a742aab5d409bdabb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc5.prefab using Guid(d2c520ee23fa3a742aab5d409bdabb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62d1dd096f6da29c63fa9c3529d50dc8') in 0.0148095 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc3.prefab
-  artifactKey: Guid(20534b5e31ed9184bb36b1363fb78d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc3.prefab using Guid(20534b5e31ed9184bb36b1363fb78d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48c00943ddcad87be0f27fb7e233b2c1') in 0.0056555 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1f5c7021fb0bc96ca00b322d37b7cad') in 0.0055036 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase2.prefab
-  artifactKey: Guid(df6f82cad43d38e428df319c99a852f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase2.prefab using Guid(df6f82cad43d38e428df319c99a852f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '250029c87bb9c5850d3d9caad4357e2c') in 0.007134 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.544492 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab
-  artifactKey: Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab using Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ae83c4a5c4dc6c3ef6dd8e7f21afce9') in 0.0074085 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.136249 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
-  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '845760aa34fbb37f6fb2a7bf5877a638') in 0.0086833 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000300 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fb83681472e4637af1b2045a1287d9a') in 0.0060577 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab
-  artifactKey: Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab using Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec2ee6736324c93aebb150f9ceee1510') in 0.0052371 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW5.prefab
-  artifactKey: Guid(8d774df9b04e19f4990f1d46e6bf587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW5.prefab using Guid(8d774df9b04e19f4990f1d46e6bf587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '49b29f55f9c71252215bf3ad36d62771') in 0.0061215 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW1.prefab
-  artifactKey: Guid(031f3818f3556254da0fe95c21e4b3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW1.prefab using Guid(031f3818f3556254da0fe95c21e4b3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9806655ba2a7f14e8674d6e1447462a1') in 0.0060457 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab
-  artifactKey: Guid(e152c851e83dd834b8905c295c2227e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab using Guid(e152c851e83dd834b8905c295c2227e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dcaf73ddcc697357e2e84ba6d23b9b66') in 0.0070432 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW4.prefab
-  artifactKey: Guid(54de7a8be4711fa469b9f4268f49711b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW4.prefab using Guid(54de7a8be4711fa469b9f4268f49711b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94e32b646db395f08253c98ad55079da') in 0.0057117 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab
-  artifactKey: Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab using Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '427ad3193f2d6496fbe409d3c54aa729') in 0.0083309 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/DecoyW3.prefab
-  artifactKey: Guid(4ac59e7d31910744f9c2d2c5c66b1e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/DecoyW3.prefab using Guid(4ac59e7d31910744f9c2d2c5c66b1e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6c322f0d547721bb67bf4be69758414') in 0.0042285 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW4.prefab
-  artifactKey: Guid(c7d9115ca358a624bb944bdd99b845c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW4.prefab using Guid(c7d9115ca358a624bb944bdd99b845c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c33876a072ea58d68cf297840395fa9b') in 0.0050121 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
-  artifactKey: Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab using Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21d5177bb6c2864c3acd2abade3b74ae') in 0.0181598 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab
-  artifactKey: Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab using Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0a765dd8e8a5c492a91315693bffa7b1') in 0.0071666 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab
-  artifactKey: Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab using Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5deeedbfbe373ac3c2a0f70e19d70f54') in 0.0045216 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab
-  artifactKey: Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab using Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ccf156bb4874e9b1a08c43e538214aad') in 0.0054757 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW3.prefab
-  artifactKey: Guid(72e4995211e01e94e9924ee2897962d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW3.prefab using Guid(72e4995211e01e94e9924ee2897962d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13b9b20c4dc5975d1e7b667195305f6e') in 0.0061067 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW2.prefab
-  artifactKey: Guid(4fd72582e8ad8474998c9e624e2d56b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW2.prefab using Guid(4fd72582e8ad8474998c9e624e2d56b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f42497d30221a254003b24d80fefe654') in 0.008259 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.4 MB). Loaded Objects now: 6174.
-Memory consumption went from 187.3 MB to 181.9 MB.
-Total: 307.933300 ms (FindLiveObjects: 4.447400 ms CreateObjectMapping: 0.653300 ms MarkObjects: 299.105700 ms  DeleteObjects: 3.723400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  8.000 seconds
-Refreshing native plugins compatible for Editor in 3.15 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.563 seconds
-Domain Reload Profiling: 10578ms
-	BeginReloadAssembly (4210ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (212ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (12ms)
-		CreateAndSetChildDomain (1177ms)
-	RebuildCommonClasses (132ms)
-	RebuildNativeTypeToScriptingClass (45ms)
-	initialDomainReloadingComplete (130ms)
-	LoadAllAssembliesAndSetupDomain (3496ms)
-		LoadAssemblies (3030ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (963ms)
-			TypeCache.Refresh (132ms)
-				TypeCache.ScanAssembly (12ms)
-			BuildScriptInfoCaches (759ms)
-			ResolveRequiredComponents (43ms)
-	FinalizeReload (2565ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1855ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (14ms)
-			BeforeProcessingInitializeOnLoad (279ms)
-			ProcessInitializeOnLoadAttributes (1419ms)
-			ProcessInitializeOnLoadMethodAttributes (124ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (16ms)
-Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (5.7 MB). Loaded Objects now: 6173.
-Memory consumption went from 193.1 MB to 187.4 MB.
-Total: 26.079500 ms (FindLiveObjects: 2.711600 ms CreateObjectMapping: 1.314800 ms MarkObjects: 11.809000 ms  DeleteObjects: 9.923600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (4.7 MB). Loaded Objects now: 6173.
-Memory consumption went from 193.2 MB to 188.5 MB.
-Total: 16.432000 ms (FindLiveObjects: 3.000800 ms CreateObjectMapping: 0.713200 ms MarkObjects: 8.359400 ms  DeleteObjects: 4.356000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  6.351 seconds
-Refreshing native plugins compatible for Editor in 1.38 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.315 seconds
-Domain Reload Profiling: 9658ms
-	BeginReloadAssembly (2819ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (114ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (12ms)
-		CreateAndSetChildDomain (944ms)
-	RebuildCommonClasses (152ms)
-	RebuildNativeTypeToScriptingClass (42ms)
-	initialDomainReloadingComplete (119ms)
-	LoadAllAssembliesAndSetupDomain (3210ms)
-		LoadAssemblies (3016ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1021ms)
-			TypeCache.Refresh (119ms)
-				TypeCache.ScanAssembly (6ms)
-			BuildScriptInfoCaches (826ms)
-			ResolveRequiredComponents (44ms)
-	FinalizeReload (3317ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2679ms)
-			LogAssemblyErrors (1ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (13ms)
-			BeforeProcessingInitializeOnLoad (120ms)
-			ProcessInitializeOnLoadAttributes (2397ms)
-			ProcessInitializeOnLoadMethodAttributes (131ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (25ms)
-Refreshing native plugins compatible for Editor in 3.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (4.8 MB). Loaded Objects now: 6173.
-Memory consumption went from 195.1 MB to 190.3 MB.
-Total: 236.396000 ms (FindLiveObjects: 5.043100 ms CreateObjectMapping: 7.977700 ms MarkObjects: 28.413500 ms  DeleteObjects: 194.955800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (6.9 MB). Loaded Objects now: 6173.
-Memory consumption went from 195.1 MB to 188.2 MB.
-Total: 32.595900 ms (FindLiveObjects: 8.002200 ms CreateObjectMapping: 2.202400 ms MarkObjects: 11.633600 ms  DeleteObjects: 10.750900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  4.643 seconds
-Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.981 seconds
-Domain Reload Profiling: 6633ms
-	BeginReloadAssembly (2435ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (72ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (3ms)
-		CreateAndSetChildDomain (912ms)
-	RebuildCommonClasses (70ms)
-	RebuildNativeTypeToScriptingClass (24ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (2065ms)
-		LoadAssemblies (2066ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (788ms)
-			TypeCache.Refresh (110ms)
-				TypeCache.ScanAssembly (6ms)
-			BuildScriptInfoCaches (609ms)
-			ResolveRequiredComponents (32ms)
-	FinalizeReload (1982ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1496ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (10ms)
-			BeforeProcessingInitializeOnLoad (143ms)
-			ProcessInitializeOnLoadAttributes (1247ms)
-			ProcessInitializeOnLoadMethodAttributes (82ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (5.0 MB). Loaded Objects now: 6173.
-Memory consumption went from 197.0 MB to 192.0 MB.
-Total: 19.739600 ms (FindLiveObjects: 2.276500 ms CreateObjectMapping: 0.763400 ms MarkObjects: 11.080700 ms  DeleteObjects: 5.614400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 305.440174 seconds.
-  path: Assets/Scripts/Effects/MultiplicateTwo.cs
-  artifactKey: Guid(dd964990a1861e24c9f11160eef05b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/MultiplicateTwo.cs using Guid(dd964990a1861e24c9f11160eef05b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa242a012e3e41c42e2b98e30f94deaa') in 0.03179 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.34 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.1 MB). Loaded Objects now: 6173.
-Memory consumption went from 196.7 MB to 191.6 MB.
-Total: 30.071500 ms (FindLiveObjects: 2.884700 ms CreateObjectMapping: 1.881100 ms MarkObjects: 15.012600 ms  DeleteObjects: 10.289200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.032650 seconds.
-  path: Assets/Scripts/Effects/MultiplicateTwo.cs
-  artifactKey: Guid(dd964990a1861e24c9f11160eef05b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/MultiplicateTwo.cs using Guid(dd964990a1861e24c9f11160eef05b2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d0453c17f0fed4ed3cc205b22acf450') in 0.0090802 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  4.370 seconds
-Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.354 seconds
-Domain Reload Profiling: 5733ms
-	BeginReloadAssembly (1719ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (60ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (5ms)
-		CreateAndSetChildDomain (822ms)
-	RebuildCommonClasses (71ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (2503ms)
-		LoadAssemblies (1910ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (899ms)
-			TypeCache.Refresh (233ms)
-				TypeCache.ScanAssembly (14ms)
-			BuildScriptInfoCaches (619ms)
-			ResolveRequiredComponents (26ms)
-	FinalizeReload (1356ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (913ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (106ms)
-			ProcessInitializeOnLoadAttributes (741ms)
-			ProcessInitializeOnLoadMethodAttributes (49ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (774ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
 			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (4.9 MB). Loaded Objects now: 6173.
-Memory consumption went from 199.0 MB to 194.1 MB.
-Total: 15.949800 ms (FindLiveObjects: 2.206100 ms CreateObjectMapping: 0.736300 ms MarkObjects: 8.629800 ms  DeleteObjects: 4.146500 ms)
+Unloading 140 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5514 unused Assets / (4.7 MB). Loaded Objects now: 6170.
+Memory consumption went from 217.6 MB to 212.8 MB.
+Total: 18.000600 ms (FindLiveObjects: 1.880700 ms CreateObjectMapping: 1.397000 ms MarkObjects: 10.198800 ms  DeleteObjects: 4.520300 ms)
 
-Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 900557.877666 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45bdd47b104a63d509055f45d4c14753') in 0.0926087 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.105084 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '800ec64fb83c241de70822b59becb021') in 0.0066232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW3.prefab
+  artifactKey: Guid(b3e41deaa48cfc74287dfc997e770d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW3.prefab using Guid(b3e41deaa48cfc74287dfc997e770d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1e1d59a28b002ffcfc18a142f3eba261') in 0.0041786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.663309 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa6406d5edb859d7a80d1ef7ded132d9') in 0.0030372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  5.459 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.874 seconds
+Domain Reload Profiling: 7411ms
+	BeginReloadAssembly (2514ms)
+		ExecutionOrderSort (1ms)
+		DisableScriptedObjects (112ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (5ms)
+		CreateAndSetChildDomain (1067ms)
+	RebuildCommonClasses (95ms)
+	RebuildNativeTypeToScriptingClass (27ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (2823ms)
+		LoadAssemblies (2664ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (798ms)
+			TypeCache.Refresh (39ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (641ms)
+			ResolveRequiredComponents (40ms)
+	FinalizeReload (1876ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1355ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (141ms)
+			ProcessInitializeOnLoadAttributes (1097ms)
+			ProcessInitializeOnLoadMethodAttributes (91ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.1 MB). Loaded Objects now: 6173.
-Memory consumption went from 199.0 MB to 193.9 MB.
-Total: 74.933900 ms (FindLiveObjects: 2.530300 ms CreateObjectMapping: 0.560300 ms MarkObjects: 67.610600 ms  DeleteObjects: 4.223300 ms)
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (4.5 MB). Loaded Objects now: 6173.
+Memory consumption went from 193.6 MB to 189.1 MB.
+Total: 21.223600 ms (FindLiveObjects: 2.686100 ms CreateObjectMapping: 1.174500 ms MarkObjects: 12.052600 ms  DeleteObjects: 5.305500 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
@@ -934,59 +306,49 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  6.960 seconds
-Refreshing native plugins compatible for Editor in 1.66 ms, found 3 plugins.
+- Loaded All Assemblies, in  4.260 seconds
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.588 seconds
-Domain Reload Profiling: 8549ms
-	BeginReloadAssembly (2728ms)
+- Finished resetting the current domain, in  1.466 seconds
+Domain Reload Profiling: 5752ms
+	BeginReloadAssembly (1215ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (64ms)
+		DisableScriptedObjects (48ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (2ms)
-		CreateAndSetChildDomain (506ms)
-	RebuildCommonClasses (236ms)
-	RebuildNativeTypeToScriptingClass (49ms)
-	initialDomainReloadingComplete (138ms)
-	LoadAllAssembliesAndSetupDomain (3809ms)
-		LoadAssemblies (4404ms)
+		ReleaseScriptingObjects (4ms)
+		CreateAndSetChildDomain (605ms)
+	RebuildCommonClasses (89ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (100ms)
+	LoadAllAssembliesAndSetupDomain (2856ms)
+		LoadAssemblies (2124ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1263ms)
-			TypeCache.Refresh (169ms)
-				TypeCache.ScanAssembly (12ms)
-			BuildScriptInfoCaches (1039ms)
-			ResolveRequiredComponents (33ms)
-	FinalizeReload (1589ms)
+		AnalyzeDomain (1042ms)
+			TypeCache.Refresh (56ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (911ms)
+			ResolveRequiredComponents (35ms)
+	FinalizeReload (1467ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1134ms)
+		SetupLoadedEditorAssemblies (999ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (11ms)
-			BeforeProcessingInitializeOnLoad (139ms)
-			ProcessInitializeOnLoadAttributes (882ms)
-			ProcessInitializeOnLoadMethodAttributes (90ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (120ms)
+			ProcessInitializeOnLoadAttributes (776ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (13ms)
-Refreshing native plugins compatible for Editor in 1.20 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (5.0 MB). Loaded Objects now: 6173.
-Memory consumption went from 200.8 MB to 195.8 MB.
-Total: 22.816900 ms (FindLiveObjects: 2.820600 ms CreateObjectMapping: 1.237300 ms MarkObjects: 12.315900 ms  DeleteObjects: 6.437600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.6 MB). Loaded Objects now: 6173.
-Memory consumption went from 200.8 MB to 195.2 MB.
-Total: 320.483700 ms (FindLiveObjects: 36.400600 ms CreateObjectMapping: 1.457000 ms MarkObjects: 275.430000 ms  DeleteObjects: 7.190900 ms)
+Unloading 5512 unused Assets / (5.1 MB). Loaded Objects now: 6173.
+Memory consumption went from 195.5 MB to 190.4 MB.
+Total: 23.953300 ms (FindLiveObjects: 3.108100 ms CreateObjectMapping: 1.364400 ms MarkObjects: 12.914400 ms  DeleteObjects: 6.559500 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
@@ -1006,59 +368,49 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in 19.384 seconds
-Refreshing native plugins compatible for Editor in 2.30 ms, found 3 plugins.
+- Loaded All Assemblies, in  5.183 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.125 seconds
-Domain Reload Profiling: 22533ms
-	BeginReloadAssembly (13166ms)
-		ExecutionOrderSort (2ms)
-		DisableScriptedObjects (2434ms)
+- Finished resetting the current domain, in  1.351 seconds
+Domain Reload Profiling: 6544ms
+	BeginReloadAssembly (2497ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (123ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (10ms)
-		CreateAndSetChildDomain (3407ms)
-	RebuildCommonClasses (179ms)
-	RebuildNativeTypeToScriptingClass (51ms)
-	initialDomainReloadingComplete (208ms)
-	LoadAllAssembliesAndSetupDomain (5802ms)
-		LoadAssemblies (7219ms)
+		ReleaseScriptingObjects (5ms)
+		CreateAndSetChildDomain (1311ms)
+	RebuildCommonClasses (110ms)
+	RebuildNativeTypeToScriptingClass (27ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (2489ms)
+		LoadAssemblies (2478ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1068ms)
-			TypeCache.Refresh (153ms)
-				TypeCache.ScanAssembly (11ms)
-			BuildScriptInfoCaches (782ms)
-			ResolveRequiredComponents (98ms)
-	FinalizeReload (3127ms)
+		AnalyzeDomain (538ms)
+			TypeCache.Refresh (44ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (440ms)
+			ResolveRequiredComponents (24ms)
+	FinalizeReload (1352ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2252ms)
+		SetupLoadedEditorAssemblies (924ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (13ms)
-			BeforeProcessingInitializeOnLoad (186ms)
-			ProcessInitializeOnLoadAttributes (1891ms)
-			ProcessInitializeOnLoadMethodAttributes (144ms)
-			AfterProcessingInitializeOnLoad (10ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (101ms)
+			ProcessInitializeOnLoadAttributes (730ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (25ms)
-Refreshing native plugins compatible for Editor in 2.07 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (5.6 MB). Loaded Objects now: 6173.
-Memory consumption went from 202.8 MB to 197.2 MB.
-Total: 50.055300 ms (FindLiveObjects: 3.312200 ms CreateObjectMapping: 1.578300 ms MarkObjects: 13.086300 ms  DeleteObjects: 31.916900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.0 MB). Loaded Objects now: 6173.
-Memory consumption went from 202.8 MB to 197.8 MB.
-Total: 327.051100 ms (FindLiveObjects: 10.679000 ms CreateObjectMapping: 0.981100 ms MarkObjects: 309.235900 ms  DeleteObjects: 6.150900 ms)
+Unloading 5512 unused Assets / (5.0 MB). Loaded Objects now: 6173.
+Memory consumption went from 197.4 MB to 192.5 MB.
+Total: 16.250800 ms (FindLiveObjects: 1.208800 ms CreateObjectMapping: 0.771700 ms MarkObjects: 8.586200 ms  DeleteObjects: 5.677600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
@@ -1078,299 +430,455 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  7.198 seconds
-Refreshing native plugins compatible for Editor in 1.26 ms, found 3 plugins.
+- Loaded All Assemblies, in  2.678 seconds
+Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.597 seconds
-Domain Reload Profiling: 12808ms
-	BeginReloadAssembly (2569ms)
-		ExecutionOrderSort (58ms)
-		DisableScriptedObjects (473ms)
+- Finished resetting the current domain, in  1.319 seconds
+Domain Reload Profiling: 4005ms
+	BeginReloadAssembly (495ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (7ms)
-		CreateAndSetChildDomain (742ms)
-	RebuildCommonClasses (142ms)
-	RebuildNativeTypeToScriptingClass (32ms)
-	initialDomainReloadingComplete (154ms)
-	LoadAllAssembliesAndSetupDomain (4311ms)
-		LoadAssemblies (2528ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (162ms)
+	RebuildCommonClasses (67ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (2058ms)
+		LoadAssemblies (1751ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (2295ms)
-			TypeCache.Refresh (131ms)
-				TypeCache.ScanAssembly (8ms)
-			BuildScriptInfoCaches (1463ms)
-			ResolveRequiredComponents (432ms)
-	FinalizeReload (5600ms)
+		AnalyzeDomain (561ms)
+			TypeCache.Refresh (34ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (426ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (1321ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (4322ms)
+		SetupLoadedEditorAssemblies (925ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (12ms)
-			BeforeProcessingInitializeOnLoad (170ms)
-			ProcessInitializeOnLoadAttributes (3684ms)
-			ProcessInitializeOnLoadMethodAttributes (416ms)
-			AfterProcessingInitializeOnLoad (26ms)
-			EditorAssembliesLoaded (7ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (125ms)
+			ProcessInitializeOnLoadAttributes (712ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (76ms)
-Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (4.7 MB). Loaded Objects now: 6173.
-Memory consumption went from 204.7 MB to 200.0 MB.
-Total: 40.217500 ms (FindLiveObjects: 4.458000 ms CreateObjectMapping: 1.812200 ms MarkObjects: 26.209400 ms  DeleteObjects: 7.498800 ms)
+Unloading 5512 unused Assets / (4.9 MB). Loaded Objects now: 6173.
+Memory consumption went from 199.5 MB to 194.5 MB.
+Total: 22.248400 ms (FindLiveObjects: 2.480700 ms CreateObjectMapping: 0.852600 ms MarkObjects: 13.517400 ms  DeleteObjects: 5.173600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  4.468 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.426 seconds
+Domain Reload Profiling: 5900ms
+	BeginReloadAssembly (1870ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (62ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (5ms)
+		CreateAndSetChildDomain (1064ms)
+	RebuildCommonClasses (77ms)
+	RebuildNativeTypeToScriptingClass (25ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (2432ms)
+		LoadAssemblies (2301ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (548ms)
+			TypeCache.Refresh (37ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (445ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (1428ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (978ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (12ms)
+			BeforeProcessingInitializeOnLoad (117ms)
+			ProcessInitializeOnLoadAttributes (759ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 1.15 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (5.0 MB). Loaded Objects now: 6173.
+Memory consumption went from 201.3 MB to 196.3 MB.
+Total: 22.016000 ms (FindLiveObjects: 2.835800 ms CreateObjectMapping: 0.922300 ms MarkObjects: 12.676500 ms  DeleteObjects: 5.313100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  6.509 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.529 seconds
+Domain Reload Profiling: 8040ms
+	BeginReloadAssembly (2824ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (254ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (10ms)
+		CreateAndSetChildDomain (1432ms)
+	RebuildCommonClasses (108ms)
+	RebuildNativeTypeToScriptingClass (34ms)
+	initialDomainReloadingComplete (96ms)
+	LoadAllAssembliesAndSetupDomain (3448ms)
+		LoadAssemblies (2820ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (996ms)
+			TypeCache.Refresh (102ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (823ms)
+			ResolveRequiredComponents (28ms)
+	FinalizeReload (1530ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1017ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (162ms)
+			ProcessInitializeOnLoadAttributes (760ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 1.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (4.7 MB). Loaded Objects now: 6173.
+Memory consumption went from 203.3 MB to 198.6 MB.
+Total: 20.674400 ms (FindLiveObjects: 2.738700 ms CreateObjectMapping: 0.843300 ms MarkObjects: 12.169100 ms  DeleteObjects: 4.856500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  5.896 seconds
+Refreshing native plugins compatible for Editor in 1.25 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.423 seconds
+Domain Reload Profiling: 7320ms
+	BeginReloadAssembly (2902ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (242ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (7ms)
+		CreateAndSetChildDomain (1236ms)
+	RebuildCommonClasses (300ms)
+	RebuildNativeTypeToScriptingClass (62ms)
+	initialDomainReloadingComplete (142ms)
+	LoadAllAssembliesAndSetupDomain (2491ms)
+		LoadAssemblies (2663ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (724ms)
+			TypeCache.Refresh (89ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (567ms)
+			ResolveRequiredComponents (25ms)
+	FinalizeReload (1424ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1004ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (13ms)
+			BeforeProcessingInitializeOnLoad (119ms)
+			ProcessInitializeOnLoadAttributes (787ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (4.5 MB). Loaded Objects now: 6173.
+Memory consumption went from 205.2 MB to 200.7 MB.
+Total: 19.775900 ms (FindLiveObjects: 2.687500 ms CreateObjectMapping: 0.727700 ms MarkObjects: 11.140100 ms  DeleteObjects: 4.971300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 583.047939 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab
-  artifactKey: Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab using Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03d18f4eba051871dec9c01ab846a968') in 1.1992413 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001426 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase6.prefab
-  artifactKey: Guid(7226f6790d5088a4ea696265f34cc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase6.prefab using Guid(7226f6790d5088a4ea696265f34cc300) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4816b158f46980b6b050656d5d197af0') in 0.0161493 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab
-  artifactKey: Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab using Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '67d970016102572945df312ef6afb547') in 0.0106584 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc1.prefab
-  artifactKey: Guid(3a61fd352036b9e48a83dcb945004d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc1.prefab using Guid(3a61fd352036b9e48a83dcb945004d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b6142dfe96e049bc17850697f7f231f') in 0.012572 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc7.prefab
-  artifactKey: Guid(6184ccf4c29f6254fa4f35ce97723027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc7.prefab using Guid(6184ccf4c29f6254fa4f35ce97723027) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0c9d8e0217289bf2665d235ca4c1474') in 0.0089081 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab
-  artifactKey: Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab using Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d7d82b63900af21a457e124fa6a0ed9') in 0.0101662 seconds
+  Time since last request: 622.265280 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW2.prefab
+  artifactKey: Guid(32d893d06a6dad54382bfe4b1dd623c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW2.prefab using Guid(32d893d06a6dad54382bfe4b1dd623c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2f73fde44ce91475448fae469c6dd70e') in 1.3242058 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
-  artifactKey: Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab using Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd4bdcae94aa0cd6239b44c63fec1c5c') in 0.0065342 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab
-  artifactKey: Guid(74deec309ffb58c46b740581a3dd67f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab using Guid(74deec309ffb58c46b740581a3dd67f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '32405c1f579bf621d56004974bfe611f') in 0.0067624 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc9.prefab
-  artifactKey: Guid(cd47546624d43a74585652b869ffe5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc9.prefab using Guid(cd47546624d43a74585652b869ffe5c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3f1e0e48176bfe0f94f30501b92327d') in 0.0078722 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab
-  artifactKey: Guid(b8d4380c9c8989242a785e8ed0b4987b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab using Guid(b8d4380c9c8989242a785e8ed0b4987b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a6beca640008ac16120008afd1ab7c55') in 0.0074959 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab
-  artifactKey: Guid(99da99d831ec56849a53b4efdc5372ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab using Guid(99da99d831ec56849a53b4efdc5372ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f9c39eaf48ce102057a221ea222b4205') in 0.0069121 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc4.prefab
-  artifactKey: Guid(e5a64561f2d54574e9fdee03a31274e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc4.prefab using Guid(e5a64561f2d54574e9fdee03a31274e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e573605bc29fd3edfd63cc34c450c44') in 0.0060465 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Decoy1.prefab
-  artifactKey: Guid(38213cef62e0e984592370daafbb0d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Decoy1.prefab using Guid(38213cef62e0e984592370daafbb0d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '011ffb6757d63a85d8a25478ba7c877b') in 0.0070226 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc3.prefab
-  artifactKey: Guid(20534b5e31ed9184bb36b1363fb78d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc3.prefab using Guid(20534b5e31ed9184bb36b1363fb78d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c47b1b7fb86c8199e1ab1a616ff37fd7') in 0.0051484 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5a81de7dae1733d589f981436a84cef') in 0.0055576 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.102435 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
-  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b19ad4ce43bfdb95612d238b42918dc') in 0.0110798 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab
-  artifactKey: Guid(301a7ca3c7b44a44abf06e8fa35ffc60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab using Guid(301a7ca3c7b44a44abf06e8fa35ffc60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96eb21d27af1724d9c57d9044ea31273') in 0.0085072 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW6.prefab
-  artifactKey: Guid(6d9bfa95670095c46ad0ab1de2d16872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW6.prefab using Guid(6d9bfa95670095c46ad0ab1de2d16872) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b20722601f8491475108568651cc8175') in 0.0077861 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000087 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab
-  artifactKey: Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab using Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c90560ad56b92320aef8907cbe5dbe6') in 0.0057952 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a9ebd46065982390d062ff7b14a59a37') in 0.0053315 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab
-  artifactKey: Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab using Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f778f13123ff40469a806c34d4dbfcc0') in 0.0070943 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW8.prefab
-  artifactKey: Guid(104463529d538eb4b9905b689a2b5602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW8.prefab using Guid(104463529d538eb4b9905b689a2b5602) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2787355fc5bc1ce66b09e6f2739ced5f') in 0.00571 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab
-  artifactKey: Guid(402161b0fd4bef04199f8724b93eebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab using Guid(402161b0fd4bef04199f8724b93eebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e544df73481acafbbc3d17151751b89') in 0.0056996 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab
-  artifactKey: Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab using Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3665e8d63b1d198660c49a24b7a401d0') in 0.0067822 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
-  artifactKey: Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab using Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dae8d942698271ee26ee59fa41413268') in 0.0055271 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab
-  artifactKey: Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab using Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '271d8d1d6cf7ccbd6a3b164b715b710f') in 0.0039656 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW1.prefab
-  artifactKey: Guid(13a3b43d4f09a9c44806afbb223b6b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW1.prefab using Guid(13a3b43d4f09a9c44806afbb223b6b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e8ff05bc5e220727c62bb29049bbe10') in 0.0049229 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW3.prefab
-  artifactKey: Guid(da64446e6dfc47a4884b37a4f1edb754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW3.prefab using Guid(da64446e6dfc47a4884b37a4f1edb754) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4f03a59fa67cd2d2e1e1a63f405e178') in 0.0058418 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
+  Time since last request: 3.499845 seconds.
   path: Assets/Prefabs/DeckWarriors 2.0/ClearW3.prefab
   artifactKey: Guid(b3e41deaa48cfc74287dfc997e770d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW3.prefab using Guid(b3e41deaa48cfc74287dfc997e770d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b7e3ea9c1880a6200f7bb6a78e9e9dd') in 0.0058308 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW3.prefab using Guid(b3e41deaa48cfc74287dfc997e770d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '663fb2c7d4e3387d1bbba33507870292') in 0.0161134 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/DecoyW1.prefab
-  artifactKey: Guid(6f896386406dc5949acffadf706269d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/DecoyW1.prefab using Guid(6f896386406dc5949acffadf706269d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0003c992a1448cbda8e7b0c39b31314e') in 0.0047042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 3.718143 seconds.
+  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13c2222c4acd5151fb22b226c43532c6') in 0.0131941 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 1.07 ms, found 3 plugins.
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  3.952 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.457 seconds
+Domain Reload Profiling: 5415ms
+	BeginReloadAssembly (2003ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (106ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (3ms)
+		CreateAndSetChildDomain (797ms)
+	RebuildCommonClasses (83ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (1792ms)
+		LoadAssemblies (1665ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (613ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (17ms)
+			BuildScriptInfoCaches (434ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (1457ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1006ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (111ms)
+			ProcessInitializeOnLoadAttributes (776ms)
+			ProcessInitializeOnLoadMethodAttributes (96ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (5.0 MB). Loaded Objects now: 6173.
+Memory consumption went from 207.1 MB to 202.1 MB.
+Total: 33.678300 ms (FindLiveObjects: 3.756100 ms CreateObjectMapping: 1.134200 ms MarkObjects: 19.951200 ms  DeleteObjects: 8.832100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  3.697 seconds
+Refreshing native plugins compatible for Editor in 1.25 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.884 seconds
+Domain Reload Profiling: 5598ms
+	BeginReloadAssembly (725ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (2ms)
+		CreateAndSetChildDomain (192ms)
+	RebuildCommonClasses (74ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (2834ms)
+		LoadAssemblies (2375ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (899ms)
+			TypeCache.Refresh (65ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (719ms)
+			ResolveRequiredComponents (47ms)
+	FinalizeReload (1886ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1417ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (116ms)
+			ProcessInitializeOnLoadAttributes (1197ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (2ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (5.1 MB). Loaded Objects now: 6173.
+Memory consumption went from 209.1 MB to 204.0 MB.
+Total: 30.424700 ms (FindLiveObjects: 2.801200 ms CreateObjectMapping: 0.857100 ms MarkObjects: 19.528200 ms  DeleteObjects: 7.232100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  6.269 seconds
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.406 seconds
+Domain Reload Profiling: 7684ms
+	BeginReloadAssembly (2920ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (54ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (6ms)
+		CreateAndSetChildDomain (1733ms)
+	RebuildCommonClasses (205ms)
+	RebuildNativeTypeToScriptingClass (31ms)
+	initialDomainReloadingComplete (114ms)
+	LoadAllAssembliesAndSetupDomain (3005ms)
+		LoadAssemblies (2995ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (816ms)
+			TypeCache.Refresh (55ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (690ms)
+			ResolveRequiredComponents (26ms)
+	FinalizeReload (1408ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (992ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (124ms)
+			ProcessInitializeOnLoadAttributes (772ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 2.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (4.9 MB). Loaded Objects now: 6173.
+Memory consumption went from 210.9 MB to 206.1 MB.
+Total: 161.785400 ms (FindLiveObjects: 1.825700 ms CreateObjectMapping: 1.355800 ms MarkObjects: 15.299200 ms  DeleteObjects: 143.070600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (4.3 MB). Loaded Objects now: 6173.
-Memory consumption went from 204.7 MB to 200.4 MB.
-Total: 465.882500 ms (FindLiveObjects: 8.973800 ms CreateObjectMapping: 0.897900 ms MarkObjects: 448.655100 ms  DeleteObjects: 7.351100 ms)
+Unloading 5504 unused Assets / (5.6 MB). Loaded Objects now: 6173.
+Memory consumption went from 211.0 MB to 205.4 MB.
+Total: 881.116400 ms (FindLiveObjects: 7.049700 ms CreateObjectMapping: 1.422600 ms MarkObjects: 855.149900 ms  DeleteObjects: 17.103400 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
@@ -1391,358 +899,48 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 - Loaded All Assemblies, in  5.980 seconds
-Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.08 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.149 seconds
-Domain Reload Profiling: 8137ms
-	BeginReloadAssembly (2908ms)
-		ExecutionOrderSort (1ms)
-		DisableScriptedObjects (108ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (5ms)
-		CreateAndSetChildDomain (1167ms)
-	RebuildCommonClasses (131ms)
-	RebuildNativeTypeToScriptingClass (29ms)
-	initialDomainReloadingComplete (87ms)
-	LoadAllAssembliesAndSetupDomain (2830ms)
-		LoadAssemblies (2737ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1025ms)
-			TypeCache.Refresh (72ms)
-				TypeCache.ScanAssembly (5ms)
-			BuildScriptInfoCaches (867ms)
-			ResolveRequiredComponents (53ms)
-	FinalizeReload (2151ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1363ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (22ms)
-			BeforeProcessingInitializeOnLoad (188ms)
-			ProcessInitializeOnLoadAttributes (983ms)
-			ProcessInitializeOnLoadMethodAttributes (148ms)
-			AfterProcessingInitializeOnLoad (14ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
-Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (3.0 MB). Loaded Objects now: 6173.
-Memory consumption went from 206.7 MB to 203.7 MB.
-Total: 69.845000 ms (FindLiveObjects: 4.179200 ms CreateObjectMapping: 1.685900 ms MarkObjects: 48.871800 ms  DeleteObjects: 14.778500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5500 unused Assets / (5.3 MB). Loaded Objects now: 6173.
-Memory consumption went from 206.7 MB to 201.3 MB.
-Total: 85.719200 ms (FindLiveObjects: 6.543700 ms CreateObjectMapping: 2.071700 ms MarkObjects: 68.511100 ms  DeleteObjects: 8.587700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  5.479 seconds
-Refreshing native plugins compatible for Editor in 3.59 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.203 seconds
-Domain Reload Profiling: 7690ms
-	BeginReloadAssembly (2500ms)
+- Finished resetting the current domain, in  2.058 seconds
+Domain Reload Profiling: 8039ms
+	BeginReloadAssembly (3201ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (149ms)
+		DisableScriptedObjects (148ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (4ms)
-		CreateAndSetChildDomain (1068ms)
-	RebuildCommonClasses (134ms)
-	RebuildNativeTypeToScriptingClass (43ms)
-	initialDomainReloadingComplete (126ms)
-	LoadAllAssembliesAndSetupDomain (2684ms)
-		LoadAssemblies (2299ms)
+		CreateAndSetChildDomain (914ms)
+	RebuildCommonClasses (212ms)
+	RebuildNativeTypeToScriptingClass (38ms)
+	initialDomainReloadingComplete (108ms)
+	LoadAllAssembliesAndSetupDomain (2422ms)
+		LoadAssemblies (3149ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (937ms)
+		AnalyzeDomain (900ms)
 			TypeCache.Refresh (88ms)
-				TypeCache.ScanAssembly (4ms)
-			BuildScriptInfoCaches (777ms)
-			ResolveRequiredComponents (47ms)
-	FinalizeReload (2204ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1501ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (13ms)
-			BeforeProcessingInitializeOnLoad (208ms)
-			ProcessInitializeOnLoadAttributes (1140ms)
-			ProcessInitializeOnLoadMethodAttributes (117ms)
-			AfterProcessingInitializeOnLoad (14ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5508 unused Assets / (4.3 MB). Loaded Objects now: 6173.
-Memory consumption went from 208.6 MB to 204.3 MB.
-Total: 21.115100 ms (FindLiveObjects: 1.732400 ms CreateObjectMapping: 1.843400 ms MarkObjects: 12.717900 ms  DeleteObjects: 4.812500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5501 unused Assets / (5.1 MB). Loaded Objects now: 6174.
-Memory consumption went from 208.6 MB to 203.6 MB.
-Total: 259.386200 ms (FindLiveObjects: 5.826600 ms CreateObjectMapping: 1.759100 ms MarkObjects: 245.095500 ms  DeleteObjects: 6.698400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 615.180325 seconds.
-  path: Assets/Scripts/Effects/ClimateEffects.cs
-  artifactKey: Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/ClimateEffects.cs using Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e3d891cad79966c09d8242d9b1b9d087') in 0.1950105 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5501 unused Assets / (4.1 MB). Loaded Objects now: 6174.
-Memory consumption went from 208.3 MB to 204.2 MB.
-Total: 294.338700 ms (FindLiveObjects: 8.507900 ms CreateObjectMapping: 1.552100 ms MarkObjects: 274.592000 ms  DeleteObjects: 9.344800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 252.154835 seconds.
-  path: Assets/Scripts/Effects/ClimateEffects.cs
-  artifactKey: Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/ClimateEffects.cs using Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5223ee4ef0ac765f6d804f365836bf96') in 0.0597816 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.96 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5501 unused Assets / (4.7 MB). Loaded Objects now: 6174.
-Memory consumption went from 208.3 MB to 203.6 MB.
-Total: 258.507300 ms (FindLiveObjects: 6.419300 ms CreateObjectMapping: 1.922700 ms MarkObjects: 241.752600 ms  DeleteObjects: 8.401200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.78 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5501 unused Assets / (4.7 MB). Loaded Objects now: 6174.
-Memory consumption went from 208.3 MB to 203.6 MB.
-Total: 28.454000 ms (FindLiveObjects: 1.653600 ms CreateObjectMapping: 2.229600 ms MarkObjects: 16.090000 ms  DeleteObjects: 8.473500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 255.911872 seconds.
-  path: Assets/Scripts/Effects/ClimateEffects.cs
-  artifactKey: Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Effects/ClimateEffects.cs using Guid(70bbece2ff6ac834a98cbed39b72e69d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c1a7392f6f4fa05381c306d2639d5f4') in 0.0216832 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  7.248 seconds
-Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.116 seconds
-Domain Reload Profiling: 8369ms
-	BeginReloadAssembly (4225ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (129ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (6ms)
-		CreateAndSetChildDomain (2319ms)
-	RebuildCommonClasses (100ms)
-	RebuildNativeTypeToScriptingClass (29ms)
-	initialDomainReloadingComplete (76ms)
-	LoadAllAssembliesAndSetupDomain (2822ms)
-		LoadAssemblies (2383ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1243ms)
-			TypeCache.Refresh (290ms)
-				TypeCache.ScanAssembly (25ms)
-			BuildScriptInfoCaches (919ms)
-			ResolveRequiredComponents (20ms)
-	FinalizeReload (1117ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (770ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (10ms)
-			BeforeProcessingInitializeOnLoad (98ms)
-			ProcessInitializeOnLoadAttributes (593ms)
-			ProcessInitializeOnLoadMethodAttributes (60ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5509 unused Assets / (5.0 MB). Loaded Objects now: 6174.
-Memory consumption went from 210.5 MB to 205.5 MB.
-Total: 19.734700 ms (FindLiveObjects: 2.500200 ms CreateObjectMapping: 1.127000 ms MarkObjects: 9.909100 ms  DeleteObjects: 6.194100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 54.604527 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b9fff046353b3e6af4b15254f09bbf2d') in 0.1802569 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab
-  artifactKey: Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab using Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6a2a4500ef03529a1a884e9b7ecdb7d') in 0.0076072 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.579845 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a5bb3f8bc5422d931c41be38c4c3ebc') in 0.003336 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.052938 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
-  artifactKey: Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab using Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '89913ccb238702a43bbb2fd931100e28') in 0.0028189 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab
-  artifactKey: Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab using Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b81799be46616fa1ac3da5ece9fcde03') in 0.0041932 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5501 unused Assets / (6.1 MB). Loaded Objects now: 6174.
-Memory consumption went from 210.3 MB to 204.2 MB.
-Total: 382.691800 ms (FindLiveObjects: 5.948300 ms CreateObjectMapping: 0.646900 ms MarkObjects: 368.384500 ms  DeleteObjects: 7.525300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  5.033 seconds
-Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.588 seconds
-Domain Reload Profiling: 6630ms
-	BeginReloadAssembly (2143ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (119ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (3ms)
-		CreateAndSetChildDomain (960ms)
-	RebuildCommonClasses (130ms)
-	RebuildNativeTypeToScriptingClass (32ms)
-	initialDomainReloadingComplete (95ms)
-	LoadAllAssembliesAndSetupDomain (2640ms)
-		LoadAssemblies (2813ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (486ms)
-			TypeCache.Refresh (70ms)
 				TypeCache.ScanAssembly (5ms)
-			BuildScriptInfoCaches (376ms)
-			ResolveRequiredComponents (20ms)
-	FinalizeReload (1590ms)
+			BuildScriptInfoCaches (729ms)
+			ResolveRequiredComponents (28ms)
+	FinalizeReload (2059ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1223ms)
+		SetupLoadedEditorAssemblies (1517ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (141ms)
-			ProcessInitializeOnLoadAttributes (1002ms)
-			ProcessInitializeOnLoadMethodAttributes (60ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			SetLoadedEditorAssemblies (12ms)
+			BeforeProcessingInitializeOnLoad (138ms)
+			ProcessInitializeOnLoadAttributes (1264ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.37 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5509 unused Assets / (5.6 MB). Loaded Objects now: 6174.
-Memory consumption went from 212.5 MB to 206.9 MB.
-Total: 16.726200 ms (FindLiveObjects: 0.807200 ms CreateObjectMapping: 0.630900 ms MarkObjects: 9.390300 ms  DeleteObjects: 5.894000 ms)
+Unloading 5512 unused Assets / (4.6 MB). Loaded Objects now: 6173.
+Memory consumption went from 212.9 MB to 208.4 MB.
+Total: 17.500600 ms (FindLiveObjects: 1.205300 ms CreateObjectMapping: 0.644400 ms MarkObjects: 10.908000 ms  DeleteObjects: 4.739600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
@@ -1762,440 +960,110 @@ C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  1.308 seconds
-Refreshing native plugins compatible for Editor in 0.34 ms, found 3 plugins.
+- Loaded All Assemblies, in  7.609 seconds
+Refreshing native plugins compatible for Editor in 1.16 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.097 seconds
-Domain Reload Profiling: 2410ms
-	BeginReloadAssembly (278ms)
+- Finished resetting the current domain, in  1.726 seconds
+Domain Reload Profiling: 9391ms
+	BeginReloadAssembly (1831ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (88ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (65ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (949ms)
-		LoadAssemblies (516ms)
+		ReleaseScriptingObjects (6ms)
+		CreateAndSetChildDomain (674ms)
+	RebuildCommonClasses (74ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (5656ms)
+		LoadAssemblies (4278ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (589ms)
-			TypeCache.Refresh (10ms)
+		AnalyzeDomain (1700ms)
+			TypeCache.Refresh (92ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (536ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (1098ms)
+			BuildScriptInfoCaches (1455ms)
+			ResolveRequiredComponents (69ms)
+	FinalizeReload (1728ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (808ms)
+		SetupLoadedEditorAssemblies (1207ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (238ms)
-			ProcessInitializeOnLoadAttributes (510ms)
-			ProcessInitializeOnLoadMethodAttributes (46ms)
-			AfterProcessingInitializeOnLoad (4ms)
-			EditorAssembliesLoaded (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (13ms)
+			BeforeProcessingInitializeOnLoad (130ms)
+			ProcessInitializeOnLoadAttributes (952ms)
+			ProcessInitializeOnLoadMethodAttributes (97ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (16ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5509 unused Assets / (5.5 MB). Loaded Objects now: 6174.
-Memory consumption went from 214.4 MB to 208.9 MB.
-Total: 20.032900 ms (FindLiveObjects: 1.959000 ms CreateObjectMapping: 1.530000 ms MarkObjects: 10.070800 ms  DeleteObjects: 6.467000 ms)
+Unloading 5512 unused Assets / (4.7 MB). Loaded Objects now: 6173.
+Memory consumption went from 214.9 MB to 210.2 MB.
+Total: 22.527500 ms (FindLiveObjects: 1.633200 ms CreateObjectMapping: 0.947700 ms MarkObjects: 13.848800 ms  DeleteObjects: 5.856700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
-Received Import Request.
-  Time since last request: 289.989642 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc6.prefab
-  artifactKey: Guid(3d57ad5e670acf740975dc67957871e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc6.prefab using Guid(3d57ad5e670acf740975dc67957871e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa8eabbfed506b7daeffe63978d9e2da') in 0.1138082 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Fabio_2k3\Escuela\Progamación\Proyectos\Gwent-Proyecto\Gwent Proyecto Pro\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  5.594 seconds
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.792 seconds
+Domain Reload Profiling: 7398ms
+	BeginReloadAssembly (1426ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (39ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (3ms)
+		CreateAndSetChildDomain (846ms)
+	RebuildCommonClasses (73ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (4014ms)
+		LoadAssemblies (3212ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1112ms)
+			TypeCache.Refresh (65ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (947ms)
+			ResolveRequiredComponents (39ms)
+	FinalizeReload (1793ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1241ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (12ms)
+			BeforeProcessingInitializeOnLoad (173ms)
+			ProcessInitializeOnLoadAttributes (943ms)
+			ProcessInitializeOnLoadMethodAttributes (100ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5512 unused Assets / (4.5 MB). Loaded Objects now: 6173.
+Memory consumption went from 216.8 MB to 212.3 MB.
+Total: 16.266700 ms (FindLiveObjects: 1.139500 ms CreateObjectMapping: 0.638800 ms MarkObjects: 10.203500 ms  DeleteObjects: 3.999000 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab
-  artifactKey: Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab using Guid(f46d228b6cf71da4ab038419ff351e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd9ac05c41804046b6a86f94f922b0aee') in 0.0049815 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000328 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab
-  artifactKey: Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab using Guid(bb65a7933ca3e4f4d95462c19ac59347) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1424018dc37fd8bb817f93580ee2a5b1') in 0.0032677 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase1.prefab
-  artifactKey: Guid(850d3a526090a1642aa5aa58cd0825e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase1.prefab using Guid(850d3a526090a1642aa5aa58cd0825e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9a61779a7624d0233e1e8d5b98048276') in 0.00639 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab
-  artifactKey: Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase5.prefab using Guid(2d7aa4b2bf0725a47b29b582763126b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8e90c8aca5e675368cb43fa9ff49823') in 0.0061363 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
-  artifactKey: Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab using Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dedd6104aca401943955b543efca652c') in 0.0045283 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear3.prefab
-  artifactKey: Guid(e9e8658f9e8e05740a3834107e9b19f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear3.prefab using Guid(e9e8658f9e8e05740a3834107e9b19f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '36a1e25ad953cc1763920850a62b9531') in 0.0047627 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc8.prefab
-  artifactKey: Guid(8450d094ec4856a4cb821ad23b4a2c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc8.prefab using Guid(8450d094ec4856a4cb821ad23b4a2c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62a174e5c89452ec4273026e77c909ab') in 0.0037331 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab
-  artifactKey: Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab using Guid(4ee4324c5e4708d4f9994c7cb12d083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e851ec2008b70edb91ddfdec68f1d5cf') in 0.0040729 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab
-  artifactKey: Guid(b98c16b5b459e4d4fb052aa2340ea5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab using Guid(b98c16b5b459e4d4fb052aa2340ea5ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e79c749dab19c23a9cba44a366e283a') in 0.0056107 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Increase3.prefab
-  artifactKey: Guid(7bf16f8e2eeb53443a2d211bfbeb71c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Increase3.prefab using Guid(7bf16f8e2eeb53443a2d211bfbeb71c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05cdc3967f8cadd8499022c25c8876d3') in 0.0055681 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Clear2.prefab
-  artifactKey: Guid(31023effc39c3394882d527aa1809b6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Clear2.prefab using Guid(31023effc39c3394882d527aa1809b6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb9a3890d5fe3f3897328f2e518d1906') in 0.0068761 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc5.prefab
-  artifactKey: Guid(d2c520ee23fa3a742aab5d409bdabb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc5.prefab using Guid(d2c520ee23fa3a742aab5d409bdabb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e374f3e1da7a20723dbb1514d037ed0a') in 0.0068077 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/UnitOrc2.prefab
-  artifactKey: Guid(d54049aba1432034eafcb20e664a5450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/UnitOrc2.prefab using Guid(d54049aba1432034eafcb20e664a5450) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '484829ae5d354abf9d5496b466ba5749') in 0.0047798 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86f681dfbee47c365b86623b08982212') in 0.0049898 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 59.166613 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
-  artifactKey: Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab using Guid(bd6b5ba3819027c4b9d6fc4a3f9aa145) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1dbf2f346236e17b055c62e994610f99') in 0.080978 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.273351 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
-  artifactKey: Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab using Guid(73a643514a0e72a4c8896b9a9ee059ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a5ccf57b73c0c08a0f59731c8222563') in 0.0137076 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.719473 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate3.prefab
-  artifactKey: Guid(1e525b8da8f75da4b81dd1afd9fd9be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate3.prefab using Guid(1e525b8da8f75da4b81dd1afd9fd9be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aaea150337182dfc4256120eb4bfe6c8') in 0.0054265 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.068484 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab
-  artifactKey: Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate4.prefab using Guid(9acce1cd24cc597409a6db42fde1c548) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b45b783a53ee36c419273f05026d521b') in 0.0116753 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.800301 seconds.
-  path: Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab
-  artifactKey: Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckOrcs 2.0/Climate5.prefab using Guid(ca7ab06389e4c0241b9523fb8a604702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5ef245327f4eef0c1624423e57816de') in 0.0049516 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.805405 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
-  artifactKey: Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab using Guid(162df371eeb943f439dd64290449a213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f384fa0ad86db0633749560236a21dab') in 0.0085888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW5.prefab
-  artifactKey: Guid(8d774df9b04e19f4990f1d46e6bf587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW5.prefab using Guid(8d774df9b04e19f4990f1d46e6bf587b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab8c5a9ec64206a243f659a956d393fa') in 0.0071628 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000060 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW1.prefab
-  artifactKey: Guid(031f3818f3556254da0fe95c21e4b3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW1.prefab using Guid(031f3818f3556254da0fe95c21e4b3df) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e923d6f2363b8292edacefefbfa1353a') in 0.0078927 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW6.prefab
-  artifactKey: Guid(6d9bfa95670095c46ad0ab1de2d16872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW6.prefab using Guid(6d9bfa95670095c46ad0ab1de2d16872) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '531c5af121a5138fdfd21cd3a3f6a998') in 0.0045882 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab
-  artifactKey: Guid(301a7ca3c7b44a44abf06e8fa35ffc60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab using Guid(301a7ca3c7b44a44abf06e8fa35ffc60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e71bada6573c8fe3f71bb9ec0d9b1cdf') in 0.0062882 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000080 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab
-  artifactKey: Guid(e152c851e83dd834b8905c295c2227e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab using Guid(e152c851e83dd834b8905c295c2227e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b22bd05e032e6c70b75030dcccf56bab') in 0.0052289 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab
-  artifactKey: Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW2.prefab using Guid(cf8ae86c1a01a5942a92316ff5b278b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3644ea2c58c163d8c174f61cbd2b9634') in 0.0060636 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW5.prefab
-  artifactKey: Guid(7a4e46b12a33f7e48a02a02544d46606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW5.prefab using Guid(7a4e46b12a33f7e48a02a02544d46606) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c62607f06e361caeb04599bb3aa5ec83') in 0.0058773 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a7d86900cb7fd3983f25496c7eabca9') in 0.0049289 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab
-  artifactKey: Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW7.prefab using Guid(ba8b9b97ef851df41b65688a40b7f738) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f9058dcd48a00308eeed1f6a085ea6b') in 0.0056954 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW8.prefab
-  artifactKey: Guid(104463529d538eb4b9905b689a2b5602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW8.prefab using Guid(104463529d538eb4b9905b689a2b5602) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec8ccdfa54a8e10263798b4669ea9204') in 0.0056524 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab
-  artifactKey: Guid(402161b0fd4bef04199f8724b93eebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab using Guid(402161b0fd4bef04199f8724b93eebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de9979cbca646d810569a4ed1821ff18') in 0.0047189 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab
-  artifactKey: Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab using Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2bf5dbfd3d546957566f159f15da8c08') in 0.0064931 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
-  artifactKey: Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab using Guid(e9cc15fd9bd261749901a812127a53bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb21f48c2a28b92b8fbe48f7adff7262') in 0.0042212 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab
-  artifactKey: Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/UnitW9.prefab using Guid(8062ae8702c95a846a67cb2e06b496e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc47eb0ff132d09bbfb4e7b75cfc53d3') in 0.0048563 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab
-  artifactKey: Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab using Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6523ee0cad9659cd0e65d869c53e96d7') in 0.0042459 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab
-  artifactKey: Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab using Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3b6dc025bd66a2630926475d3f1c9ad') in 0.0055888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/IncreaseW3.prefab
-  artifactKey: Guid(72e4995211e01e94e9924ee2897962d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/IncreaseW3.prefab using Guid(72e4995211e01e94e9924ee2897962d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46ccdd9a0a033eed8d5235ed0804fcf4') in 0.0118147 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.659105 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '11945b98d4371e367cd7d3a6ec3f855c') in 0.0059922 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab
-  artifactKey: Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab using Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bd57cedd168bd31d52fecf2fbe0d4dfd') in 0.0054897 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab
-  artifactKey: Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab using Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '853d4752cc04a17e0d2147fd78d57acf') in 0.0064459 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.103992 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd839f963489572a52829f2ecc1d3ad0c') in 0.0054243 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW4.prefab
-  artifactKey: Guid(8f5d3e46091ec9e4aafa0de4db6cbe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW4.prefab using Guid(8f5d3e46091ec9e4aafa0de4db6cbe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '39c12b7122fa37dc26354c0976a93c09') in 0.0057079 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.089228 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab
-  artifactKey: Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW1.prefab using Guid(65c059ec58bc5bc41a5070097df97ac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '80660c7d3d4d90cecfb9ab6b8c495cdc') in 0.0039013 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.162659 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab
-  artifactKey: Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW2.prefab using Guid(431532e958c5cd043971acbae159d8aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'be41904b5049503c1524299869f0af69') in 0.0047896 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.258731 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab
-  artifactKey: Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab using Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9cc1f40cce292490d275112566fd17e7') in 0.0062888 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.720755 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab
-  artifactKey: Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW3.prefab using Guid(0f2957aaefc8fc64e82fca4493f1e2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c41adb43272edc0c2ac2b75aebc408a') in 0.0066754 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.859411 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW4.prefab
-  artifactKey: Guid(8f5d3e46091ec9e4aafa0de4db6cbe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW4.prefab using Guid(8f5d3e46091ec9e4aafa0de4db6cbe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c9afa46ca7c0b197f6a265b7e801113') in 0.005011 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.490533 seconds.
-  path: Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab
-  artifactKey: Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/DeckWarriors 2.0/ClimateW5.prefab using Guid(4fe2aace4ddd8b7498829c253aa032bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6bee9b74e5b2f994767eb4acd47a828') in 0.0039836 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
+Prepare: number of updated asset objects reloaded= 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6935093854122204966}
   - component: {fileID: 4193838468120292124}
   - component: {fileID: -2924534749130928529}
+  - component: {fileID: -3021517715119780906}
   m_Layer: 5
   m_Name: DecoyW2
   m_TagString: Untagged
@@ -106,6 +107,13 @@ MonoBehaviour:
   - SW3
   - SW4
   - SW5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: -3021517715119780906}
 --- !u!65 &4193838468120292124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,3 +150,50 @@ MonoBehaviour:
   name: DecoyW1
   type: Decoy
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-3021517715119780906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245769911798171046}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098e4fc168f144145915f48e08cb1f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardNameGame:
+  - UnitGoldW
+  - UnitSilverW1
+  - UnitSilverW2
+  - UnitSilverW3
+  - UnitW1
+  - UnitW2
+  - UnitW3
+  - UnitW4
+  - UnitW5
+  - UnitW6
+  - UnitW7
+  - UnitW8
+  - UnitW9
+  cardNameOriginal:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  nameOfUnity: {fileID: 0}
+  command: {fileID: 0}

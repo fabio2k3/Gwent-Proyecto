@@ -6,11 +6,10 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class GameFlow : MonoBehaviour
 {
-    public Cards[,] cardsOnBoard = new Cards[6, 6];
-
     public static bool avoidCampOrc;
     public static bool avoidCampWarrior;
 
@@ -18,8 +17,8 @@ public class GameFlow : MonoBehaviour
     private int orcWinsCount = 0;
     private int warriorWinsCount = 0;
 
-    public TextMeshProUGUI scoreWarrior; // Asegúrate de asignar estos en el inspector
-    public TextMeshProUGUI scoreOrc;     // Asegúrate de asignar estos en el inspector
+    public TextMeshProUGUI scoreWarrior;
+    public TextMeshProUGUI scoreOrc;
     public GameObject roundOfWarriors;
     public GameObject roundOfOrcs;
     public GameObject WarriorsWin;
@@ -30,6 +29,9 @@ public class GameFlow : MonoBehaviour
     private bool orcGave;
     private bool warriorsGave;
     private bool weHaveWinner;
+
+    public NewBehaviourScript cardHandOrc;
+    public NewBehaviourScript cardHandWarrior; 
 
     void Start()
     {
@@ -43,6 +45,34 @@ public class GameFlow : MonoBehaviour
     void Update()
     {
         Debug.Log("Estado actual " + whoStart.ToString());
+
+        #region Clear Effect !!!!
+        if(ClearEffect.removeClimateCard)
+        {
+            if (DragAndDrop.climateCards[ClearEffect.positionOfRemoveClimate] != null)
+            {
+                string cardName = DragAndDrop.climateCards[ClearEffect.positionOfRemoveClimate].name;
+                GameObject cloneObject = DragAndDrop.climateCards[ClearEffect.positionOfRemoveClimate];
+
+                string originalObjectName = cardName.EndsWith("(Clone)") ? cardName.Replace("(Clone)", "") : cardName;
+
+                if (cardHandOrc.objectNames.Contains(cardName))
+                {
+                    cardHandOrc.objectNames.Remove(cardName);
+                    // Eliminar el objeto de hand si coincide con el objeto original
+                    cardHandOrc.hand.RemoveAll(obj => obj.name == originalObjectName);
+                }
+                else if (cardHandWarrior.objectNames.Contains(cardName))
+                {
+                    cardHandWarrior.objectNames.Remove(cardName);
+                    // Eliminar el objeto de hand si coincide con el objeto original
+                    cardHandWarrior.hand.RemoveAll(obj => obj.name == originalObjectName);
+                }
+
+                DragAndDrop.climateCards[cloneObject.GetComponent<Cards>().climateInvocated] = null;
+            }
+        }
+        #endregion
 
         #region Winner of the GAME
 
@@ -76,13 +106,56 @@ public class GameFlow : MonoBehaviour
                 {
                     if (DragAndDrop.gameObjectsCards[row, col] != null)
                     {
+                        string cardName = DragAndDrop.gameObjectsCards[row, col].name;
+                        GameObject clonedObject = DragAndDrop.gameObjectsCards[row, col];
+
+                        string originalObjectName = cardName.EndsWith("(Clone)") ? cardName.Replace("(Clone)", "") : cardName;
+
+                        if (cardHandOrc.objectNames.Contains(cardName))
+                        {
+                            cardHandOrc.objectNames.Remove(cardName);
+                            // Eliminar el objeto de hand si coincide con el objeto original
+                            cardHandOrc.hand.RemoveAll(obj => obj.name == originalObjectName);
+                        }
+                        else if (cardHandWarrior.objectNames.Contains(cardName))
+                        {
+                            cardHandWarrior.objectNames.Remove(cardName);
+                            // Eliminar el objeto de hand si coincide con el objeto original
+                            cardHandWarrior.hand.RemoveAll(obj => obj.name == originalObjectName);
+                        }
+
                         DragAndDrop.gameObjectsCards[row, col].transform.position = new Vector3(
                             DragAndDrop.gameObjectsCards[row, col].transform.position.x,
                             DragAndDrop.gameObjectsCards[row, col].transform.position.y,
                             0f
                         );
+
                         DragAndDrop.gameObjectsCards[row, col] = null;
                     }                    
+                }
+
+                for(int pos = 0; pos < 3; pos++)
+                {
+                    if (DragAndDrop.climateCards[pos] != null)
+                    {
+                        string cardName = DragAndDrop.climateCards[pos].name;
+                        GameObject cloneObject = DragAndDrop.climateCards[pos];
+
+                        string originalObjectName = cardName.EndsWith("(Clone)") ? cardName.Replace("(Clone)", "") : cardName;
+
+                        if (cardHandOrc.objectNames.Contains(cardName))
+                        {
+                            cardHandOrc.objectNames.Remove(cardName);
+                            // Eliminar el objeto de hand si coincide con el objeto original
+                            cardHandOrc.hand.RemoveAll(obj => obj.name == originalObjectName);
+                        }
+                        else if (cardHandWarrior.objectNames.Contains(cardName))
+                        {
+                            cardHandWarrior.objectNames.Remove(cardName);
+                            // Eliminar el objeto de hand si coincide con el objeto original
+                            cardHandWarrior.hand.RemoveAll(obj => obj.name == originalObjectName);
+                        }
+                    }
                 }
             }
 
@@ -91,12 +164,6 @@ public class GameFlow : MonoBehaviour
             roundOfWarriors.SetActive(false);
         }
         #endregion
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            roundOfWarriors.SetActive(false);
-            roundOfOrcs.SetActive(false);
-        }
 
         #region Check Winner of the Round
         if (warriorsGave && orcGave)
@@ -125,6 +192,7 @@ public class GameFlow : MonoBehaviour
                 
         }
         #endregion
+
         else
         {
             #region Pass Turn
@@ -168,8 +236,6 @@ public class GameFlow : MonoBehaviour
             }
             #endregion
         }
-        
-        
     }
 
     private int CalculateScoreOrcs()

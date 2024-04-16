@@ -16,6 +16,8 @@ public class Cards : MonoBehaviour
     public int colInvocated;
 
     public int climateInvocated;
+
+    public Vector3 originalPosition;
     public void AssignAttack(string newName, string newType, int newAttack)
     {
         name = newName;

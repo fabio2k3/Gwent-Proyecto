@@ -21,10 +21,29 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 3;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[2, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 3;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
         }
         else if (gameObject.GetComponent<Cards>().name == "Climate2")
         {
@@ -39,10 +58,29 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[1, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
         }
         else if (gameObject.GetComponent<Cards>().name == "Climate3")
         {
@@ -57,10 +95,119 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[0, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
+        }
+        else if (gameObject.GetComponent<Cards>().name == "Climate4")
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[1, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[2, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[3, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[4, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+        }
+        else if (gameObject.GetComponent<Cards>().name == "Climate5")
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[0, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[5, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
         }
         #endregion
 
@@ -78,10 +225,29 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[3, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
         }
         else if (gameObject.GetComponent<Cards>().name == "ClimateW2")
         {
@@ -96,10 +262,29 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 3;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[4, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 3;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
         }
         else if (gameObject.GetComponent<Cards>().name == "ClimateW3")
         {
@@ -114,10 +299,119 @@ public class ClimateEffects : MonoBehaviour
                     if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
                     {
                         currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
                     }
                 }
             }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[5, col];
 
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack -= 5;
+
+                        if (currentCard.attack < 0)
+                            currentCard.attack = 0;
+                    }
+                }
+            }
+        }
+        else if (gameObject.GetComponent<Cards>().name == "ClimateW4")
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[0, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[1, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[4, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[5, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+        }
+        else if (gameObject.GetComponent<Cards>().name == "ClimateW5")
+        {
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[2, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
+            for (int col = 0; col < 5; col++)
+            {
+                GameObject currentCardObject = DragAndDrop.gameObjectsCards[3, col];
+
+                if (currentCardObject != null)
+                {
+                    Cards currentCard = currentCardObject.GetComponent<Cards>();
+
+                    if (currentCard.type == "Unit" && (currentCard.name != "UnitGoldOrc" || currentCard.name != "UnitGoldW"))
+                    {
+                        currentCard.attack = 0;
+                    }
+                }
+            }
         }
         #endregion
     }

@@ -12,8 +12,6 @@ public class NewBehaviourScript : MonoBehaviour
     public Transform canvasTransform;
     public List<string> objectNames = new List<string>();
 
-    
-
     void Start()
     {
         for(int i = 0; i < 10; i++)

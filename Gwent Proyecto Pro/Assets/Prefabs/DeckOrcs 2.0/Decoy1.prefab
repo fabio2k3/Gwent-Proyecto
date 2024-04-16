@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3038765314432776633}
   - component: {fileID: -8491829141357760616}
   - component: {fileID: 6267996063914735881}
+  - component: {fileID: -7289369888972185205}
   m_Layer: 5
   m_Name: Decoy1
   m_TagString: Untagged
@@ -127,6 +128,13 @@ MonoBehaviour:
   - SO3
   - SO4
   - SO5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: -7289369888972185205}
 --- !u!114 &6267996063914735881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +150,33 @@ MonoBehaviour:
   name: Decoy1
   type: Decoy
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+--- !u!114 &-7289369888972185205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118091284671829875}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098e4fc168f144145915f48e08cb1f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitCards:
+  - {fileID: 4279075839283003971, guid: 4ee4324c5e4708d4f9994c7cb12d083f, type: 3}
+  - {fileID: 2914031045066159033, guid: 3a61fd352036b9e48a83dcb945004d14, type: 3}
+  - {fileID: 2167182823084832044, guid: d54049aba1432034eafcb20e664a5450, type: 3}
+  - {fileID: 8455200312638228804, guid: 20534b5e31ed9184bb36b1363fb78d48, type: 3}
+  - {fileID: 6499937479715158597, guid: e5a64561f2d54574e9fdee03a31274e5, type: 3}
+  - {fileID: 1545501752725244978, guid: d2c520ee23fa3a742aab5d409bdabb0f, type: 3}
+  - {fileID: 373527847291638855, guid: 3d57ad5e670acf740975dc67957871e7, type: 3}
+  - {fileID: 5447187615690528430, guid: 6184ccf4c29f6254fa4f35ce97723027, type: 3}
+  - {fileID: 9142124541745764617, guid: 8450d094ec4856a4cb821ad23b4a2c49, type: 3}
+  - {fileID: 1934269656009249296, guid: cd47546624d43a74585652b869ffe5c3, type: 3}
+  - {fileID: 1555934306211536792, guid: b98c16b5b459e4d4fb052aa2340ea5ae, type: 3}
+  - {fileID: 4437187453417330730, guid: b8d4380c9c8989242a785e8ed0b4987b, type: 3}
+  - {fileID: 6746873047014193501, guid: bb65a7933ca3e4f4d95462c19ac59347, type: 3}

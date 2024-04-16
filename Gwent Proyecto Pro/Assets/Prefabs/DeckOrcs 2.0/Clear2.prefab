@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1479602997210946578}
   - component: {fileID: 515505984033157294}
   - component: {fileID: 7385886981037586491}
+  - component: {fileID: -7949927653596388343}
   m_Layer: 5
   m_Name: Clear2
-  m_TagString: Untagged
+  m_TagString: ClearEffect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +128,14 @@ MonoBehaviour:
   - SO3
   - SO4
   - SO5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: -7949927653596388343}
 --- !u!114 &7385886981037586491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +151,20 @@ MonoBehaviour:
   name: Clear2
   type: Clear
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-7949927653596388343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442574791364527074}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d671c25961d768041b6934aeb61da639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

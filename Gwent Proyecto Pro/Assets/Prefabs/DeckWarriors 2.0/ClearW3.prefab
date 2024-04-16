@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8475762931420750507}
   - component: {fileID: 5251009526353504652}
   - component: {fileID: -8018865663344888903}
+  - component: {fileID: -846299971253997020}
   m_Layer: 5
   m_Name: ClearW3
-  m_TagString: Untagged
+  m_TagString: ClearEffect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +107,14 @@ MonoBehaviour:
   - SW3
   - SW4
   - SW5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: -846299971253997020}
 --- !u!65 &5251009526353504652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,3 +151,20 @@ MonoBehaviour:
   name: ClearW3
   type: Clear
   attack: 0
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-846299971253997020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392847201750415479}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d671c25961d768041b6934aeb61da639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

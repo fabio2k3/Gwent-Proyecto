@@ -53,6 +53,7 @@ TagManager:
   - Climate1
   - Climate2
   - Climate3
+  - ClearEffect
   layers:
   - Default
   - TransparentFX

@@ -6,39 +6,28 @@ using UnityEngine;
 
 public class DecoyEffect : MonoBehaviour
 {
-    public List<string> cardNameGame = new List<string>();
-    public List<string> cardNameOriginal = new List<string>();
-    public TextMeshPro nameOfUnity;
-    public TextMeshPro command;
-    private GameObject currentCardObject;
-    private Cards currentCard;
+    public static bool confirmed;
+
+    public static bool returnCard;
 
     void Start()
     {
         for (int col = 0; col < 5; col++)
         {
-            currentCardObject = DragAndDrop.gameObjectsCards[gameObject.GetComponent<Cards>().rowInvocated, col];
+            GameObject currentCardObject = DragAndDrop.gameObjectsCards[gameObject.GetComponent<Cards>().rowInvocated, col];
+
             if (currentCardObject != null)
             {
-                currentCard = currentCardObject.GetComponent<Cards>();
+                Cards currentCard = currentCardObject.GetComponent<Cards>();
 
-                if (currentCard.type == "Unit" && cardNameGame.Contains(currentCard.name))
+                if (currentCard.type == "Unit")
                 {
-                    nameOfUnity.gameObject.SetActive(true);
-                    command.gameObject.SetActive(true);
-
-                    int index = cardNameGame.IndexOf(currentCard.name);
-
-                    nameOfUnity.text = " " + cardNameOriginal[index];
-
-                    if (Input.GetKeyDown(KeyCode.Return))
+                    if(confirmed)
                     {
-                        currentCard.transform.position = currentCard.originalPosition;
-                        this.enabled = false;
-                        break;
+                        currentCardObject.transform.position = currentCard.originalPosition;
+
+                        returnCard = true;
                     }
-                    else if (Input.GetKeyDown(KeyCode.Escape))
-                        continue;
                 }
             }
         }

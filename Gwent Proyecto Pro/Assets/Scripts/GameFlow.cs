@@ -19,6 +19,7 @@ public class GameFlow : MonoBehaviour
 
     public TextMeshProUGUI scoreWarrior;
     public TextMeshProUGUI scoreOrc;
+
     public GameObject roundOfWarriors;
     public GameObject roundOfOrcs;
     public GameObject WarriorsWin;
@@ -32,6 +33,7 @@ public class GameFlow : MonoBehaviour
 
     public NewBehaviourScript cardHandOrc;
     public NewBehaviourScript cardHandWarrior; 
+
 
     void Start()
     {

@@ -4378,6 +4378,7 @@ MonoBehaviour:
   hand: []
   canvasTransform: {fileID: 1705746144}
   objectNames: []
+  button: {fileID: 2066319225}
 --- !u!4 &1410022841
 Transform:
   m_ObjectHideFlags: 0
@@ -4671,9 +4672,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DrawCards, Assembly-CSharp
-        m_MethodName: Draw
+      - m_Target: {fileID: 1632809454}
+        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_MethodName: AddCardsFromDeckButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5162,6 +5163,7 @@ MonoBehaviour:
   hand: []
   canvasTransform: {fileID: 1705746144}
   objectNames: []
+  button: {fileID: 1520065574}
 --- !u!4 &1632809455
 Transform:
   m_ObjectHideFlags: 0
@@ -7171,9 +7173,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DrawCards, Assembly-CSharp
-        m_MethodName: Draw
+      - m_Target: {fileID: 1410022840}
+        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_MethodName: AddCardsFromDeckButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

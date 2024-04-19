@@ -19,12 +19,15 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     public static bool invocated;
     public static GameObject[,] gameObjectsCards = new GameObject[6, 6];
+    public static GameObject[,] decoyGameObjects = new GameObject[6, 6];
     public static GameObject[] climateCards = new GameObject[3];
     public static int rowInvocated = 0;
 
     public GameObject cardInvocated;
     
     private bool originalOrcCardPosition;
+    private bool originalWarriorCardPosition;
+    public static bool wantToChange;
 
     #region Effects
     public PlusTwo plusTwo;
@@ -54,7 +57,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         dragging = true;
 
-        gameObject.GetComponent<Cards>().originalPosition = originalCanvasPosition;
+        gameObject.GetComponent<Cards>().originalPosition = transform.localPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -96,7 +99,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             {
                 if (validPositions.Contains(pos.tag))
                 {
-
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
                     //gameObjectsCards[row, col] = gameObject;
@@ -116,7 +118,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             {
                 if (validPositions.Contains(pos.tag))
                 {
-
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
                     //gameObjectsCards[row, col] = gameObject;
@@ -147,7 +148,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
             if (pos.CompareTag("WCamp")) 
             {
                 
-                originalOrcCardPosition = true;
+                originalWarriorCardPosition = true;
 
                 return;
             }
@@ -209,7 +210,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if (originalOrcCardPosition)
             transform.localPosition = originalCanvasPosition;
-
+        if (originalWarriorCardPosition)
+            transform.localPosition = originalCanvasPosition;
 
         int row = gameObject.GetComponent<Cards>().rowInvocated;
         int col = gameObject.GetComponent<Cards>().colInvocated;
@@ -217,9 +219,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if (gameObject.GetComponent<Cards>().name == "Climate1" || gameObject.GetComponent<Cards>().name == "Climate2" || gameObject.GetComponent<Cards>().name == "Climate3" || gameObject.GetComponent<Cards>().name == "Climate4" || gameObject.GetComponent<Cards>().name == "Climate5" || gameObject.GetComponent<Cards>().name == "ClimateW1" || gameObject.GetComponent<Cards>().name == "ClimateW2" || gameObject.GetComponent<Cards>().name == "ClimateW3" || gameObject.GetComponent<Cards>().name == "ClimateW4" || gameObject.GetComponent<Cards>().name == "ClimateW5")
             climateCards[positionCLimateArray] = gameObject; 
+        else if(gameObject.GetComponent<Cards>().type == "Decoy")
+            decoyGameObjects[row,col] = gameObject;
         else
-            gameObjectsCards[row, col] = gameObject;
+            gameObjectsCards[row,col] = gameObject;
 
+
+        #region Activated Effects
         if (gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Increase1" || gameObject.GetComponent<Cards>().name == "Increase2" || gameObject.GetComponent<Cards>().name == "IncreaseW5"))
             plusTwo.enabled = true;
 
@@ -243,5 +249,16 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Clear1" || gameObject.GetComponent<Cards>().name == "Clear2" || gameObject.GetComponent<Cards>().name == "Clear3" || gameObject.GetComponent<Cards>().name == "ClearW1" || gameObject.GetComponent<Cards>().name == "ClearW2" || gameObject.GetComponent<Cards>().name == "ClearW3" ))
             clearEffect.enabled = true;
+        #endregion
+
+        if (GameFlow.canTakeACard && GameFlow.movement < 2)
+            GameFlow.movement++;
+        
+        GameFlow.whoStart = (GameFlow.whoStart == 0) ? 1 : 0;
+
+        if(GameFlow.whoStart == 0)
+            GameFlow.tourWarriors = true;
+        if (GameFlow.whoStart == 1)
+            GameFlow.tourOrcs = true;
     }
 }

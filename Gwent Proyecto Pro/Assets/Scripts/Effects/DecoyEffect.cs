@@ -6,29 +6,24 @@ using UnityEngine;
 
 public class DecoyEffect : MonoBehaviour
 {
-    public static bool confirmed;
-
-    public static bool returnCard;
-
+    
     void Start()
     {
+        // Obtener las coordenadas originales del GameObject actual
+        Vector3 originalPosition = gameObject.GetComponent<Cards>().originalPosition;
+
+        // Iterar sobre las cartas en la misma fila
         for (int col = 0; col < 5; col++)
         {
+            // Obtener la carta en la posición actual
             GameObject currentCardObject = DragAndDrop.gameObjectsCards[gameObject.GetComponent<Cards>().rowInvocated, col];
 
-            if (currentCardObject != null)
+            // Verificar si hay una carta en esta posición y si no es la misma carta actual
+            if (currentCardObject != null && currentCardObject != gameObject)
             {
-                Cards currentCard = currentCardObject.GetComponent<Cards>();
-
-                if (currentCard.type == "Unit")
-                {
-                    if(confirmed)
-                    {
-                        currentCardObject.transform.position = currentCard.originalPosition;
-
-                        returnCard = true;
-                    }
-                }
+                // Establecer las coordenadas originales al GameObject actual
+                currentCardObject.transform.localPosition = originalPosition;
+                DragAndDrop.gameObjectsCards[currentCardObject.GetComponent<Cards>().rowInvocated, currentCardObject.GetComponent<Cards>().colInvocated] = null;
             }
         }
     }

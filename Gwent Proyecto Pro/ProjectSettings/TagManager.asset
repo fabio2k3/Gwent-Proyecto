@@ -54,6 +54,8 @@ TagManager:
   - Climate2
   - Climate3
   - ClearEffect
+  - UnitRecover
+  - Command
   layers:
   - Default
   - TransparentFX

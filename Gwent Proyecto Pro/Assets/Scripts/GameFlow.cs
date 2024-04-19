@@ -243,7 +243,7 @@ public class GameFlow : MonoBehaviour
         {
             if (CalculateScoreOrcs() > CalculateScoreWarriors())
             {
-                Debug.Log("Gana Orcos");
+                roundOfOrcs.transform.position = new Vector3(roundOfOrcs.transform.position.x, roundOfOrcs.transform.position.y, 100f);
                 roundOfOrcs.SetActive(true);
                 orcWinsCount++;
                 weHaveWinner = true;
@@ -251,12 +251,11 @@ public class GameFlow : MonoBehaviour
                 orcGave = false;
                 whoStart = 1;
                 canTakeACard = true;
-                Debug.Log(orcWinsCount);
             }
                 
             else if(CalculateScoreOrcs() < CalculateScoreWarriors())
             {
-                Debug.Log("Gana W");
+                roundOfWarriors.transform.position = new Vector3(roundOfWarriors.transform.position.x, roundOfWarriors.transform.position.y, 100f);
                 roundOfWarriors.SetActive(true);
                 warriorWinsCount++;
                 weHaveWinner = true;
@@ -264,7 +263,6 @@ public class GameFlow : MonoBehaviour
                 orcGave = false;
                 whoStart = 0;
                 canTakeACard = true;
-                Debug.Log(warriorWinsCount);
             }
             else
             {
@@ -284,7 +282,7 @@ public class GameFlow : MonoBehaviour
                         effectOrcLeader = false;
                     }
                     if(Input.GetKeyDown(KeyCode.Escape))
-                    {
+                    { 
                         textLeaderOrc.gameObject.SetActive(false);
                         TiedRound.SetActive(true);
                         orcWinsCount++;

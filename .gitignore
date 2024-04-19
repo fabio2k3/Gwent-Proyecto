@@ -131,3 +131,99 @@ Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab
 Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW1.prefab
 Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
 Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab
+Gwent Proyecto Pro/Assets/Scripts/GameFlow.cs
+Gwent Proyecto Pro/Library/ArtifactDB
+Gwent Proyecto Pro/Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Bee/backend1.traceevents
+Gwent Proyecto Pro/Library/Bee/fullprofile.json
+Gwent Proyecto Pro/Library/Bee/tundra.digestcache
+Gwent Proyecto Pro/Library/Bee/tundra.log.json
+Gwent Proyecto Pro/Library/Bee/TundraBuildState.state
+Gwent Proyecto Pro/Library/Bee/TundraBuildState.state.map
+Gwent Proyecto Pro/Library/BurstCache/JIT/Hashes/a110ffe6b760e4b56cb86ae44bc7857d.bhc
+Gwent Proyecto Pro/Library/expandedItems
+Gwent Proyecto Pro/Library/ilpp.pid
+Gwent Proyecto Pro/Library/InspectorExpandedItems.asset
+Gwent Proyecto Pro/Library/SceneVisibilityState.asset
+Gwent Proyecto Pro/Library/ScriptAssemblies/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Search/transactions.db
+Gwent Proyecto Pro/Library/ShaderCache.db
+Gwent Proyecto Pro/Library/SourceAssetDB
+Gwent Proyecto Pro/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+Gwent Proyecto Pro/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref
+Gwent Proyecto Pro/Logs/AssetImportWorker0-prev.log
+Gwent Proyecto Pro/Logs/AssetImportWorker0.log
+Gwent Proyecto Pro/Logs/AssetImportWorker1-prev.log
+Gwent Proyecto Pro/Logs/AssetImportWorker1.log
+Gwent Proyecto Pro/Logs/shadercompiler-AssetImportWorker0-0.log
+Gwent Proyecto Pro/Logs/shadercompiler-AssetImportWorker1-0.log
+Gwent Proyecto Pro/Logs/shadercompiler-UnityShaderCompiler.exe-0.log
+Gwent Proyecto Pro/Temp/__Backupscenes/0.backup
+Gwent Proyecto Pro/Temp/FSTimeGet-c9eb75135180f7d4ea50c3def9c5f235
+Gwent Proyecto Pro/Temp/FSTimeGet-de6bd08450131cf4fa1ff5df210688c4
+Gwent Proyecto Pro/UserSettings/Layouts/default-2023.dwlt
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Clear1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Climate1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Climate2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Decoy1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Decoy2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/Decoy3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitGoldOrc.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckOrcs 2.0/UnitSilverOrc3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/ClearW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/DecoyW3.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitGoldW.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW1.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW2.prefab
+Gwent Proyecto Pro/Assets/Prefabs/DeckWarriors 2.0/UnitSilverW3.prefab
+Gwent Proyecto Pro/Assets/Scripts/GameFlow.cs
+Gwent Proyecto Pro/Library/ArtifactDB
+Gwent Proyecto Pro/Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Bee/backend1.traceevents
+Gwent Proyecto Pro/Library/Bee/fullprofile.json
+Gwent Proyecto Pro/Library/Bee/tundra.digestcache
+Gwent Proyecto Pro/Library/Bee/tundra.log.json
+Gwent Proyecto Pro/Library/Bee/TundraBuildState.state
+Gwent Proyecto Pro/Library/Bee/TundraBuildState.state.map
+Gwent Proyecto Pro/Library/BurstCache/JIT/Hashes/a110ffe6b760e4b56cb86ae44bc7857d.bhc
+Gwent Proyecto Pro/Library/expandedItems
+Gwent Proyecto Pro/Library/ilpp.pid
+Gwent Proyecto Pro/Library/InspectorExpandedItems.asset
+Gwent Proyecto Pro/Library/SceneVisibilityState.asset
+Gwent Proyecto Pro/Library/ScriptAssemblies/Assembly-CSharp.dll
+Gwent Proyecto Pro/Library/Search/transactions.db
+Gwent Proyecto Pro/Library/ShaderCache.db
+Gwent Proyecto Pro/Library/SourceAssetDB
+Gwent Proyecto Pro/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json
+Gwent Proyecto Pro/Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref
+Gwent Proyecto Pro/Logs/AssetImportWorker0-prev.log
+Gwent Proyecto Pro/Logs/AssetImportWorker0.log
+Gwent Proyecto Pro/Logs/AssetImportWorker1-prev.log
+Gwent Proyecto Pro/Logs/AssetImportWorker1.log
+Gwent Proyecto Pro/Logs/shadercompiler-AssetImportWorker0-0.log
+Gwent Proyecto Pro/Logs/shadercompiler-AssetImportWorker1-0.log
+Gwent Proyecto Pro/Logs/shadercompiler-UnityShaderCompiler.exe-0.log
+Gwent Proyecto Pro/Temp/__Backupscenes/0.backup
+Gwent Proyecto Pro/Temp/FSTimeGet-c9eb75135180f7d4ea50c3def9c5f235
+Gwent Proyecto Pro/Temp/FSTimeGet-de6bd08450131cf4fa1ff5df210688c4
+Gwent Proyecto Pro/UserSettings/Layouts/default-2023.dwlt

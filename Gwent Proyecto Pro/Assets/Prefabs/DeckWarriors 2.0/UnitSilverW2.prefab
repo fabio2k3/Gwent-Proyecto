@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: edd44eb68f6cefc43a1a3a0a39c7f682, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c7b96dd4fdd5cb4582ca8ffb275fce6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -101,6 +101,14 @@ MonoBehaviour:
   - RW3
   - RW4
   - RW5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!65 &5515181562192938373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,3 +145,8 @@ MonoBehaviour:
   name: UnitSilverW2
   type: Unit
   attack: 8
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}

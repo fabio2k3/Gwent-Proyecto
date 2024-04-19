@@ -135,6 +135,7 @@ MonoBehaviour:
   multiplicateThree: {fileID: 0}
   climateEffects: {fileID: 0}
   decoyEffect: {fileID: -7289369888972185205}
+  clearEffect: {fileID: 0}
 --- !u!114 &6267996063914735881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +155,7 @@ MonoBehaviour:
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-7289369888972185205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098e4fc168f144145915f48e08cb1f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitCards:
+  cardObjects:
   - {fileID: 4279075839283003971, guid: 4ee4324c5e4708d4f9994c7cb12d083f, type: 3}
   - {fileID: 2914031045066159033, guid: 3a61fd352036b9e48a83dcb945004d14, type: 3}
   - {fileID: 2167182823084832044, guid: d54049aba1432034eafcb20e664a5450, type: 3}

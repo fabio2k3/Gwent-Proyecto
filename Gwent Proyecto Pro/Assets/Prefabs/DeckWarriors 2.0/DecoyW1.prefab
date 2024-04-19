@@ -114,6 +114,7 @@ MonoBehaviour:
   multiplicateThree: {fileID: 0}
   climateEffects: {fileID: 0}
   decoyEffect: {fileID: 3465466312828402610}
+  clearEffect: {fileID: 0}
 --- !u!65 &3519351255280203513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -167,33 +168,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098e4fc168f144145915f48e08cb1f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardNameGame:
-  - UnitGoldW
-  - UnitSilverW1
-  - UnitSilverW2
-  - UnitSilverW3
-  - UnitW1
-  - UnitW2
-  - UnitW3
-  - UnitW4
-  - UnitW5
-  - UnitW6
-  - UnitW7
-  - UnitW8
-  - UnitW9
-  cardNameOriginal:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
-  - 11
-  - 12
-  - 13
-  nameOfUnity: {fileID: 0}
-  command: {fileID: 0}
+  cardObjects:
+  - {fileID: 7342577271383912868, guid: 301a7ca3c7b44a44abf06e8fa35ffc60, type: 3}
+  - {fileID: 8933201033892769298, guid: 13a3b43d4f09a9c44806afbb223b6b36, type: 3}
+  - {fileID: 2673336856566029002, guid: e9cc15fd9bd261749901a812127a53bc, type: 3}
+  - {fileID: 3987105157987209220, guid: e152c851e83dd834b8905c295c2227e3, type: 3}
+  - {fileID: 1381235051360535547, guid: 031f3818f3556254da0fe95c21e4b3df, type: 3}
+  - {fileID: 2140174693982588205, guid: 4fd72582e8ad8474998c9e624e2d56b7, type: 3}
+  - {fileID: 756554788032180216, guid: da64446e6dfc47a4884b37a4f1edb754, type: 3}
+  - {fileID: 5406643618263280308, guid: 54de7a8be4711fa469b9f4268f49711b, type: 3}
+  - {fileID: 8333111697329603799, guid: 7a4e46b12a33f7e48a02a02544d46606, type: 3}
+  - {fileID: 3419022788975686066, guid: 6d9bfa95670095c46ad0ab1de2d16872, type: 3}
+  - {fileID: 543987629233665822, guid: ba8b9b97ef851df41b65688a40b7f738, type: 3}
+  - {fileID: 7515148853831875968, guid: 104463529d538eb4b9905b689a2b5602, type: 3}
+  - {fileID: 7149123961039050934, guid: 8062ae8702c95a846a67cb2e06b496e2, type: 3}

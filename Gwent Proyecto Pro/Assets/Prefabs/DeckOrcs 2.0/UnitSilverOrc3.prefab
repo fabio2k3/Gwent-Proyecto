@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 763b3017ae6259943977c342cda2e65c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d102922673e46e240939d1c500d27ed0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -122,6 +122,14 @@ MonoBehaviour:
   - SO3
   - SO4
   - SO5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!114 &-4509897485165652964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +145,8 @@ MonoBehaviour:
   name: UnitSilverOrc3
   type: Unit
   attack: 6
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}

@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea42a8d416339734fbb6593f4401fb02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86d026298658d67479db123704bb732a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -122,6 +122,8 @@ MonoBehaviour:
   multiplicateTwo: {fileID: 0}
   multiplicateThree: {fileID: 0}
   climateEffects: {fileID: -1910110921673169220}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!114 &5243703309727162971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,7 @@ MonoBehaviour:
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-1910110921673169220
 MonoBehaviour:
   m_ObjectHideFlags: 0

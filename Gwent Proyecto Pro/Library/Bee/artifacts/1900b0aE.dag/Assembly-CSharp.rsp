@@ -125,6 +125,7 @@
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Extension DLL/Gwent Create Cards.dll"
 -r:"C:/Program Files/Unity 2023.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
 -r:"C:/Program Files/Unity 2023.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.AdaptivePerformanceModule.dll"
 -r:"C:/Program Files/Unity 2023.2.7f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -468,6 +469,14 @@
 "Assets/Scripts/PlayerMove.cs"
 "Assets/Scripts/PositionOfCards.cs"
 "Assets/Scripts/SceneLoader.cs"
+"Assets/Scripts/Scripts Extras/ChangeImageOrc.cs"
+"Assets/Scripts/Scripts Extras/ChangeImageWarrior.cs"
+"Assets/Scripts/Scripts Extras/ExpanderEscala.cs"
+"Assets/Scripts/Scripts Extras/LoadSceneCreateCards.cs"
+"Assets/Scripts/Scripts Extras/LoadScensOnClick.cs"
+"Assets/Scripts/Scripts Extras/OpenPDF.cs"
+"Assets/Scripts/Segundo Proyecto/SaveTextEffect.cs"
+"Assets/Scripts/Segundo Proyecto/ShowText.cs"
 -langversion:9.0
 
 /deterministic

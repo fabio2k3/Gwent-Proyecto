@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1786578281946442932}
   - component: {fileID: -8336188968713911728}
   - component: {fileID: -694872678007811973}
+  - component: {fileID: 9197610250089966850}
+  - component: {fileID: 7957929245182923042}
   m_Layer: 5
   m_Name: ClimateW2
   m_TagString: Untagged
@@ -101,6 +103,8 @@ MonoBehaviour:
   multiplicateTwo: {fileID: 0}
   multiplicateThree: {fileID: 0}
   climateEffects: {fileID: -694872678007811973}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!65 &1786578281946442932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -137,10 +141,12 @@ MonoBehaviour:
   name: ClimateW2
   type: Climate
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-694872678007811973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +159,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bbece2ff6ac834a98cbed39b72e69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9197610250089966850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947409839313926185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 710406bb6fd1a1a4397c8493c9472326, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: bdc547370337cb742943d83e794a7e05, type: 3}
+--- !u!114 &7957929245182923042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947409839313926185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

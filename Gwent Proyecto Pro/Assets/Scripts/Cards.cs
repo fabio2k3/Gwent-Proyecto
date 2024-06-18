@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Cards : MonoBehaviour
 {
-    public string name;
+    public string name; // Nombre de la carta
 
-    public string type;
+    public string type; // Tipo de la carta
 
-    public int attack;
+    public int attack; // propiedad de ataque
+    public int attackAux;
 
-    public bool invocated;
+    public bool invocated; // si fue invocada o no
 
-    public int rowInvocated;
-    public int colInvocated;
+    public int rowInvocated; // fila donde fue invocada
+    public int colInvocated; // columna donde fue invocada
 
-    public int climateInvocated;
+    public int climateInvocated; // position del array donde se invocan las carta Climate
 
-    public Vector3 originalPosition;
+    public Vector3 originalPosition; // Posicion Original de la carta dentro del canvas
     public void AssignAttack(string newName, string newType, int newAttack)
     {
         name = newName;
@@ -27,17 +28,6 @@ public class Cards : MonoBehaviour
         {
             attack = newAttack;
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
 

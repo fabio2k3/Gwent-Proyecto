@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5252105166828502565}
   - component: {fileID: -8223803491619443691}
   - component: {fileID: 7057900892276505955}
+  - component: {fileID: 7634756559373162017}
   m_Layer: 5
   m_Name: Increase6
   m_TagString: Untagged
@@ -117,6 +118,12 @@ MonoBehaviour:
   - CO3
   cardInvocated: {fileID: 0}
   plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!114 &7057900892276505955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,5 +139,23 @@ MonoBehaviour:
   name: Increase6
   type: Increase
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &7634756559373162017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012734971527928616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 64bc7c636c5f6e643842dd86c3fc8f11, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 104604006023697252}
   - component: {fileID: -4513206733361550513}
   - component: {fileID: 2058234862750834639}
+  - component: {fileID: -107616773326457350}
+  - component: {fileID: -2145359400572460794}
   m_Layer: 5
   m_Name: IncreaseW5
   m_TagString: Untagged
@@ -99,6 +101,10 @@ MonoBehaviour:
   plusTwo: {fileID: 2058234862750834639}
   plusOne: {fileID: 0}
   multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!65 &104604006023697252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -135,8 +141,12 @@ MonoBehaviour:
   name: IncreaseW5
   type: Increase
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2058234862750834639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +159,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e9c171f89c1fa48a1c16c8e73d8fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-107616773326457350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420267170804361658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 68c44f5f9d7b97243a3ad0ea6c09f120, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: bdc547370337cb742943d83e794a7e05, type: 3}
+--- !u!114 &-2145359400572460794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420267170804361658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

@@ -12,56 +12,69 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     private Vector3 pointerOffset;
     private bool dragging = false;
     private RectTransform canvasRectTransform;
-    private bool moveCard = false;
+    private bool moveCard = false; // verificar que se mueve la carta
     private Vector3 position;
-    private Vector3 originalCanvasPosition;
-    public List<string> validPositions = new List<string>();
+    private Vector3 originalCanvasPosition; // Posicion Original de las cartas
+    public List<string> validPositions = new List<string>(); // Posiciones donde pueden estar las cartas
 
     public static bool invocated;
-    public static GameObject[,] gameObjectsCards = new GameObject[6, 6];
-    public static GameObject[,] decoyGameObjects = new GameObject[6, 6];
-    public static GameObject[] climateCards = new GameObject[3];
-    public static int rowInvocated = 0;
+    public static GameObject[,] gameObjectsCards = new GameObject[6, 6]; // Matriz GameObject Cartas
+    public static GameObject[,] decoyGameObjects = new GameObject[6, 6]; // Matriz para las cartas Señuelo
+    public static GameObject[] climateCards = new GameObject[3]; // Array cartas Clima
+    public static int rowInvocated = 0; 
 
     public GameObject cardInvocated;
     
+    /* Verificar cual de los dos Jugadores esta jugando
+      para que el contrario no invoque cartas */
     private bool originalOrcCardPosition;
     private bool originalWarriorCardPosition;
-    public static bool wantToChange;
 
     #region Effects
-    public PlusTwo plusTwo;
+    // Para invocar el efecto de las carta de Aumento
+    public PlusTwo plusTwo;  
     public PlusOne plusOne;
     public MultiplicateTwo multiplicateTwo;
     public MultiplicateThree multiplicateThree;
+
+    // Para invocar efecto cartas clima
     public ClimateEffects climateEffects;
+
+    // Para invocar efecto cartas Señuelo
     public DecoyEffect decoyEffect;
+     
+    // Para invocar efecto cartas Despeje
     public ClearEffect clearEffect;
     #endregion
 
 
     void Start()
     {
+        // Inicializar la referencia al RectTransform del canvas que contiene este objeto
         canvasRectTransform = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
 
-        originalCanvasPosition = transform.localPosition;
+        originalCanvasPosition = transform.localPosition; // tomar la posicion dentro del canvas
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        moveCard = true;
-        position = transform.position;
+        moveCard = true; // cuando se da click sobre la carta indica que se va amover
+        position = transform.position; // guardar la posicion actual
+
+        // Se calcula el desplazamiento del cursor en relacion con el objeto
         Vector3 pointerPos = eventData.pointerCurrentRaycast.screenPosition;
         RectTransformUtility.ScreenPointToWorldPointInRectangle(canvasRectTransform, pointerPos, eventData.enterEventCamera, out pointerOffset);
         pointerOffset -= transform.position;
 
-        dragging = true;
+        dragging = true; // se activa el arrastre
 
+        // se guarda en la propiedad originalPosition de Cards la posicion original de la carta
         gameObject.GetComponent<Cards>().originalPosition = transform.localPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        // si se esta moviendo el objeto, se actualiza la posicion en funcion del cursor
         if (dragging)
         {
             Vector3 pointerPos = eventData.pointerCurrentRaycast.screenPosition;
@@ -72,18 +85,18 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
     void OnTriggerStay(Collider pos)
     {
-        GameFlow checkClimate = new GameFlow();
+        GameFlow checkClimate = new GameFlow(); // Instancia de la clase GameFlow
 
         if(GameFlow.avoidCampOrc)
         {
-            if (pos.CompareTag("WCamp")) // Verifica si colisiona con un WCamp
+            if (pos.CompareTag("WCamp")) // Verifica si colisiona con el campo de los Warriors
             {
-                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true);
+                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true); // Ignorar la colision
 
                 return;
             }
 
-            if (pos.CompareTag("OrcCamp")) // Verifica si colisiona con un OrcCamp
+            if (pos.CompareTag("OrcCamp")) // Verifica si colisiona con el campo de los Warriors
             {          
                 // Restaura la posición original del objeto
                 originalOrcCardPosition = true;
@@ -91,22 +104,20 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                 return;
             }
 
-            int row = pos.GetComponent<PositionOfCards>().row;
-            int col = pos.GetComponent<PositionOfCards>().col;
-            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate;
+            int row = pos.GetComponent<PositionOfCards>().row; // asignarle valor a la propiedad row (fila) de Cards
+            int col = pos.GetComponent<PositionOfCards>().col; // asignarle valor a la propiedad col (columna) de Cards
+            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate; // asignarle valor la propiedad positionOfClimate (posicion dentro del array climateCards) de Carrds
 
-            if(checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
+            if(checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name)) // verificar que estas tomando una carta clima
             {
-                if (validPositions.Contains(pos.tag))
+                if (validPositions.Contains(pos.tag)) // verificar si puede ocupar dicha posicion
                 {
+                    // cambiar la poscion con el gameobject que colisiono
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //gameObjectsCards[row, col] = gameObject;
 
+                    // actualizar las propiedades de la carta
                     gameObject.GetComponent<Cards>().invocated = true;
-                    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    gameObject.GetComponent<Cards>().colInvocated = col;
-
                     gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
@@ -114,19 +125,18 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     transform.localPosition = originalCanvasPosition;
                 }
             }
-            else
+            else // caso que no sea clima
             {
-                if (validPositions.Contains(pos.tag))
+                if (validPositions.Contains(pos.tag)) // verificar si puede ocupar dicha posicion
                 {
+                    // cambiar la poscion con el gameobject que colisiono
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //gameObjectsCards[row, col] = gameObject;
 
+                    // actualizar las propiedades de las cartas
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
-
-                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -138,38 +148,35 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if (GameFlow.avoidCampWarrior)
         {
-            if (pos.CompareTag("OrcCamp")) 
+            if (pos.CompareTag("OrcCamp")) // Verifica si colisiona con el campo de los Warriors
             {
-                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true);
+                Physics.IgnoreCollision(GetComponent<Collider>(), pos, true); // Ignorar la colision
 
                 return;
             }
 
-            if (pos.CompareTag("WCamp")) 
+            if (pos.CompareTag("WCamp")) // Verifica si colisiona con el campo de los Warriors
             {
                 
-                originalWarriorCardPosition = true;
+                originalWarriorCardPosition = true; // Restaura la posición original del objeto
 
                 return;
             }
 
-            int row = pos.GetComponent<PositionOfCards>().row;
-            int col = pos.GetComponent<PositionOfCards>().col;
-            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate;
+            int row = pos.GetComponent<PositionOfCards>().row; // asignarle valor a la propiedad row (fila) de Cards
+            int col = pos.GetComponent<PositionOfCards>().col; // asignarle valor a la propiedad col (columna) de Cards
+            int positionClimate = pos.GetComponent<PositionOfCards>().positionOfClimate; // asignarle valor la propiedad positionOfClimate (posicion dentro del array climateCards) de Carrds
 
-            if (checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name))
+            if (checkClimate.ClimateCards.Contains(gameObject.GetComponent<Cards>().name)) // verificar que estas tomando una carta clima
             {
-                if (validPositions.Contains(pos.tag))
+                if (validPositions.Contains(pos.tag)) // verificar si puede ocupar dicha posicion
                 {
-
+                    // cambiar la poscion con el gameobject que colisiono
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //gameObjectsCards[row, col] = gameObject;
 
+                    // actualizar las propiedades de la carta
                     gameObject.GetComponent<Cards>().invocated = true;
-                    gameObject.GetComponent<Cards>().rowInvocated = row;
-                    gameObject.GetComponent<Cards>().colInvocated = col;
-
                     gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
@@ -177,20 +184,18 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
                     transform.localPosition = originalCanvasPosition;
                 }
             }
-            else
+            else // caso que no sea clima
             {
-                if (validPositions.Contains(pos.tag))
+                if (validPositions.Contains(pos.tag)) // verificar si puede ocupar dicha posicion
                 {
-
+                    // cambiar la poscion con el gameobject que colisiono
                     Vector3 coordenas = pos.transform.position;
                     transform.position = new Vector3(coordenas.x, coordenas.y, coordenas.z);
-                    //gameObjectsCards[row, col] = gameObject;
 
+                    // actualizar las propiedades de las cartas
                     gameObject.GetComponent<Cards>().invocated = true;
                     gameObject.GetComponent<Cards>().rowInvocated = row;
                     gameObject.GetComponent<Cards>().colInvocated = col;
-
-                    gameObject.GetComponent<Cards>().climateInvocated = positionClimate;
                 }
                 else
                 {
@@ -200,8 +205,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         }
         
     }
-
-
 
     public void OnPointerUp(PointerEventData eventData)
     {
@@ -250,6 +253,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
         if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Clear1" || gameObject.GetComponent<Cards>().name == "Clear2" || gameObject.GetComponent<Cards>().name == "Clear3" || gameObject.GetComponent<Cards>().name == "ClearW1" || gameObject.GetComponent<Cards>().name == "ClearW2" || gameObject.GetComponent<Cards>().name == "ClearW3" ))
             clearEffect.enabled = true;
         #endregion
+
 
         if (GameFlow.canTakeACard && GameFlow.movement < 2)
             GameFlow.movement++;

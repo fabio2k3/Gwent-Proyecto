@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameCarts.unity
     guid: 21cce72b0d7460343b33a59a294824a8
+  - enabled: 1
+    path: Assets/Scenes/StartGame.unity
+    guid: 5a24f598ece96d14c80c1fb3135079d5
+  - enabled: 1
+    path: Assets/Scenes/CreateCards.unity
+    guid: c7b77c7286c071846bfadc33260517b8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

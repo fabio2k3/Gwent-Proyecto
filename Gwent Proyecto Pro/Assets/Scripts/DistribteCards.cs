@@ -6,18 +6,18 @@ using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public List<GameObject> deck = new List<GameObject>();
-    public List<GameObject> hand = new List<GameObject>();
-    public List<GameObject> cementery = new List<GameObject>();
-    public static List<GameObject> cardsChange = new List<GameObject>();
-    public Transform canvasTransform;
-    public List<string> objectNames = new List<string>();
+    public List<GameObject> deck = new List<GameObject>(); // lista de las cartas en el deck
+    public List<GameObject> hand = new List<GameObject>(); // lista de las cartas en la mano
+    public List<GameObject> cementery = new List<GameObject>(); // cementerio
+    public Transform canvasTransform; // posicion del CANVAS
+    public List<string> objectNames = new List<string>(); // lista de los nombres de las cartas
     public Dictionary<GameObject, int> originalHandPositions = new Dictionary<GameObject, int>(); // Almacena las posiciones originales de las cartas en la mano
 
     public Button button; // Botón para agregar cartas desde el mazo
 
     void Start()
     {
+        // agregar las cartaas a la mano y eliminarlas del deck
         for (int i = 0; i < 10; i++)
         {
             GameObject temp = deck[Random.Range(0, deck.Count)];
@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
             deck.Remove(temp);
         }
 
-        Transform handPosition = transform.Find("CardsHand");
+        Transform handPosition = transform.Find("CardsHand"); // colocarlas en sus respectivas posciones
 
         // Almacenar las posiciones originales de las cartas en la mano antes de removerlas
         for (int i = 0; i < hand.Count; i++)

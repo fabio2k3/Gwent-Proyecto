@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4320123214877299305}
   - component: {fileID: -8886787164918728304}
   - component: {fileID: -746752731594218913}
+  - component: {fileID: -7561556952813708868}
+  - component: {fileID: 614456080377176401}
   m_Layer: 5
   m_Name: ClearW2
   m_TagString: ClearEffect
@@ -151,6 +153,7 @@ MonoBehaviour:
   name: ClearW2
   type: Clear
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
@@ -168,3 +171,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d671c25961d768041b6934aeb61da639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7561556952813708868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873583948542771864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 0}
+  imagenCondicional: {fileID: 21300000, guid: 5f9cd1e8c8d3f5c4e9a84e325acebfa7, type: 3}
+--- !u!114 &614456080377176401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873583948542771864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

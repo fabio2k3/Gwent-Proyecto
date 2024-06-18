@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4762415249748584189}
   - component: {fileID: -2332145445903510312}
   - component: {fileID: 6156989529744096998}
+  - component: {fileID: -2167318827202189777}
   m_Layer: 5
   m_Name: Decoy2
   m_TagString: Untagged
@@ -151,6 +152,7 @@ MonoBehaviour:
   name: Decoy2
   type: Decoy
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
@@ -168,3 +170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098e4fc168f144145915f48e08cb1f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2167318827202189777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204323760410036262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 8bac15aa8022d4f4fa53527e613878d4, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 151159195299505629}
   - component: {fileID: 7472105717560856734}
   - component: {fileID: -2630272289489878355}
+  - component: {fileID: 5549647789776602266}
+  - component: {fileID: 7043441793357807146}
   m_Layer: 5
   m_Name: UnitSilverW1
   m_TagString: Untagged
@@ -145,8 +147,36 @@ MonoBehaviour:
   name: UnitSilverW1
   type: Unit
   attack: 8
+  attackAux: 8
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
   originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &5549647789776602266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933201033892769298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 32b308f67d5d6ce4a835734906fe6d43, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: bdc547370337cb742943d83e794a7e05, type: 3}
+--- !u!114 &7043441793357807146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933201033892769298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

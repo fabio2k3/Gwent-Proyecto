@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2781030165694186387}
   - component: {fileID: 6315693078433060168}
   - component: {fileID: 9189593997178913531}
+  - component: {fileID: -1957700928207088948}
   m_Layer: 5
   m_Name: UnitOrc9
   m_TagString: Untagged
@@ -117,6 +118,14 @@ MonoBehaviour:
   - MO3
   - MO4
   - MO5
+  cardInvocated: {fileID: 0}
+  plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!114 &9189593997178913531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +141,23 @@ MonoBehaviour:
   name: UnitOrc9
   type: Unit
   attack: 3
+  attackAux: 3
+  invocated: 0
+  rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &-1957700928207088948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934269656009249296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 66eff6c8d6f8c4c4fa770f09c1949c55, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

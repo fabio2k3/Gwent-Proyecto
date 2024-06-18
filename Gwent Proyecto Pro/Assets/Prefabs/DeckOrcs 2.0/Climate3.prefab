@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1618552634507396792}
   - component: {fileID: -6881525293521191239}
   - component: {fileID: 4704280306997392638}
+  - component: {fileID: -8737836572487755479}
   m_Layer: 5
   m_Name: Climate3
   m_TagString: Untagged
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ece7f70575227f4c8f09a20a4a089ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f950ef95827b0147a6c56cd8551e10a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -122,6 +123,8 @@ MonoBehaviour:
   multiplicateTwo: {fileID: 0}
   multiplicateThree: {fileID: 0}
   climateEffects: {fileID: 4704280306997392638}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!114 &-6881525293521191239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,10 +140,12 @@ MonoBehaviour:
   name: Climate3
   type: Climate
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &4704280306997392638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +158,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bbece2ff6ac834a98cbed39b72e69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8737836572487755479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602421278284875669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 1f950ef95827b0147a6c56cd8551e10a, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

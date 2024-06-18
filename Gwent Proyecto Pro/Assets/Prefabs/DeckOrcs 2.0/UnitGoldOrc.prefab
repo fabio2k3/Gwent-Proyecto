@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8680498106590845590}
   - component: {fileID: -2974057841443135878}
   - component: {fileID: 4313788263422554367}
+  - component: {fileID: 1657411846738718856}
   m_Layer: 5
   m_Name: UnitGoldOrc
   m_TagString: Untagged
@@ -150,8 +151,23 @@ MonoBehaviour:
   name: UnitGoldOrc
   type: Unit
   attack: 10
+  attackAux: 10
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
   climateInvocated: 0
   originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &1657411846738718856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279075839283003971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: fc11e3946937c8949b73d9eb1f948b52, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

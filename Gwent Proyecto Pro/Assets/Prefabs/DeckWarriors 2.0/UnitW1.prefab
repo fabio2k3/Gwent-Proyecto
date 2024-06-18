@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2624155867063370801}
   - component: {fileID: 3689162331658429859}
   - component: {fileID: 2611402483422546557}
+  - component: {fileID: 9198240021004750428}
+  - component: {fileID: 3548481838365412591}
   m_Layer: 5
   m_Name: UnitW1
   m_TagString: Untagged
@@ -98,6 +100,12 @@ MonoBehaviour:
   - RW5
   cardInvocated: {fileID: 1381235051360535547}
   plusTwo: {fileID: 0}
+  plusOne: {fileID: 0}
+  multiplicateTwo: {fileID: 0}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!65 &3689162331658429859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -134,5 +142,36 @@ MonoBehaviour:
   name: UnitW1
   type: Unit
   attack: 8
+  attackAux: 8
   invocated: 0
   rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &9198240021004750428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381235051360535547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 6b3560d269a0ffd479f069ad767850fd, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: bdc547370337cb742943d83e794a7e05, type: 3}
+--- !u!114 &3548481838365412591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381235051360535547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

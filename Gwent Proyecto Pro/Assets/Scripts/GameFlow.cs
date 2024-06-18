@@ -14,53 +14,51 @@ using static UnityEngine.Rendering.DebugUI.Table;
 
 public class GameFlow : MonoBehaviour
 {
-    public static bool avoidCampOrc;
-    public static bool avoidCampWarrior;
+    public static bool avoidCampOrc; // se pueden invocar cartas en el campo de los Orcos
+    public static bool avoidCampWarrior; // se pueden invocar cartas en el campo de los Warriors
 
-    public static int whoStart;
-    private int orcWinsCount = 0;
-    private int warriorWinsCount = 0;
+    /* numero que genera quien empieza
+     0 => Warriors
+     1 => Orcos*/
+    public static int whoStart; 
 
-    public TextMeshProUGUI scoreWarrior;
-    public TextMeshProUGUI scoreOrc;
-    public TextMeshProUGUI textLeaderOrc;
-    public TextMeshProUGUI WarriorwantToChance;
+    private int orcWinsCount = 0; // Contador de partidas ganadas por los orcos
+    private int warriorWinsCount = 0; // Contador de partidas ganadas por los warriors
 
-    public GameObject roundOfWarriors;
-    public GameObject roundOfOrcs;
-    public GameObject WarriorsWin;
-    public GameObject OrcWin;
-    public GameObject TourOfOrcs;
-    public GameObject TourOfWarriors;
-    public GameObject TiedRound;
+    public TextMeshProUGUI scoreWarrior; // Contador Warriors
+    public TextMeshProUGUI scoreOrc; // Contador Orcos
+    public TextMeshProUGUI textLeaderOrc; // Texto efecto Lider Orcos
 
-    public List<string> ClimateCards = new List<string>();
+    public GameObject roundOfWarriors; // ronda Warriors
+    public GameObject roundOfOrcs; // ronda Orcos
+    public GameObject WarriorsWin; // Ganan los Warriors
+    public GameObject OrcWin; // Ganan los Orcos
+    public GameObject TourOfOrcs; // Turno de los Orcos (WINNERS)
+    public GameObject TourOfWarriors; // Turno de los Warrior (WINNERS)
+    public GameObject TiedRound; // Ronda Empatada
 
-    private bool orcGave;
-    private bool warriorsGave;
-    private bool weHaveWinner;
-    private bool effectOrcLeader = true;
-    private bool startNewRound;
-    public static bool tourOrcs;
-    public static bool tourWarriors;
-    public static bool canTakeACard;
+    public List<string> ClimateCards = new List<string>(); // Lista de las cartas de CLIMA
+
+    private bool orcGave; // Orcos cedieron el Turno
+    private bool warriorsGave; // Warriors Cedieron el Turno
+    private bool weHaveWinner; // Warriors o Orcos ganaron la ronda
+    private bool effectOrcLeader = true; // verificar mas tarde si se activo el efecto del lider
+    private bool startNewRound; // empezo una nueva ronda
+    public static bool tourOrcs; // turno de los orcos
+    public static bool tourWarriors; // turno de los warriors
+    public static bool canTakeACard; // puedes tomar una carta
    
     public static int movement = 0;
 
-    public static bool warriorWantToChange;
-    public static bool orcWantToChange;
-
-    public NewBehaviourScript cardHandOrc;
+    public NewBehaviourScript cardHandOrc; 
     public NewBehaviourScript cardHandWarrior;
 
-    public Button warriorEffectLeader;
+    public Button warriorEffectLeader; // Boton para activar el efecto del lider
 
     void Start()
     {
-        scoreWarrior = GameObject.Find("ScoreWarriors").GetComponent<TextMeshProUGUI>(); 
+        scoreWarrior = GameObject.Find("ScoreWarriors").GetComponent<TextMeshProUGUI>();
         scoreOrc = GameObject.Find("ScoreOrcs").GetComponent<TextMeshProUGUI>();
-        //decoyEffect = GameObject.Find("UnitRecover").GetComponent<TextMeshProUGUI>();
-        //decoyCommand = GameObject.Find("Command").GetComponent<TextMeshProUGUI>();
 
         whoStart = UnityEngine.Random.Range(0, 2);
 
@@ -68,9 +66,6 @@ public class GameFlow : MonoBehaviour
             tourWarriors = true;
         if (whoStart == 1)
             tourOrcs = true;
-
-        warriorWantToChange = true;
-        orcWantToChange = true;
 
         warriorEffectLeader.onClick.AddListener(OnAddCardsButtonPressed);
     }
@@ -376,6 +371,7 @@ public class GameFlow : MonoBehaviour
         #endregion
     }
 
+    // Funcion para Calcular el Score de los Orcos
     public int CalculateScoreOrcs()
     {
         int scoreOrc = 0;
@@ -393,6 +389,7 @@ public class GameFlow : MonoBehaviour
         return scoreOrc;
     }
 
+    // Funcion para Calcular el Score de los Warriors
     public int CalculateScoreWarriors()
     {
         int scoreWarrior = 0;
@@ -410,6 +407,7 @@ public class GameFlow : MonoBehaviour
         return scoreWarrior;
     }
 
+    // Funcion para activar el efecto del lider
     public void OnAddCardsButtonPressed()
     {
         if (cardHandWarrior.hand.Count < 10)

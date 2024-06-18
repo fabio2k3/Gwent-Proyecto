@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7361032130461836988}
   - component: {fileID: -8265411919230797159}
   - component: {fileID: 8889966234189810390}
+  - component: {fileID: -767103537603380386}
+  - component: {fileID: -3759031654824771729}
   m_Layer: 5
   m_Name: IncreaseW6
   m_TagString: Untagged
@@ -99,6 +101,10 @@ MonoBehaviour:
   plusTwo: {fileID: 0}
   plusOne: {fileID: 0}
   multiplicateTwo: {fileID: 8889966234189810390}
+  multiplicateThree: {fileID: 0}
+  climateEffects: {fileID: 0}
+  decoyEffect: {fileID: 0}
+  clearEffect: {fileID: 0}
 --- !u!65 &7361032130461836988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -135,8 +141,12 @@ MonoBehaviour:
   name: IncreaseW6
   type: Increase
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
+  colInvocated: 0
+  climateInvocated: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8889966234189810390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +159,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd964990a1861e24c9f11160eef05b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-767103537603380386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5658342784666021961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df02ec24684bb95478a962442d0193fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: e71f25693f315e649b777adc323317b1, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: bdc547370337cb742943d83e794a7e05, type: 3}
+--- !u!114 &-3759031654824771729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5658342784666021961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c814ba468322851409d64f5e3a2c16f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.5, y: 1.5, z: 1.5}

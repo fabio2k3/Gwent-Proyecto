@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 515505984033157294}
   - component: {fileID: 7385886981037586491}
   - component: {fileID: -7949927653596388343}
+  - component: {fileID: 6700983191546138410}
   m_Layer: 5
   m_Name: Clear2
   m_TagString: ClearEffect
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1c1ef3cc7079e64cafdf0b631d99e80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 747fd44f19b8070499f00c9189356384, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -151,6 +152,7 @@ MonoBehaviour:
   name: Clear2
   type: Clear
   attack: 0
+  attackAux: 0
   invocated: 0
   rowInvocated: 0
   colInvocated: 0
@@ -168,3 +170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d671c25961d768041b6934aeb61da639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6700983191546138410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442574791364527074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83263e82650370e4eba87096e11ff67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagenPredeterminada: {fileID: 21300000, guid: 747fd44f19b8070499f00c9189356384, type: 3}
+  imagenCondicional: {fileID: 21300000, guid: 2cff125891b05eb4384358c219c312b0, type: 3}

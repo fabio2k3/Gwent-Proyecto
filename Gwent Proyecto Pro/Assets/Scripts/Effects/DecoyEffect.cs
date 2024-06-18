@@ -9,10 +9,10 @@ public class DecoyEffect : MonoBehaviour
     
     void Start()
     {
-        // Obtener las coordenadas originales del GameObject actual
+        // obtener la posicion original de la carta que se sustituida
         Vector3 originalPosition = gameObject.GetComponent<Cards>().originalPosition;
 
-        // Iterar sobre las cartas en la misma fila
+        
         for (int col = 0; col < 5; col++)
         {
             // Obtener la carta en la posición actual

@@ -3,47 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.IO;
 
 public class SaveTextEffect : MonoBehaviour
 {
-    public TMP_InputField inputFieldEffect;
-    public Button saveButton;
-    private string saveKeyPrefix = "TextEffect_";
-    private int textCounter;
-    void Start()
-    {
-        textCounter = PlayerPrefs.GetInt("TextCount", 0);
-
-        saveButton.onClick.AddListener(SaveText);
-    }
+    public TMP_InputField inputField;
+    public string filePath = "Assets/SavedTexts.txt";
 
     public void SaveText()
     {
-        string textToSave = inputFieldEffect.text;
-        string saveKey = saveKeyPrefix + textCounter;
-        PlayerPrefs.Save();
-        // Debug.Log("Texto guardado con la clave " + saveKey + ": " + textToSave);
+        string textToSave = inputField.text;
+        string timeStamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        string textWithTimestamp = $"{timeStamp}: {textToSave}\n";
 
-        textCounter++;
-        PlayerPrefs.SetInt("TextCounter", textCounter);
-        PlayerPrefs.Save();
-    }
-
-    public List<string> LoadAlltexts()
-    {
-        List<string> allTexts = new List<string>();
-
-        for(int i = 0; i < textCounter; i++)
-        {
-            string saveKey = saveKeyPrefix + i;
-            if(PlayerPrefs.HasKey(saveKey))
-            {
-                string loadText = PlayerPrefs.GetString(saveKey);
-                allTexts.Add(loadText);
-                Debug.Log("Texto cargado con la clave " + saveKey + ": " + loadText);
-            }
-        }
-
-        return allTexts;
+        File.AppendAllText(filePath, textWithTimestamp);
+        Debug.Log("Texto guardado en " + filePath);
     }
 }

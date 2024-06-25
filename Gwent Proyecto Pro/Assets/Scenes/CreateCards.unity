@@ -719,6 +719,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 949282152}
+        m_TargetAssemblyTypeName: LoadTextEffect, Assembly-CSharp
+        m_MethodName: loadText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &500078220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,8 +1470,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 949282151}
-  - component: {fileID: 949282152}
   - component: {fileID: 949282153}
+  - component: {fileID: 949282152}
   m_Layer: 0
   m_Name: CatchEffectText
   m_TagString: Untagged
@@ -1491,7 +1503,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 949282149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb6ff9e346a228448641ff896e82d39, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f829d16696493a4ab7bb774090293d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &949282153
@@ -1506,8 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9637fa29b93bc488942040a0a5b047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFieldEffect: {fileID: 556978551}
-  saveButton: {fileID: 500078219}
+  inputField: {fileID: 556978551}
 --- !u!1 &1304773960
 GameObject:
   m_ObjectHideFlags: 0

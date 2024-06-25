@@ -8,15 +8,16 @@ using System.IO;
 public class SaveTextEffect : MonoBehaviour
 {
     public TMP_InputField inputField;
-    public string filePath = "Assets/SavedTexts.txt";
+    public static Dictionary<int, string> savedTexts = new Dictionary<int, string>();
+    private static int nextKey = 0;
 
     public void SaveText()
     {
         string textToSave = inputField.text;
-        string timeStamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        string textWithTimestamp = $"{timeStamp}: {textToSave}\n";
 
-        File.AppendAllText(filePath, textWithTimestamp);
-        Debug.Log("Texto guardado en " + filePath);
+        savedTexts.Add(nextKey, textToSave);
+        nextKey++;
+
+        //Debug.Log("Texto guardado con clave " + (nextKey - 1) + textToSave);
     }
 }

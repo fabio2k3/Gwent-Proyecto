@@ -28,7 +28,7 @@ namespace Gwent_Create_Card_Token
             Plus, PlusPlus, PlusFunc, Menos, MenosMenos, MenosFunc, Multi, Potencia, Division,
 
             // Operadores Booleanos
-            And, Or, MenorQ, MenorIgualQ, MayorQ,
+            And, Or, MenorQ, MenorIgualQ, MayorQ, MayorIgualQ, Igual,
 
             // Asignación
             Asignacion, Arrow,
@@ -40,14 +40,14 @@ namespace Gwent_Create_Card_Token
             For, While,
 
             // Signos
-            Punto, PuntoComa, DoblePunto, ParentesisOpne, ParentisisClose, LlaveOpen, LlaveClose,
+            Punto, PuntoComa, Coma, DoblePunto, ParentesisOpen, ParentisisClose, LlaveOpen, LlaveClose, Comillas,
 
             // Palabras Claves Effect
-            effect, Name, Params, Action, TriggerPlayer, Booard, HandOfPlayer, Hand, FieldOfPlayer, Field,
+            effect, Name, Params, Action, TriggerPlayer, Board, HandOfPlayer, Hand, FieldOfPlayer, Field,
             GraveyardOfPlayer, Graveyard, DeckOfPlayer, Find, Push, SendBottom, Pop, Remove, Shuffle,
 
             // Palabras Claves Card
-            Type, Faction, Power, Range, OnActivation, Effect, Selector, Source, Single, Predicate, PostAction
+            card, Type, Faction, Power, Range, OnActivation, Effect, Selector, Source, Single, Predicate, PostAction
         }
 
     }

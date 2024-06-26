@@ -24,11 +24,11 @@ public class LoadTextEffect : MonoBehaviour
            
             string text = textKeyValue.Value;
 
-            List<string> words = Lexer.GetWords(text);
-            List<Tokens> tokens = Lexer.GetTokens(words);
+            //List<string> words = Lexer.GetWords(text);
+            //List<Tokens> tokens = Lexer.GetTokens(words);
 
-            foreach (Tokens token in tokens)
-                UnityEngine.Debug.Log($"Token:{token.Value}, Tipo: {token.Type}");
+            //foreach (Tokens token in tokens)
+            //    UnityEngine.Debug.Log($"Token:{token.Value}, Tipo: {token.Type}");
         }
     }
 }

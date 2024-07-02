@@ -475,6 +475,7 @@
 "Assets/Scripts/Scripts Extras/LoadScensOnClick.cs"
 "Assets/Scripts/Scripts Extras/OpenPDF.cs"
 "Assets/Scripts/Segundo Proyecto/Card.cs"
+"Assets/Scripts/Segundo Proyecto/Effect.cs"
 "Assets/Scripts/Segundo Proyecto/Expression.cs"
 "Assets/Scripts/Segundo Proyecto/Lexer.cs"
 "Assets/Scripts/Segundo Proyecto/Tokens.cs"

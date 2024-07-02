@@ -7,7 +7,7 @@ namespace Gwent_Create_Card_Expression
 {
     public class Effect
     {
-        public string name {  get; set; }
+        public string Name {  get; set; }
         public Dictionary<string,string> Params { get; set; }
 
         public Effect() 

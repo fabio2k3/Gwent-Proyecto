@@ -9,14 +9,14 @@ namespace Gwent_Create_Card_Expression
     {
         public class BinaryExpression : Expression
         {
-            public Expression Letf { get; }
+            public Expression Left { get; }
             public string Operator { get; }
-            public Expression Rigth { get; }
+            public Expression Right { get; }
             public BinaryExpression(Expression left, string op, Expression right) 
             { 
-                Letf = left;
+                Left = left;
                 Operator = op;
-                Rigth = right;
+                Right = right;
             }
         }
 

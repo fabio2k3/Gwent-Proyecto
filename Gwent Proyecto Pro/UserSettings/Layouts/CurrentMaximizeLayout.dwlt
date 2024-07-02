@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 72
+  controlID: 2760
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 211.7714, y: 0.31656456, z: 0}
+    m_Target: {x: -8.485663, y: -1.4058704, z: -28.128695}
     speed: 2
-    m_Value: {x: 211.77075, y: 0.31653363, z: 0.00044592147}
+    m_Value: {x: -8.485663, y: -1.4058704, z: -28.128695}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -558,9 +558,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 28.753725
+    m_Target: 112.59247
     speed: 2
-    m_Value: 28.754215
+    m_Value: 112.59247
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 73
+  controlID: 2761
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 74
+  controlID: 2762
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -706,9 +706,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 14bcffff
-      m_LastClickedID: -17388
-      m_ExpandedIDs: fecafffff0faffff
+      m_SelectedIDs: 7ce7ffff
+      m_LastClickedID: -6276
+      m_ExpandedIDs: ecf9fffff0faffff48a10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -725,7 +725,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 5}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/2nd Project/Warriors Cards
+    - Assets/Prefabs/1st Project/DeckOrcs 2.0
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -944,17 +944,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/2nd Project/Warriors Cards
+  - Assets/Prefabs/1st Project/DeckOrcs 2.0
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\Fabio_2k3\\Escuela\\Progamaci\xF3n\\Proyectos\\Gwent-Proyecto\\Gwent
     Proyecto Pro"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 211}
-    m_SelectedIDs: 9ca30000
-    m_LastClickedID: 41884
-    m_ExpandedIDs: 0000000056a00000d6a00000dca00000e0a000003aa1000010a200001aa2000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 64a20000
+    m_LastClickedID: 41572
+    m_ExpandedIDs: 0000000056a00000daa000004ea2000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -983,7 +983,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000056a00000
+    m_ExpandedIDs: 0000000056a0000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1009,9 +1009,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 14bcffff
-    m_LastClickedInstanceID: -17388
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 7ce7ffff
+    m_LastClickedInstanceID: -6276
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

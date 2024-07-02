@@ -2249,8 +2249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32200bdb81831974fbcf781c01654a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listWarrior: []
-  listOrc: []
+  listWarrior:
+  - {fileID: 21300000, guid: 87b7d2e45533e854e8795203bb53e357, type: 3}
+  - {fileID: 21300000, guid: ccfd0551364272d419d281a9edbc48a1, type: 3}
+  - {fileID: 21300000, guid: b965343188ca45447bc0216e2787c05f, type: 3}
+  listOrc:
+  - {fileID: 21300000, guid: b5c2bcdda2ecfbc44a0e9fc0b9d48237, type: 3}
+  - {fileID: 21300000, guid: 849b18873170d254b8aae5cf109bbc58, type: 3}
+  - {fileID: 21300000, guid: 06ef5bac2bfc13345b6be335c912c365, type: 3}
 --- !u!4 &1802110985
 Transform:
   m_ObjectHideFlags: 0

@@ -475,9 +475,6 @@
 "Assets/Scripts/Scripts Extras/LoadScensOnClick.cs"
 "Assets/Scripts/Scripts Extras/OpenPDF.cs"
 "Assets/Scripts/Segundo Proyecto/Lexer.cs"
-"Assets/Scripts/Segundo Proyecto/LoadTextEffect.cs"
-"Assets/Scripts/Segundo Proyecto/SaveTextEffect.cs"
-"Assets/Scripts/Segundo Proyecto/ShowText.cs"
 "Assets/Scripts/Segundo Proyecto/Tokens.cs"
 -langversion:9.0
 

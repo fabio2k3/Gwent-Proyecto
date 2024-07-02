@@ -9,45 +9,45 @@ namespace Gwent_Create_Card_Lexer
 {
     public class Lexer
     {
-        public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">" };
+        public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">", ",", "[", "]" };
 
         private static Dictionary<string, Tokens.TokenType> keyWordsOfDSL = new Dictionary<string, Tokens.TokenType> {
-            { "effect", Tokens.TokenType.effect},
-            { "Name", Tokens.TokenType.Name},
-            { "Params", Tokens.TokenType.Params },
-            { "Action", Tokens.TokenType.Action},
-            { "TriggerPlayer", Tokens.TokenType.TriggerPlayer},
-            { "Board",Tokens.TokenType.Board },
-            { "HandOfPlayer", Tokens.TokenType.HandOfPlayer},
-            { "Hand", Tokens.TokenType.Hand  },
-            { "FieldOfPlayer", Tokens.TokenType.FieldOfPlayer },
-            { "Field",  Tokens.TokenType.Field},
-            { "GraveyardOfPlayer", Tokens.TokenType.GraveyardOfPlayer },
-            { "Graveyard", Tokens.TokenType.Graveyard },
-            { "DeckOfPlayer", Tokens.TokenType.DeckOfPlayer},
-            { "Find", Tokens.TokenType.Find },
-            { "Push", Tokens.TokenType.Push },
-            { "SendBottom", Tokens.TokenType.SendBottom },
-            { "Pop", Tokens.TokenType.Pop },
-            { "Remove", Tokens.TokenType.Remove},
-            { "Shuffle", Tokens.TokenType.Shuffle},
-            { "card", Tokens.TokenType.card  },
-            { "Type",  Tokens.TokenType.Type},
-            { "Faction", Tokens.TokenType.Faction},
-            { "Power", Tokens.TokenType.Power },
-            { "Range", Tokens.TokenType.Range},
-            { "OnActivation", Tokens.TokenType.OnActivation },
-            { "Effect", Tokens.TokenType.Effect },
-            { "Selector",  Tokens.TokenType.Selector},
-            { "Source",  Tokens.TokenType.Source},
-            { "Single", Tokens.TokenType.Single},
-            { "Predicate", Tokens.TokenType.Predicate },
-            { "PostAction", Tokens.TokenType.PostAction},
-        };
+        { "effect", Tokens.TokenType.Identifier },
+        { "Name", Tokens.TokenType.Identifier },
+        { "Params", Tokens.TokenType.Identifier },
+        { "Action", Tokens.TokenType.Identifier },
+        { "TriggerPlayer", Tokens.TokenType.Identifier },
+        { "Board", Tokens.TokenType.Identifier },
+        { "HandOfPlayer", Tokens.TokenType.Identifier },
+        { "Hand", Tokens.TokenType.Identifier },
+        { "FieldOfPlayer", Tokens.TokenType.Identifier },
+        { "Field", Tokens.TokenType.Identifier },
+        { "GraveyardOfPlayer", Tokens.TokenType.Identifier },
+        { "Graveyard", Tokens.TokenType.Identifier },
+        { "DeckOfPlayer", Tokens.TokenType.Identifier },
+        { "Find", Tokens.TokenType.Identifier },
+        { "Push", Tokens.TokenType.Identifier },
+        { "SendBottom", Tokens.TokenType.Identifier },
+        { "Pop", Tokens.TokenType.Identifier },
+        { "Remove", Tokens.TokenType.Identifier },
+        { "Shuffle", Tokens.TokenType.Identifier },
+        { "card", Tokens.TokenType.Identifier },
+        { "Type", Tokens.TokenType.Identifier },
+        { "Faction", Tokens.TokenType.Identifier },
+        { "Power", Tokens.TokenType.Identifier },
+        { "Range", Tokens.TokenType.Identifier },
+        { "OnActivation", Tokens.TokenType.Identifier },
+        { "Effect", Tokens.TokenType.Identifier },
+        { "Selector", Tokens.TokenType.Identifier },
+        { "Source", Tokens.TokenType.Identifier },
+        { "Single", Tokens.TokenType.Identifier },
+        { "Predicate", Tokens.TokenType.Identifier },
+        { "PostAction", Tokens.TokenType.Identifier },
+    };
+
         public static List<(string, int)> GetWordsAndRow(string input, string[] special)
         {
             List<(string, int)> tokensAndLines = new List<(string, int)>();
-
             int line = 1;
 
             string newInput = Lexer.Spaces(input, specialCaracter);
@@ -57,7 +57,19 @@ namespace Gwent_Create_Card_Lexer
                 char c = newInput[i];
                 string charString = c.ToString();
 
-                if (Array.Exists(specialCaracter, element => element == charString))
+                if (c == '\"')
+                {
+                    string str = "\"";
+                    i++;
+                    while (i < newInput.Length && newInput[i] != '\"')
+                    {
+                        str += newInput[i];
+                        i++;
+                    }
+                    str += '\"';
+                    tokensAndLines.Add((str, line));
+                }
+                else if (Array.Exists(specialCaracter, element => element == charString))
                     tokensAndLines.Add((charString, line));
                 else if (!char.IsWhiteSpace(c))
                 {
@@ -115,7 +127,6 @@ namespace Gwent_Create_Card_Lexer
             }
 
             string result = sb.ToString().Replace("  ", " ");
-
             return result.Trim();
         }
 
@@ -134,12 +145,12 @@ namespace Gwent_Create_Card_Lexer
                 {
                     if (wordsAndRow[i + 1].Item1 == "+")
                     {
-                        tokens.Add(new Tokens("++", Tokens.TokenType.PlusPlus, row));
+                        tokens.Add(new Tokens("++", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else if (wordsAndRow[i + 1].Item1 == "=")
                     {
-                        tokens.Add(new Tokens("+=", Tokens.TokenType.PlusFunc, row));
+                        tokens.Add(new Tokens("+=", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
@@ -149,12 +160,12 @@ namespace Gwent_Create_Card_Lexer
                 {
                     if (wordsAndRow[i + 1].Item1 == "-")
                     {
-                        tokens.Add(new Tokens("--", Tokens.TokenType.MenosMenos, row));
+                        tokens.Add(new Tokens("--", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else if (wordsAndRow[i + 1].Item1 == "=")
                     {
-                        tokens.Add(new Tokens("-=", Tokens.TokenType.MenosFunc, row));
+                        tokens.Add(new Tokens("-=", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
@@ -164,70 +175,82 @@ namespace Gwent_Create_Card_Lexer
                 {
                     if (wordsAndRow[i + 1].Item1 == "&")
                     {
-                        tokens.Add(new Tokens("&&", Tokens.TokenType.And, row));
+                        tokens.Add(new Tokens("&&", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
-
-                    throw new Exception($"Error en la línea {row}, & no está definido en DSL");
+                    else
+                    {
+                        throw new Exception($"Error en la línea {row}, & no está definido en DSL");
+                    }
                 }
                 else if (token == "|")
                 {
                     if (wordsAndRow[i + 1].Item1 == "|")
                     {
-                        tokens.Add(new Tokens("||", Tokens.TokenType.Or, row));
+                        tokens.Add(new Tokens("||", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
-
-                    throw new Exception($"Error en la línea {row}, | no está definido en DSL");
+                    else
+                    {
+                        throw new Exception($"Error en la línea {row}, | no está definido en DSL");
+                    }
                 }
                 else if (token == "<")
                 {
                     if (wordsAndRow[i + 1].Item1 == "=")
                     {
-                        tokens.Add(new Tokens("<=", Tokens.TokenType.MenorIgualQ, row));
+                        tokens.Add(new Tokens("<=", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
-                        tokens.Add(new Tokens("<", Tokens.TokenType.MenorQ, row));
+                        tokens.Add(new Tokens("<", Tokens.TokenType.Identifier, row));
                 }
                 else if (token == ">")
                 {
                     if (wordsAndRow[i + 1].Item1 == "=")
                     {
-                        tokens.Add(new Tokens(">=", Tokens.TokenType.MayorIgualQ, row));
+                        tokens.Add(new Tokens(">=", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
-                        tokens.Add(new Tokens(">", Tokens.TokenType.MayorQ, row));
+                        tokens.Add(new Tokens(">", Tokens.TokenType.Identifier, row));
                 }
                 else if (token == "@")
                 {
                     if (wordsAndRow[i + 1].Item1 == "@")
                     {
-                        tokens.Add(new Tokens("@@", Tokens.TokenType.DobleConcatenacion, row));
+                        tokens.Add(new Tokens("@@", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
-                        tokens.Add(new Tokens("@", Tokens.TokenType.Concatenacion, row));
+                        tokens.Add(new Tokens("@", Tokens.TokenType.Identifier, row));
                 }
                 else if (token == "=")
                 {
                     if (wordsAndRow[i + 1].Item1 == "=")
                     {
-                        tokens.Add(new Tokens("==", Tokens.TokenType.Igual, row));
+                        tokens.Add(new Tokens("==", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else if (wordsAndRow[i + 1].Item1 == ">")
                     {
-                        tokens.Add(new Tokens("=>", Tokens.TokenType.Arrow, row));
+                        tokens.Add(new Tokens("=>", Tokens.TokenType.Identifier, row));
                         i += 1;
                     }
                     else
-                        tokens.Add(new Tokens("=", Tokens.TokenType.Asignacion, row));
+                        tokens.Add(new Tokens("=", Tokens.TokenType.Identifier, row));
+                }
+                else if (token.StartsWith("\"") && token.EndsWith("\""))
+                {
+                    string cleanedToken = token.Trim().Trim('"');
+                    tokens.Add(new Tokens(cleanedToken, Tokens.TokenType.String, row));
                 }
                 else
                     tokens.Add(new Tokens(token, Lexer.ClassifyTokens(token), row));
             }
+
+            // Agregar el token EOF al final
+            tokens.Add(new Tokens("EOF", Tokens.TokenType.EOF, wordsAndRow.Count > 0 ? wordsAndRow[^1].Item2 : 1));
 
             return tokens;
         }
@@ -238,7 +261,6 @@ namespace Gwent_Create_Card_Lexer
             {
                 int.Parse(token);
                 return Tokens.TokenType.Number;
-
             }
             catch (Exception)
             {
@@ -251,9 +273,9 @@ namespace Gwent_Create_Card_Lexer
                     case "^":
                         return Tokens.TokenType.Potencia;
                     case "for":
-                        return Tokens.TokenType.For;
+                        return Tokens.TokenType.Identifier;
                     case "while":
-                        return Tokens.TokenType.While;
+                        return Tokens.TokenType.Identifier;
                     case ".":
                         return Tokens.TokenType.Punto;
                     case ";":
@@ -270,12 +292,15 @@ namespace Gwent_Create_Card_Lexer
                         return Tokens.TokenType.LlaveOpen;
                     case "}":
                         return Tokens.TokenType.LlaveClose;
+                    case "[":
+                        return Tokens.TokenType.CorcheteOpen;
+                    case "]":
+                        return Tokens.TokenType.CorcheteClose;
                     case "\"":
                         return Tokens.TokenType.Comillas;
                     default:
                         return Tokens.TokenType.Identifier;
                 }
-
             }
         }
     }

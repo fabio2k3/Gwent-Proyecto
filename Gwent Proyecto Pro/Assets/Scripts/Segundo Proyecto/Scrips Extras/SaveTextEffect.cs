@@ -14,11 +14,9 @@ public class SaveTextEffect : MonoBehaviour
 
     public string fileName; // string donde guardare el nombre del texto
 
-    public string folderName = "Texts Effects"; // Carpeta donde guardare los textos
-
     public void SaveText()
     {
-        string userInput = inputField.text;
+        string userInput = inputField.text; // Obtener el texto
         List<(string,int)> listWords = Lexer.GetWordsAndRow(userInput, Lexer.specialCaracter);
         List<Tokens> tokens = Lexer.GetTokens(listWords);
 
@@ -29,7 +27,7 @@ public class SaveTextEffect : MonoBehaviour
 
         Debug.Log(fileName);
 
-        string folderPath = Path.Combine(Application.dataPath,folderName);
+        string folderPath = Path.Combine(Application.dataPath, "Textos/Texts Effects");
 
         if (!Directory.Exists(folderPath))
         {
@@ -39,5 +37,7 @@ public class SaveTextEffect : MonoBehaviour
         string filePath = Path.Combine(folderPath,fileName);
 
         File.WriteAllText(filePath, userInput);
+
+        inputField.text = string.Empty;
     }
 }

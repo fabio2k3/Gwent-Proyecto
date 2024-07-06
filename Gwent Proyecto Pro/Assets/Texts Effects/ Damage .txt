@@ -1,6 +1,0 @@
-effect {
-            Name: "Damage",
-            Params: {
-                Amount: Number
-            },
-        }

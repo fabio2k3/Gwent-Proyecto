@@ -25,6 +25,8 @@ public class SaveTextCard : MonoBehaviour
         ParserCard parserCard = new ParserCard(tokens);
         Card cardText = parserCard.ParseCard();
 
+        Debug.Log(cardText.Name);
+       
         fileName = cardText.Name + ".txt";
 
         Debug.Log(fileName);

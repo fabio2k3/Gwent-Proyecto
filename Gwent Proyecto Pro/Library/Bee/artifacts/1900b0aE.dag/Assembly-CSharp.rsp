@@ -482,6 +482,7 @@
 "Assets/Scripts/Segundo Proyecto/Parser.cs"
 "Assets/Scripts/Segundo Proyecto/ParserCard.cs"
 "Assets/Scripts/Segundo Proyecto/ParserEffect.cs"
+"Assets/Scripts/Segundo Proyecto/Scrips Extras/CreatePrefabsCards.cs"
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/List.cs"
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/SaveTextCard.cs"
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/SaveTextEffect.cs"

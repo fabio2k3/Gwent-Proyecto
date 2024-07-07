@@ -18,6 +18,11 @@ public class CreatePrefabsCards : MonoBehaviour
     string prefabsFolderOrc = "Assets/Prefabs/2nd Project/For Use/Orc";
     string prefabsFolderWarrior = "Assets/Prefabs/2nd Project/For Use/Warrior";
 
+
+    // Refencias a los masos de las cartas
+    NewBehaviourScript orcsDeck;
+    NewBehaviourScript warriorsDeck;
+
     public void CreatePrefabs()
     {
         string[] textCards = Directory.GetFiles(textFolder, "*.txt");
@@ -43,6 +48,7 @@ public class CreatePrefabsCards : MonoBehaviour
                     string firstPrefabPath = prefabFiles[0];
                     GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
 
+                    CompletingPropieties(prefab, card);
                 }
             }
             else if(card.Type == "Warrior")
@@ -53,8 +59,105 @@ public class CreatePrefabsCards : MonoBehaviour
                     // Tomo el Primer Prefabs & lo cargo como un GameObject
                     string firstPrefabPath = prefabFiles[0];
                     GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
+
+                    CompletingPropieties(prefab, card);
                 }
             }
+        }
+    }
+
+    private void CompletingPropieties(GameObject myPrefab, Card card)
+    {
+        myPrefab.GetComponent<Cards>().name = card.Name;
+        myPrefab.GetComponent<Cards>().type = card.Type;
+      
+        if(card.Type == "Clima")
+        {
+            Debug.Log("Las Cartas tipo Clima tienen sus caracteristicas especiales por default");
+            myPrefab.GetComponent<Cards>().attack = 0;
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("Climate1");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("Climate2");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("Climate13");
+        }
+        else if(card.Type == "Aumento" && card.Faction == "Warrior")
+        {
+            Debug.Log("Las Cartas tipo Aumento tienen sus caracteristicas especiales por default");
+            myPrefab.GetComponent<Cards>().attack = 0;
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CW1");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CW2");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CW3");
+        }
+        else if (card.Type == "Aumento" && card.Faction == "Orc")
+        {
+            Debug.Log("Las Cartas tipo Aumento tienen sus caracteristicas especiales por default");
+            myPrefab.GetComponent<Cards>().attack = 0;
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CO1");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CO2");
+            myPrefab.GetComponent<DragAndDrop>().validPositions.Add("CO3");
+        }
+        else if(card.Type == "Oro" || card.Type == "Plata" )
+        {
+            myPrefab.GetComponent<Cards>().attack = card.Power;
+
+            #region Caso Warrior
+            if (card.Faction == "Warrior")
+            {
+                if(card.Range.Contains("Melee"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MW1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MW2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MW3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MW4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MW5");
+                }
+                if(card.Range.Contains("Ranged"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RW1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RW2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RW3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RW4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RW5");
+                }
+                if(card.Range.Contains("Siege"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SW1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SW2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SW3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SW4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SW5");
+                }
+            }
+            #endregion
+
+            #region Caso Orc
+            else if (card.Faction == "Orc")
+            {
+                if (card.Range.Contains("Melee"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MO1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MO2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MO3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MO4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("MO5");
+                }
+                if (card.Range.Contains("Ranged"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RO1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RO2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RO3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RO4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("RO5");
+                }
+                if (card.Range.Contains("Siege"))
+                {
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SO1");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SO2");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SO3");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SO4");
+                    myPrefab.GetComponent<DragAndDrop>().validPositions.Add("SO5");
+                }
+            }
+            #endregion
         }
     }
 }

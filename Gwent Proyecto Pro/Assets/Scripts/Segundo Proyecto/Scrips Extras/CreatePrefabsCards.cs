@@ -14,41 +14,45 @@ public class CreatePrefabsCards : MonoBehaviour
     string textFolder = "Assets/Textos/Texts Cards";
     // Ruta Carpeta Destino Textos Cartas
     string newTextFolder = "Assets/Textos/Texts Cards/Used";
-    // Ruta Carpeta Prefabs
+    // Rutas Carpetas Prefabs
     string prefabsFolderOrc = "Assets/Prefabs/2nd Project/For Use/Orc";
+    string prefabsFolderWarrior = "Assets/Prefabs/2nd Project/For Use/Warrior";
 
     public void CreatePrefabs()
     {
         string[] textCards = Directory.GetFiles(textFolder, "*.txt");
         foreach (string textCard in textCards)
         {
-            string[] prefabFiles = Directory.GetFiles(prefabsFolderOrc, "*.prefab");
-            if (prefabFiles.Length > 0)
+            // Obtener e string del txt
+            string content = File.ReadAllText(textCard);
+
+            // Proceso de Tokenizacion & Lexer
+            List<(string, int)> listWords = Lexer.GetWordsAndRow(content, Lexer.specialCaracter);
+            List<Tokens> tokens = Lexer.GetTokens(listWords);
+
+            // Parsear la lista de Tokens (Cartas)
+            ParserCard parserCard = new ParserCard(tokens);
+            Card card = parserCard.ParseCard();
+
+            if(card.Type == "Orc")
             {
-                // Obtener e string del txt
-                string content = File.ReadAllText(textCard);
-
-                // Proceso de Tokenizacion & Lexer
-                List<(string, int)> listWords = Lexer.GetWordsAndRow(content, Lexer.specialCaracter);
-                List<Tokens> tokens = Lexer.GetTokens(listWords);
-
-                // Parsear la lista de Tokens (Cartas)
-                ParserCard parserCard = new ParserCard(tokens);
-                Card cardText = parserCard.ParseCard();
-
-
-                // Tomo el Primer Prefabs & lo cargo como un GameObject
-                string firstPrefabPath = prefabFiles[0];
-                GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
-
-
-                if (prefab != null)
+                string[] prefabFiles = Directory.GetFiles(prefabsFolderOrc, "*.prefab");
+                if (prefabFiles.Length > 0)
                 {
-                    Debug.Log("Primer prefab encontrado y cargado: " + prefab.name);
+                    // Tomo el Primer Prefabs & lo cargo como un GameObject
+                    string firstPrefabPath = prefabFiles[0];
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
+
                 }
-                else
+            }
+            else if(card.Type == "Warrior")
+            {
+                string[] prefabFiles = Directory.GetFiles(prefabsFolderWarrior, "*.prefab");
+                if (prefabFiles.Length > 0)
                 {
-                    Debug.LogError("No se pudo cargar el prefab: " + firstPrefabPath);
+                    // Tomo el Primer Prefabs & lo cargo como un GameObject
+                    string firstPrefabPath = prefabFiles[0];
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
                 }
             }
         }

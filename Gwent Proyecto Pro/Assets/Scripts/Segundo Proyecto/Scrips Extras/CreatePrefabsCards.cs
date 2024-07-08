@@ -13,13 +13,15 @@ public class CreatePrefabsCards : MonoBehaviour
     // Ruta Carpeta Textos Cartas
     string textFolder = "Assets/Textos/Texts Cards";
     // Ruta Carpeta Destino Textos Cartas
-    string newTextFolder = "Assets/Textos/Texts Cards/Used";
+    string newTextFolder = "Assets/Textos/Used";
+
     // Rutas Carpetas Prefabs
     string prefabsFolderOrc = "Assets/Prefabs/2nd Project/For Use/Orc";
     string prefabsFolderWarrior = "Assets/Prefabs/2nd Project/For Use/Warrior";
 
-    // Referencias a los masos de las cartas
-
+    // Rutas para Prefabs Creados
+    string createdOrcCard = "Assets/Prefabs/2nd Project/Created/Orc";
+    string createdWarriorCard = "Assets/Prefabs/2nd Project/Created/Warrior";
 
     public void CreatePrefabs()
     {
@@ -55,23 +57,34 @@ public class CreatePrefabsCards : MonoBehaviour
                         // Tomo el Primer Prefab & lo cargo como un GameObject
                         string firstPrefabPath = prefabFiles[0];
                         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
+
                         CompletingPropieties(prefab, card);
+
+                        string newPrefabPath = Path.Combine(createdOrcCard, Path.GetFileName(firstPrefabPath));
+                        AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
                 }
                 else if (card.Faction == "Warrior")
                 {
                     string[] prefabFiles = Directory.GetFiles(prefabsFolderWarrior, "*.prefab");
+                    Debug.Log(prefabFiles.Length);
                     if (prefabFiles.Length > 0)
                     {
                         // Tomo el Primer Prefab & lo cargo como un GameObject
                         string firstPrefabPath = prefabFiles[0];
                         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(firstPrefabPath);
+
                         CompletingPropieties(prefab, card);
-                        Debug.Log(prefab.GetComponent<Cards>().name);
+
+                        string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
+                        AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
                 }
             }
 
+            // Mover los txt a la carpeta destino
+            string newFilePath = Path.Combine(newTextFolder, Path.GetFileName(textCard));
+            File.Move(textCard, newFilePath);
         }
     }
 

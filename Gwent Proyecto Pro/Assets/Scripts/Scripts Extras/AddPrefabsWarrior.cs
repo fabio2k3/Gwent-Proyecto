@@ -21,11 +21,13 @@ public class AddPrefabsWarrior : MonoBehaviour
             // Cargar mi prefab como un GameObject
             GameObject myPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefab);
 
-            if (myPrefab != null)
+            if(myPrefab != null)
             {
                 // Añadir mi Carta creada (Prefab) para la lista de Deck
                 listDeck.AddCard(myPrefab);
             }
         }
+
+        listDeck.enabled = true;
     }
 }

@@ -340,20 +340,16 @@ public class GameFlow : MonoBehaviour
             #endregion
         }
 
-        Debug.Log("Estado actual " + whoStart.ToString());
-
         #region Image about WHO Play
         if ((tourWarriors || (whoStart == 0 && startNewRound)))
         {
             TourOfWarriors.SetActive(true);
             tourWarriors = false;
-            Debug.Log(tourWarriors);
         }
         if (tourOrcs || (whoStart == 1 && startNewRound))
         {
             TourOfOrcs.SetActive(true);
             tourOrcs = false;
-            Debug.Log(tourOrcs);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))

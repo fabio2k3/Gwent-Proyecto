@@ -27,5 +27,7 @@ public class AddPrefabsOrc : MonoBehaviour
                 listDeck.AddCard(myPrefab);
             }   
         }
+
+        listDeck.enabled = true;
     }
 }

@@ -20,6 +20,16 @@ public class NewBehaviourScript : MonoBehaviour
         // agregar las cartaas a la mano y eliminarlas del deck
         for (int i = 0; i < 10; i++)
         {
+            for(int j = deck.Count - 1; j >= 0; j--)
+            {
+                if (deck[j].name.StartsWith("Warrior"))
+                {
+                    hand.Add(deck[j]);
+                    deck.RemoveAt(j);
+                    i++;
+                    //Debug.Log("Existe");
+                }
+            }
             GameObject temp = deck[Random.Range(0, deck.Count)];
             hand.Add(temp);
             deck.Remove(temp);
@@ -31,12 +41,6 @@ public class NewBehaviourScript : MonoBehaviour
         for (int i = 0; i < hand.Count; i++)
         {
             originalHandPositions.Add(hand[i], i);
-        }
-
-        // Mostrar en pantalla los GameObjects y sus respectivos índices
-        foreach (KeyValuePair<GameObject, int> entry in originalHandPositions)
-        {
-            Debug.Log("GameObject: " + entry.Key.name + ", Índice: " + entry.Value);
         }
 
         InstantiateCards(hand, handPosition);

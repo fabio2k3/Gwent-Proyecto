@@ -19,7 +19,7 @@ namespace Gwent_Create_Card_ParserCard
 
         public Card ParseCard()
         {
-            // Avanzar hasta encontrar "card" y una llave abierta
+            // Verificar el Inicio de la declaracion de mi Carta
             while (!IsAtEnd())
             {
                 Tokens token = Advance();
@@ -30,7 +30,7 @@ namespace Gwent_Create_Card_ParserCard
                 }
             }
 
-            // Procesar las secciones dentro de la llave
+            // Asignar los Valores a card
             while (!IsAtEnd())
             {
                 Tokens token = Advance();
@@ -65,6 +65,7 @@ namespace Gwent_Create_Card_ParserCard
             return card;
         }
 
+        // Parsear el Tipo de la Carta (Type)
         private string ParseType()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Type'");
@@ -79,6 +80,7 @@ namespace Gwent_Create_Card_ParserCard
             return type;
         }
 
+        // Parsear la Faccion de la Carta (Faction)
         private string ParseFaction()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Faction'");
@@ -93,6 +95,7 @@ namespace Gwent_Create_Card_ParserCard
             return faction;
         }
 
+        // Parsear el Power de la Carta
         private int ParsePower()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Power'");
@@ -102,6 +105,7 @@ namespace Gwent_Create_Card_ParserCard
             return Evaluate(expr);
         }
 
+        // Parsear los Rangos de la carta (Range)
         private List<string> ParseRange()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Range'");
@@ -129,13 +133,14 @@ namespace Gwent_Create_Card_ParserCard
             return ranges;
         }
 
-        // Parser para expresiones matemáticas
-
+        
+        // Parsear una Expresion
         private Expression ParseExpression()
         {
             return ParseTerm();
         }
 
+        // Maneja los Operadores de Suma y Resta
         private Expression ParseTerm()
         {
             Expression expr = ParseFactor();
@@ -150,6 +155,7 @@ namespace Gwent_Create_Card_ParserCard
             return expr;
         }
 
+        // Maneja los Operadores de Multiplicacion y Division
         private Expression ParseFactor()
         {
             Expression expr = ParseUnary();
@@ -164,6 +170,7 @@ namespace Gwent_Create_Card_ParserCard
             return expr;
         }
 
+        // Parsear Expresiones Unarias
         private Expression ParseUnary()
         {
             if (Match(Tokens.TokenType.Menos))
@@ -176,6 +183,7 @@ namespace Gwent_Create_Card_ParserCard
             return ParsePrimary();
         }
 
+        // Parsear Expresiones Primarias
         private Expression ParsePrimary()
         {
             if (Match(Tokens.TokenType.Number))
@@ -193,6 +201,7 @@ namespace Gwent_Create_Card_ParserCard
             throw new Exception("Expected expression");
         }
 
+        // Verificar si el Token Coincide con algunos de los Especificaods
         private bool Match(params Tokens.TokenType[] types)
         {
             foreach (Tokens.TokenType type in types)
@@ -206,8 +215,8 @@ namespace Gwent_Create_Card_ParserCard
 
             return false;
         }
-
-        // Método para evaluar el árbol de expresiones
+        
+        // Evaluar el Resultado
         private int Evaluate(Expression expr)
         {
             if (expr is Expression.LiteralExpression literal)

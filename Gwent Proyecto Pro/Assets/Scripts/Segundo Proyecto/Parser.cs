@@ -8,7 +8,7 @@ namespace Gwent_Create_Card_Expression
 {
     public class Parser 
     {
-        protected List<Tokens> tokens;
+        protected List<Tokens> tokens; // Lista Tokens para chequear
         protected int current = 0;
 
         public Parser(List<Tokens> tokens)
@@ -16,49 +16,57 @@ namespace Gwent_Create_Card_Expression
             this.tokens = tokens;
         }
 
-        // Métodos de utilidad para el parser
+        /* Función: si el Token coincide con el esperado
+          => AVANZA al siguiente Token  */
         protected Tokens Consume(Tokens.TokenType type, string message)
         {
             if (Check(type)) return Advance();
             throw new Exception(message);
         }
 
+        // Comprobar si el Token actual coincide con el tipo esperado
         protected bool Check(Tokens.TokenType type)
         {
             if (IsAtEnd()) return false;
             return Peek().Type == type;
         }
 
+        // Avanzar al siguiente Token
         protected Tokens Advance()
         {
             if (!IsAtEnd()) current++;
             return Previous();
         }
 
+        // Verificar si se llegó al final de nuestra lista de Tokens
         protected bool IsAtEnd()
         {
             return Peek().Type == Tokens.TokenType.EOF;
         }
 
+        // Obtener el Token Actual
         protected Tokens Peek()
         {
             return tokens[current];
         }
 
+        // Obtener el Token Anterior al Actual
         protected Tokens Previous()
         {
             return tokens[current - 1];
         }
 
+        // Parsear el nombre de la Carta o Efecto
         protected string ParseName()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Name'");
             string name = Consume(Tokens.TokenType.String, "Expected name string").Value;
             Consume(Tokens.TokenType.Coma, "Expected ',' after name");
 
-            return name.Trim('"'); // Remove surrounding quotes from the name
+            return name.Trim('"'); // retornar el nombre de la carta o efecto
         }
 
+        // Parsear los Parametros
         protected Dictionary<string, string> ParseParams()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Params'");

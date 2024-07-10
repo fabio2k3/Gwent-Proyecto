@@ -9,8 +9,10 @@ namespace Gwent_Create_Card_Lexer
 {
     public class Lexer
     {
+        // Caracteres Especiales
         public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">", ",", "[", "]" };
 
+        // Diccionario Caracteres Especiales & su Tipo de Token
         private static Dictionary<string, Tokens.TokenType> keyWordsOfDSL = new Dictionary<string, Tokens.TokenType> {
         { "effect", Tokens.TokenType.Identifier },
         { "Name", Tokens.TokenType.Identifier },
@@ -45,6 +47,7 @@ namespace Gwent_Create_Card_Lexer
         { "PostAction", Tokens.TokenType.Identifier },
     };
 
+        
         public static List<(string, int)> GetWordsAndRow(string input, string[] special)
         {
             List<(string, int)> tokensAndLines = new List<(string, int)>();
@@ -130,6 +133,7 @@ namespace Gwent_Create_Card_Lexer
             return result.Trim();
         }
 
+        // Obetner los Tokens de mi lista de Palabras
         public static List<Tokens> GetTokens(List<(string, int)> wordsAndRow)
         {
             List<Tokens> tokens = new List<Tokens>();
@@ -255,6 +259,7 @@ namespace Gwent_Create_Card_Lexer
             return tokens;
         }
 
+        // Clasificar los Tokens
         private static Tokens.TokenType ClassifyTokens(string token)
         {
             try

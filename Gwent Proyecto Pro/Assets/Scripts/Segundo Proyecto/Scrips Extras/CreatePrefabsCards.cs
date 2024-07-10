@@ -25,9 +25,10 @@ public class CreatePrefabsCards : MonoBehaviour
 
     public void CreatePrefabs()
     {
+        // Array de todos los txt
         string[] textCards = Directory.GetFiles(textFolder, "*.txt");
-        Debug.Log($"Archivos de texto encontrados: {textCards.Length}");
-
+   
+        // Por cada Carta Crear un Prefa (una Carta)
         foreach (string textCard in textCards)
         {
             string content = File.ReadAllText(textCard);
@@ -49,6 +50,7 @@ public class CreatePrefabsCards : MonoBehaviour
                 Debug.Log($"Facción: {card.Faction}");
                 Debug.Log($"Poder: {card.Power}");
 
+                // Caso que sea orco
                 if (card.Faction == "Orc")
                 {
                     string[] prefabFiles = Directory.GetFiles(prefabsFolderOrc, "*.prefab");
@@ -60,11 +62,12 @@ public class CreatePrefabsCards : MonoBehaviour
 
                         CompletingPropieties(prefab, card);
 
+                        // Mover mi Prefab de Carpeta
                         string newPrefabPath = Path.Combine(createdOrcCard, Path.GetFileName(firstPrefabPath));
                         AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
                 }
-                else if (card.Faction == "Warrior")
+                else if (card.Faction == "Warrior") // Caso que sea Warrior
                 {
                     string[] prefabFiles = Directory.GetFiles(prefabsFolderWarrior, "*.prefab");
                     Debug.Log(prefabFiles.Length);
@@ -76,6 +79,7 @@ public class CreatePrefabsCards : MonoBehaviour
 
                         CompletingPropieties(prefab, card);
 
+                        // Mover mi Prefab de Carpeta
                         string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
                         AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
@@ -88,15 +92,18 @@ public class CreatePrefabsCards : MonoBehaviour
         }
     }
 
+    // Metodo para Completar las Propiedades de mi Carta
     private void CompletingPropieties(GameObject myPrefab, Card card)
     {
         Cards cardComponent = myPrefab.GetComponent<Cards>();
         if (cardComponent != null)
         {
+            // Optener su Nombre & Tipo
             cardComponent.name = card.Name;
             cardComponent.type = card.Type;
             Debug.Log($"Propiedades actualizadas: Name = {cardComponent.name}, Type = {cardComponent.type}");
 
+            #region Casos Especiales: Clima & Aumento
             if (card.Type == "Clima")
             {
                 Debug.Log("Las Cartas tipo Clima tienen sus características especiales por default");
@@ -115,6 +122,8 @@ public class CreatePrefabsCards : MonoBehaviour
                 cardComponent.attack = 0;
                 myPrefab.GetComponent<DragAndDrop>().validPositions.AddRange(new List<string> { "CO1", "CO2", "CO3" });
             }
+            #endregion
+
             else if (card.Type == "Oro" || card.Type == "Plata")
             {
                 cardComponent.attack = card.Power;
@@ -153,10 +162,6 @@ public class CreatePrefabsCards : MonoBehaviour
             }
 
             Debug.Log("Propiedades completadas para el prefab: " + myPrefab.name);
-        }
-        else
-        {
-            Debug.LogError("El GameObject no tiene el componente 'Cards'");
         }
     }
 }

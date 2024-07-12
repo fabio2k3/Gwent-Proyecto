@@ -17,9 +17,12 @@ public class SaveTextEffect : MonoBehaviour
     public void SaveText()
     {
         string userInput = inputField.text; // Obtener el texto
+
+        // Obtener todos los Tokens
         List<(string,int)> listWords = Lexer.GetWordsAndRow(userInput, Lexer.specialCaracter);
         List<Tokens> tokens = Lexer.GetTokens(listWords);
 
+        // Parsear la lista de Tokens
         ParserEffect parserEffect = new ParserEffect(tokens);
         Effect effect = parserEffect.ParseEffect();
 

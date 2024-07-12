@@ -19,9 +19,12 @@ public class SaveTextCard : MonoBehaviour
     public void SaveText()
     {
         string userInput = inputField.text; // Obtener el texto
+
+        // Obtener Tokens
         List<(string, int)> listWords = Lexer.GetWordsAndRow(userInput, Lexer.specialCaracter);
         List<Tokens> tokens = Lexer.GetTokens(listWords);
 
+        // Parsear la Lista de Tokens
         ParserCard parserCard = new ParserCard(tokens);
         Card cardText = parserCard.ParseCard();
 

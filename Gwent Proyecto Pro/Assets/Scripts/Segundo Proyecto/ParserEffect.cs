@@ -16,9 +16,10 @@ namespace Gwent_Create_Card_ParserEffect
             this.effect = new Effect();
         }
 
+        // Metodo que se encarga de Parsear el Efecto
         public Effect ParseEffect()
         {
-            // Avanzar hasta encontrar "effect" y una llave abierta
+            // Verificar el Inicio de mi Efecto
             while (!IsAtEnd())
             {
                 Tokens token = Advance();
@@ -29,7 +30,7 @@ namespace Gwent_Create_Card_ParserEffect
                 }
             }
 
-            // Procesar las secciones dentro de la llave
+            // Asignar los Valores a effect
             while (!IsAtEnd())
             {
                 Tokens token = Advance();

@@ -489,6 +489,7 @@
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/List.cs"
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/SaveTextCard.cs"
 "Assets/Scripts/Segundo Proyecto/Scrips Extras/SaveTextEffect.cs"
+"Assets/Scripts/Segundo Proyecto/Selector.cs"
 "Assets/Scripts/Segundo Proyecto/Tokens.cs"
 -langversion:9.0
 

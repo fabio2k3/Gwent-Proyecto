@@ -1,3 +1,4 @@
+using Gwent_Create_Card_ActivatedEffect;
 using Gwent_Create_Card_Expression;
 using Gwent_Create_Card_Token;
 using System;
@@ -55,6 +56,9 @@ namespace Gwent_Create_Card_ParserCard
                             break;
                         case "Range":
                             card.Range = ParseRange();
+                            break;
+                        case "OnActivation":
+                            card.OnActivation = ParseOnActivation();
                             break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
@@ -133,7 +137,7 @@ namespace Gwent_Create_Card_ParserCard
             return ranges;
         }
 
-        
+        #region Expresion
         // Parsear una Expresion
         private Expression ParseExpression()
         {
@@ -248,6 +252,30 @@ namespace Gwent_Create_Card_ParserCard
 
             throw new Exception("Unknown expression type");
         }
+        #endregion
+
+        #region OnActivation
+        private List<ActivatedEffect> ParseOnActivation()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'OnActivation'");
+            Consume(Tokens.TokenType.CorcheteOpen, "Expected '[' to start OnActivation list");
+
+            var effects = new List<ActivatedEffect>();
+
+            while (!Check(Tokens.TokenType.CorcheteClose))
+            {
+                //effects.Add(ParseActivatedEffect());
+
+                if (!Check(Tokens.TokenType.CorcheteClose))
+                {
+                    Consume(Tokens.TokenType.Coma, "Expected ',' between OnActivation effects");
+                }
+            }
+
+            Consume(Tokens.TokenType.CorcheteClose, "Expected ']' to end OnActivation list");
+            return effects;
+        }
+        #endregion
     }
 }
 

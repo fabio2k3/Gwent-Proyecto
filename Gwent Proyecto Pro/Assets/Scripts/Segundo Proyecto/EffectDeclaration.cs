@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Gwent_Create_Card_ParameterValue;
 
 namespace Gwent_Create_Card_EffectDeclaration
 {

@@ -1,5 +1,7 @@
 using Gwent_Create_Card_ActivatedEffect;
+using Gwent_Create_Card_EffectDeclaration;
 using Gwent_Create_Card_Expression;
+using Gwent_Create_Card_ParameterValue;
 using Gwent_Create_Card_Token;
 using System;
 using System.Collections;
@@ -264,7 +266,7 @@ namespace Gwent_Create_Card_ParserCard
 
             while (!Check(Tokens.TokenType.CorcheteClose))
             {
-                //effects.Add(ParseActivatedEffect());
+                effects.Add(ParseActivatedEffect());
 
                 if (!Check(Tokens.TokenType.CorcheteClose))
                 {
@@ -274,6 +276,85 @@ namespace Gwent_Create_Card_ParserCard
 
             Consume(Tokens.TokenType.CorcheteClose, "Expected ']' to end OnActivation list");
             return effects;
+        }
+
+        private ActivatedEffect ParseActivatedEffect()
+        {
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start ActivatedEffect");
+
+            var activatedEffect = new ActivatedEffect();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var token = Advance();
+                switch (token.Value)
+                {
+                    case "Effect":
+                        activatedEffect.Effect = ParseEffectDeclaration();
+                        break;
+                    case "Selector":
+                        //activatedEffect.Selector = ParseSelector();
+                        break;
+                    case "PostAction":
+                       // activatedEffect.PostAction = ParsePostAction();
+                        break;
+                    default:
+                        throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "sExpected '}' to end ActivatedEffect");
+            return activatedEffect;
+        }
+
+        private EffectDeclaration ParseEffectDeclaration()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Effect'");
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start Effect");
+
+            var effect = new EffectDeclaration();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var token = Advance();
+                string key = token.Value;
+
+                Consume(Tokens.TokenType.DoblePunto, $"Expected ':' after '{key}'");
+                var valueToken = Advance();
+
+                ParameterValue parameterValue;
+                switch (valueToken.Type)
+                {
+                    case Tokens.TokenType.String:
+                        parameterValue = new ParameterValue(ParameterType.String, valueToken.Value);
+                        break;
+                    case Tokens.TokenType.Number:
+                        parameterValue = new ParameterValue(ParameterType.Number, int.Parse(valueToken.Value));
+                        break;
+                    case Tokens.TokenType.Identifier:
+                        if (valueToken.Value == "true" || valueToken.Value == "false")
+                        {
+                            parameterValue = new ParameterValue(ParameterType.Boolean, bool.Parse(valueToken.Value));
+                        }
+                        else
+                        {
+                            throw new Exception($"Unexpected identifier {valueToken.Value} at line {valueToken.Row}");
+                        }
+                        break;
+                    default:
+                        throw new Exception($"Unexpected token type {valueToken.Type} at line {valueToken.Row}");
+                }
+
+                effect.Params[key] = parameterValue;
+
+                if (!Check(Tokens.TokenType.LlaveClose))
+                {
+                    Consume(Tokens.TokenType.Coma, "Expected ',' between parameters");
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "Expected '}' to end Effect");
+            return effect;
         }
         #endregion
     }

@@ -2,6 +2,7 @@ using Gwent_Create_Card_ActivatedEffect;
 using Gwent_Create_Card_EffectDeclaration;
 using Gwent_Create_Card_Expression;
 using Gwent_Create_Card_ParameterValue;
+using Gwent_Create_Card_Selector;
 using Gwent_Create_Card_Token;
 using System;
 using System.Collections;
@@ -293,7 +294,7 @@ namespace Gwent_Create_Card_ParserCard
                         activatedEffect.Effect = ParseEffectDeclaration();
                         break;
                     case "Selector":
-                        //activatedEffect.Selector = ParseSelector();
+                        activatedEffect.Selector = ParseSelector();
                         break;
                     case "PostAction":
                        // activatedEffect.PostAction = ParsePostAction();
@@ -355,6 +356,50 @@ namespace Gwent_Create_Card_ParserCard
 
             Consume(Tokens.TokenType.LlaveClose, "Expected '}' to end Effect");
             return effect;
+        }
+
+        private Selector ParseSelector()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Selector'");
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start Selector");
+
+            var selector = new Selector();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var token = Advance();
+                switch (token.Value)
+                {
+                    case "Source":
+                        selector.Source = ParseSource();
+                        break;
+                    case "Single":
+                        //selector.Single = ParseSingle();
+                        break;
+                    //case "Predicate":
+                    //    selector.Predicate = ParsePredicate();
+                    //    break;
+                    default:
+                        throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "Expected '}' to end Selector");
+            return selector;
+        }
+
+        private string ParseSource()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Source'");
+            string source = Consume(Tokens.TokenType.String, "Expected source string").Value.Trim();
+
+            var validSources = new List<string> { "board", "hand", "otherHand", "deck", "otherDeck", "field", "otherField", "parent" };
+            if (!validSources.Contains(source))
+            {
+                throw new Exception($"Invalid Source: {source}");
+            }
+
+            return source;
         }
         #endregion
     }

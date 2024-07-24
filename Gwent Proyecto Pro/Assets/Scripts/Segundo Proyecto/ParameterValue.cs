@@ -6,7 +6,10 @@ namespace Gwent_Create_Card_ParameterValue
 {
     public class ParameterValue
     {
-        public ParameterType Type { get; set; }
+        // Tipo de Parametro
+        public ParameterType Type { get; set; } 
+
+        // Valor de dicho Parametro (Object xq puede ser => Number, String
         public object Value { get; set; }
 
         public ParameterValue(ParameterType type, object value)
@@ -16,7 +19,7 @@ namespace Gwent_Create_Card_ParameterValue
         }
     }
 
-
+    // Todos los posibles tipos de Parametros
     public enum ParameterType
     {
         String,

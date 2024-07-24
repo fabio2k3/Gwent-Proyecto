@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace Gwent_Create_Card_ActivatedEffect
 {
+    // Estructura de los Efectos que se Declaran en el OnActivation
     public class ActivatedEffect 
     {
         public EffectDeclaration Effect { get; set; }

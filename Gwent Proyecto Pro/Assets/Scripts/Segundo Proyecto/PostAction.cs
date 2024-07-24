@@ -7,6 +7,7 @@ namespace Gwent_Create_Card_PostAction
 {
     public class PostAction 
     {
+        // Type => Name
         public string Type { get; set; }
         public Selector Selector { get; set; }
     }

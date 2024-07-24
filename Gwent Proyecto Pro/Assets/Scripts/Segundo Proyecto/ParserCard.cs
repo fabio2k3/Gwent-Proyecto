@@ -2,6 +2,7 @@ using Gwent_Create_Card_ActivatedEffect;
 using Gwent_Create_Card_EffectDeclaration;
 using Gwent_Create_Card_Expression;
 using Gwent_Create_Card_ParameterValue;
+using Gwent_Create_Card_PostAction;
 using Gwent_Create_Card_Selector;
 using Gwent_Create_Card_Token;
 using System;
@@ -61,7 +62,7 @@ namespace Gwent_Create_Card_ParserCard
                             card.Range = ParseRange();
                             break;
                         case "OnActivation":
-                            card.OnActivation = ParseOnActivation();
+                            //card.OnActivation = ParseOnActivation();
                             break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
@@ -297,7 +298,7 @@ namespace Gwent_Create_Card_ParserCard
                         activatedEffect.Selector = ParseSelector();
                         break;
                     case "PostAction":
-                       // activatedEffect.PostAction = ParsePostAction();
+                        activatedEffect.PostAction = ParsePostAction();
                         break;
                     default:
                         throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
@@ -374,7 +375,7 @@ namespace Gwent_Create_Card_ParserCard
                         selector.Source = ParseSource();
                         break;
                     case "Single":
-                        //selector.Single = ParseSingle();
+                        selector.Single = ParseSingle();
                         break;
                     //case "Predicate":
                     //    selector.Predicate = ParsePredicate();
@@ -401,7 +402,57 @@ namespace Gwent_Create_Card_ParserCard
 
             return source;
         }
+
+        private string ParseSingle()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Single'");
+
+            var token = Advance();
+            if (token.Value != "true" && token.Value != "false")
+            {
+                throw new Exception($"Invalid value '{token.Value}' for 'Single' at line {token.Row}. Expected 'true' or 'false'");
+            }
+
+            var singleValue = token.Value;
+
+            Consume(Tokens.TokenType.Coma, "Expected ',' after 'Single'");
+
+            return singleValue;
+        }
+
+        // REVISAR
+        private string ParsePredicate()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Predicate'");
+            return Consume(Tokens.TokenType.String, "Expected predicate string").Value;
+        }
+
+        private PostAction ParsePostAction()
+        {
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'PostAction'");
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start PostAction");
+
+            var postAction = new PostAction();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var token = Advance();
+                switch (token.Value)
+                {
+                    case "Type":
+                        postAction.Type = ParseName();
+                        break;
+                    case "Selector":
+                        postAction.Selector = ParseSelector();
+                        break;
+                    default:
+                        throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "Expected '}' to end PostAction");
+            return postAction;
+        }
         #endregion
     }
 }
-

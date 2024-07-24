@@ -80,8 +80,8 @@ public class CreatePrefabsCards : MonoBehaviour
                         CompletingPropieties(prefab, card);
 
                         // Mover mi Prefab de Carpeta
-                        string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
-                        AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
+                        //string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
+                        //AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
                 }
             }

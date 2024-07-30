@@ -389,19 +389,49 @@ namespace Gwent_Create_Card_ParserCard
             return selector;
         }
 
-        private string ParseSource()
+        private List<string> ParseSource()
         {
+            // Consume el token ':' después de 'Source'
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Source'");
-            string source = Consume(Tokens.TokenType.String, "Expected source string").Value.Trim();
 
-            var validSources = new List<string> { "board", "hand", "otherHand", "deck", "otherDeck", "field", "otherField", "parent" };
-            if (!validSources.Contains(source))
+            var sources = new List<string>();
+            var validSources = new HashSet<string> { "board", "hand", "otherHand", "deck", "otherDeck", "field", "otherField", "parent" };
+
+            while (true)
             {
-                throw new Exception($"Invalid Source: {source}");
+                // Consume el token de cadena y valida su contenido
+                string source = Consume(Tokens.TokenType.String, "Expected source string").Value.Trim('"').Trim();
+                Console.WriteLine($"Debug: Read source = '{source}'"); // Mensaje de depuración
+
+                if (!validSources.Contains(source))
+                {
+                    throw new Exception($"Invalid Source: {source}");
+                }
+                sources.Add(source);
+
+                // Si hay una coma, consume la coma y sigue
+                if (Check(Tokens.TokenType.Coma))
+                {
+                    Consume(Tokens.TokenType.Coma, "Expected ',' between sources");
+                    Console.WriteLine("Debug: Consumed ','"); // Mensaje de depuración
+                }
+                else
+                {
+                    // Si no hay más comas, esperamos el fin de la sección
+                    break;
+                }
             }
 
-            return source;
+            // Al final de la lista de fuentes, si hay una coma, la consume
+            if (Check(Tokens.TokenType.Coma))
+            {
+                Consume(Tokens.TokenType.Coma, "Expected ',' after source list");
+                Console.WriteLine("Debug: Consumed ',' after source list"); // Mensaje de depuración
+            }
+
+            return sources;
         }
+
 
         private string ParseSingle()
         {

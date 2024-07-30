@@ -62,6 +62,11 @@ public class CreatePrefabsCards : MonoBehaviour
 
                         CompletingPropieties(prefab, card);
 
+                        Debug.Log("PREFAB W");
+                        Debug.Log($"Tipo: {prefab.GetComponent<Cards>().name}");
+                        Debug.Log($"Nombre: {prefab.GetComponent<Cards>().type}");
+                        Debug.Log($"Facción: {prefab.GetComponent<Cards>().attack}");
+                       
                         // Mover mi Prefab de Carpeta
                         string newPrefabPath = Path.Combine(createdOrcCard, Path.GetFileName(firstPrefabPath));
                         AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
@@ -79,9 +84,14 @@ public class CreatePrefabsCards : MonoBehaviour
 
                         CompletingPropieties(prefab, card);
 
+                        Debug.Log("PREFAB W");
+                        Debug.Log($"Tipo: {prefab.GetComponent<Cards>().name}");
+                        Debug.Log($"Nombre: {prefab.GetComponent<Cards>().type}");
+                        Debug.Log($"Facción: {prefab.GetComponent<Cards>().attack}");
+
                         // Mover mi Prefab de Carpeta
-                        //string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
-                        //AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
+                        string newPrefabPath = Path.Combine(createdWarriorCard, Path.GetFileName(firstPrefabPath));
+                        AssetDatabase.MoveAsset(firstPrefabPath, newPrefabPath);
                     }
                 }
             }
@@ -127,6 +137,7 @@ public class CreatePrefabsCards : MonoBehaviour
             else if (card.Type == "Oro" || card.Type == "Plata")
             {
                 cardComponent.attack = card.Power;
+                cardComponent.attackAux = card.Power;
                 Debug.Log($"Ataque actualizado: Attack = {cardComponent.attack}");
 
                 if (card.Faction == "Warrior")

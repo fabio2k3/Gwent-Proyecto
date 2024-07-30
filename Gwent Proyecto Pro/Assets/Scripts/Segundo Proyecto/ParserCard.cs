@@ -316,6 +316,39 @@ namespace Gwent_Create_Card_ParserCard
 
             var effect = new EffectDeclaration();
 
+            // Primero busca el nombre (Name)
+            bool nameFound = false;
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var token = Peek();
+                if (token.Value == "Name")
+                {
+                    Advance(); // Consume 'Name'
+                    Consume(Tokens.TokenType.DoblePunto, $"Expected ':' after 'Name'");
+                    var nameToken = Consume(Tokens.TokenType.String, "Expected effect name string");
+                    effect.Name = nameToken.Value.Trim('"');
+                    Console.WriteLine($"Debug: Effect Name = '{effect.Name}'"); // Mensaje de depuración
+                    nameFound = true;
+
+                    if (Check(Tokens.TokenType.Coma))
+                    {
+                        Consume(Tokens.TokenType.Coma, "Expected ',' after effect name");
+                    }
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // Verifica si el nombre fue encontrado
+            if (!nameFound)
+            {
+                throw new Exception("Effect declaration must contain a 'Name' property.");
+            }
+
+            // Luego procesa el resto de los parámetros
             while (!Check(Tokens.TokenType.LlaveClose))
             {
                 var token = Advance();
@@ -328,7 +361,7 @@ namespace Gwent_Create_Card_ParserCard
                 switch (valueToken.Type)
                 {
                     case Tokens.TokenType.String:
-                        parameterValue = new ParameterValue(ParameterType.String, valueToken.Value);
+                        parameterValue = new ParameterValue(ParameterType.String, valueToken.Value.Trim('"'));
                         break;
                     case Tokens.TokenType.Number:
                         parameterValue = new ParameterValue(ParameterType.Number, int.Parse(valueToken.Value));

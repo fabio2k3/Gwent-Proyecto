@@ -39,6 +39,9 @@ namespace Gwent_Create_Card_Token
             // Ciclos
             For, While,
 
+            // In
+            In,
+
             // Signos
             Punto, PuntoComa, Coma, DoblePunto, ParentesisOpen, ParentisisClose, LlaveOpen, LlaveClose, CorcheteOpen, CorcheteClose, Comillas,
 

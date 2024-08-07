@@ -280,6 +280,7 @@ namespace Gwent_Create_Card_ParserCard
             return effects;
         }
 
+        // Parser Declaracion Efectos en mi OnActivation
         private ActivatedEffect ParseActivatedEffect()
         {
             Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start ActivatedEffect");
@@ -291,13 +292,13 @@ namespace Gwent_Create_Card_ParserCard
                 var token = Advance();
                 switch (token.Value)
                 {
-                    case "Effect":
+                    case "Effect": // Cuando se declara el efecto
                         activatedEffect.Effect = ParseEffectDeclaration();
                         break;
-                    case "Selector":
+                    case "Selector": // Declaracion del Selector
                         activatedEffect.Selector = ParseSelector();
                         break;
-                    case "PostAction":
+                    case "PostAction": // Parser del Post-Activation
                         activatedEffect.PostAction = ParsePostAction();
                         break;
                     default:
@@ -309,6 +310,7 @@ namespace Gwent_Create_Card_ParserCard
             return activatedEffect;
         }
 
+        // Metodo para Parsear Declaraciones de Efectos  (OnActivation => Effect1)
         private EffectDeclaration ParseEffectDeclaration()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Effect'");
@@ -316,7 +318,7 @@ namespace Gwent_Create_Card_ParserCard
 
             var effect = new EffectDeclaration();
 
-            // Primero busca el nombre (Name)
+            // Verifircar si se declaro el nombre del efecto
             bool nameFound = false;
             while (!Check(Tokens.TokenType.LlaveClose))
             {
@@ -327,7 +329,7 @@ namespace Gwent_Create_Card_ParserCard
                     Consume(Tokens.TokenType.DoblePunto, $"Expected ':' after 'Name'");
                     var nameToken = Consume(Tokens.TokenType.String, "Expected effect name string");
                     effect.Name = nameToken.Value.Trim('"');
-                    Console.WriteLine($"Debug: Effect Name = '{effect.Name}'"); // Mensaje de depuración
+                    Console.WriteLine($"Debug: Effect Name = '{effect.Name}'"); // Depurando :')
                     nameFound = true;
 
                     if (Check(Tokens.TokenType.Coma))
@@ -342,13 +344,13 @@ namespace Gwent_Create_Card_ParserCard
                 }
             }
 
-            // Verifica si el nombre fue encontrado
+            // Verificar si el nombre se Encontro 
             if (!nameFound)
             {
                 throw new Exception("Effect declaration must contain a 'Name' property.");
             }
 
-            // Luego procesa el resto de los parámetros
+            // Procesar el Resto de Parametros
             while (!Check(Tokens.TokenType.LlaveClose))
             {
                 var token = Advance();
@@ -360,13 +362,13 @@ namespace Gwent_Create_Card_ParserCard
                 ParameterValue parameterValue;
                 switch (valueToken.Type)
                 {
-                    case Tokens.TokenType.String:
+                    case Tokens.TokenType.String: // Si el valor es string
                         parameterValue = new ParameterValue(ParameterType.String, valueToken.Value.Trim('"'));
                         break;
-                    case Tokens.TokenType.Number:
+                    case Tokens.TokenType.Number: // Caso que sea un Entero (Número)
                         parameterValue = new ParameterValue(ParameterType.Number, int.Parse(valueToken.Value));
                         break;
-                    case Tokens.TokenType.Identifier:
+                    case Tokens.TokenType.Identifier: // Caso que sea un Identificador (true o false)
                         if (valueToken.Value == "true" || valueToken.Value == "false")
                         {
                             parameterValue = new ParameterValue(ParameterType.Boolean, bool.Parse(valueToken.Value));
@@ -392,6 +394,7 @@ namespace Gwent_Create_Card_ParserCard
             return effect;
         }
 
+        // Metodo para parsear el Selector
         private Selector ParseSelector()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Selector'");
@@ -404,13 +407,13 @@ namespace Gwent_Create_Card_ParserCard
                 var token = Advance();
                 switch (token.Value)
                 {
-                    case "Source":
+                    case "Source": // Parsear el Source
                         selector.Source = ParseSource();
                         break;
-                    case "Single":
+                    case "Single": // Parsear el Single
                         selector.Single = ParseSingle();
                         break;
-                    //case "Predicate":
+                    //case "Predicate":  // Parsear el Predicate
                     //    selector.Predicate = ParsePredicate();
                     //    break;
                     default:
@@ -422,9 +425,9 @@ namespace Gwent_Create_Card_ParserCard
             return selector;
         }
 
+        // Metodo para Parsear el Source
         private List<string> ParseSource()
         {
-            // Consume el token ':' después de 'Source'
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Source'");
 
             var sources = new List<string>();
@@ -432,11 +435,11 @@ namespace Gwent_Create_Card_ParserCard
 
             while (true)
             {
-                // Consume el token de cadena y valida su contenido
+                // Tomar mi cadena de texto
                 string source = Consume(Tokens.TokenType.String, "Expected source string").Value.Trim('"').Trim();
-                Console.WriteLine($"Debug: Read source = '{source}'"); // Mensaje de depuración
+                Console.WriteLine($"Debug: Read source = '{source}'"); // Depuracion
 
-                if (!validSources.Contains(source))
+                if (!validSources.Contains(source)) // Verificar si es valida
                 {
                     throw new Exception($"Invalid Source: {source}");
                 }
@@ -465,7 +468,7 @@ namespace Gwent_Create_Card_ParserCard
             return sources;
         }
 
-
+        // Parsear el SINGLE
         private string ParseSingle()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Single'");
@@ -490,6 +493,7 @@ namespace Gwent_Create_Card_ParserCard
             return Consume(Tokens.TokenType.String, "Expected predicate string").Value;
         }
 
+        // Parsear mi PostAction
         private PostAction ParsePostAction()
         {
             Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'PostAction'");
@@ -502,10 +506,10 @@ namespace Gwent_Create_Card_ParserCard
                 var token = Advance();
                 switch (token.Value)
                 {
-                    case "Type":
+                    case "Type": // Parsear Type
                         postAction.Type = ParseName();
                         break;
-                    case "Selector":
+                    case "Selector": // Parsear Selector
                         postAction.Selector = ParseSelector();
                         break;
                     default:

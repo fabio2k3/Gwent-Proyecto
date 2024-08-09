@@ -14,6 +14,7 @@ public class CheckDiccionarios : MonoBehaviour
     
 
     private string pathTexts = "Assets/Textos/Texts Effects";
+
     void Start()
     {
         effects = new List<Effect>();
@@ -22,7 +23,7 @@ public class CheckDiccionarios : MonoBehaviour
 
         if(Directory.Exists(pathTexts))
         {
-            string[] txt = Directory.GetFiles(pathTexts);
+            string[] txt = Directory.GetFiles(pathTexts,"*.txt");
 
             foreach(string file in txt)
             {

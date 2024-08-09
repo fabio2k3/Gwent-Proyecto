@@ -8,14 +8,21 @@ using Gwent_Create_Card_Token;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-
+using Gwent_Create_Card_Lexer;
+using Gwent_Create_Card_ParserEffect;
 
 namespace Gwent_Create_Card_ParserCard
 {
     public class ParserCard : Parser
     {
         private Card card;
+
+        private CheckDiccionarios effectCheck;
+
+        private string pathTexts = "Assets/Textos/Texts Effects";
+
 
         public ParserCard(List<Tokens> tokens) : base(tokens)
         {
@@ -62,7 +69,7 @@ namespace Gwent_Create_Card_ParserCard
                             card.Range = ParseRange();
                             break;
                         case "OnActivation":
-                            //card.OnActivation = ParseOnActivation();
+                            card.OnActivation = ParseOnActivation();
                             break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
@@ -382,7 +389,10 @@ namespace Gwent_Create_Card_ParserCard
                         throw new Exception($"Unexpected token type {valueToken.Type} at line {valueToken.Row}");
                 }
 
-                effect.Params[key] = parameterValue;
+                Dictionary<string, string> effectParams = TakeParamsOfMyEffect(effect.Name);
+
+                if(CheckDiccionarios.CheckDiccionary(effectParams, effect.Params))
+                    effect.Params[key] = parameterValue;
 
                 if (!Check(Tokens.TokenType.LlaveClose))
                 {
@@ -519,6 +529,36 @@ namespace Gwent_Create_Card_ParserCard
 
             Consume(Tokens.TokenType.LlaveClose, "Expected '}' to end PostAction");
             return postAction;
+        }
+        #endregion
+
+
+        #region Parsear Efecto
+        private Dictionary<string, string> TakeParamsOfMyEffect(string nameOfEffect)
+        {
+            string pathOfTexts = Path.Combine(Application.dataPath, pathTexts);
+
+            Effect effect = new Effect();
+
+            if (Directory.Exists(pathOfTexts))
+            {
+                string[] txt = Directory.GetFiles(pathTexts, "*.txt");
+
+                foreach (string file in txt)
+                {
+                    if (file == nameOfEffect)
+                    {
+                        string content = File.ReadAllText(file);
+                        List<(string, int)> listOfWords = Lexer.GetWordsAndRow(content, Lexer.specialCaracter);
+                        List<Tokens> listTokens = Lexer.GetTokens(listOfWords);
+
+                        ParserEffect parser = new ParserEffect(listTokens);
+                        effect = parser.ParseEffect();  
+                    }
+                }
+            }
+
+            return effect.Params;
         }
         #endregion
     }

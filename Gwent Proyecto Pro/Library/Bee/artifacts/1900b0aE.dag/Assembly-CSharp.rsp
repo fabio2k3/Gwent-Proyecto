@@ -480,6 +480,7 @@
 "Assets/Scripts/Segundo Proyecto/ActivatedEffect.cs"
 "Assets/Scripts/Segundo Proyecto/Card.cs"
 "Assets/Scripts/Segundo Proyecto/CardObject.cs"
+"Assets/Scripts/Segundo Proyecto/CheckDiccionarios.cs"
 "Assets/Scripts/Segundo Proyecto/Effect.cs"
 "Assets/Scripts/Segundo Proyecto/EffectDeclaration.cs"
 "Assets/Scripts/Segundo Proyecto/Expression.cs"

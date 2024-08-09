@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
-using Gwent_Create_Card_ParserCard;
 
 public class SaveTextCard : MonoBehaviour
 {

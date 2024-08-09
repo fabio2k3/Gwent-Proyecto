@@ -21,7 +21,7 @@ public class CheckDiccionarios : MonoBehaviour
 
         string pathOfTexts = Path.Combine(Application.dataPath, pathTexts);
 
-        if(Directory.Exists(pathTexts))
+        if(Directory.Exists(pathOfTexts))
         {
             string[] txt = Directory.GetFiles(pathTexts,"*.txt");
 

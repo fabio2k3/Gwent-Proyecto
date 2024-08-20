@@ -9,40 +9,40 @@ namespace Gwent_Create_Card_Lexer
 {
     public class Lexer
     {
-        public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">", ",", "[", "]" };
+        public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">", ",", "[", "]", "." };
 
         private static Dictionary<string, Tokens.TokenType> keyWordsOfDSL = new Dictionary<string, Tokens.TokenType> {
         { "effect", Tokens.TokenType.Identifier },
-        { "Name", Tokens.TokenType.Identifier },
-        { "Params", Tokens.TokenType.Identifier },
-        { "Action", Tokens.TokenType.Identifier },
-        { "TriggerPlayer", Tokens.TokenType.Identifier },
-        { "Board", Tokens.TokenType.Identifier },
-        { "HandOfPlayer", Tokens.TokenType.Identifier },
-        { "Hand", Tokens.TokenType.Identifier },
-        { "FieldOfPlayer", Tokens.TokenType.Identifier },
-        { "Field", Tokens.TokenType.Identifier },
-        { "GraveyardOfPlayer", Tokens.TokenType.Identifier },
-        { "Graveyard", Tokens.TokenType.Identifier },
-        { "DeckOfPlayer", Tokens.TokenType.Identifier },
-        { "Find", Tokens.TokenType.Identifier },
-        { "Push", Tokens.TokenType.Identifier },
-        { "SendBottom", Tokens.TokenType.Identifier },
-        { "Pop", Tokens.TokenType.Identifier },
-        { "Remove", Tokens.TokenType.Identifier },
-        { "Shuffle", Tokens.TokenType.Identifier },
-        { "card", Tokens.TokenType.Identifier },
-        { "Type", Tokens.TokenType.Identifier },
-        { "Faction", Tokens.TokenType.Identifier },
-        { "Power", Tokens.TokenType.Identifier },
-        { "Range", Tokens.TokenType.Identifier },
-        { "OnActivation", Tokens.TokenType.Identifier },
-        { "Effect", Tokens.TokenType.Identifier },
-        { "Selector", Tokens.TokenType.Identifier },
-        { "Source", Tokens.TokenType.Identifier },
-        { "Single", Tokens.TokenType.Identifier },
-        { "Predicate", Tokens.TokenType.Identifier },
-        { "PostAction", Tokens.TokenType.Identifier },
+        { "Name", Tokens.TokenType.Name },
+        { "Params", Tokens.TokenType.Params },
+        { "Action", Tokens.TokenType.Action },
+        { "TriggerPlayer", Tokens.TokenType.TriggerPlayer },
+        { "Board", Tokens.TokenType.Board },
+        { "HandOfPlayer", Tokens.TokenType.HandOfPlayer },
+        { "Hand", Tokens.TokenType.Hand },
+        { "FieldOfPlayer", Tokens.TokenType.FieldOfPlayer },
+        { "Field", Tokens.TokenType.Field },
+        { "GraveyardOfPlayer", Tokens.TokenType.GraveyardOfPlayer },
+        { "Graveyard", Tokens.TokenType.Graveyard },
+        { "DeckOfPlayer", Tokens.TokenType.DeckOfPlayer },
+        { "Find", Tokens.TokenType.Find },
+        { "Push", Tokens.TokenType.Push },
+        { "SendBottom", Tokens.TokenType.SendBottom },
+        { "Pop", Tokens.TokenType.Pop },
+        { "Remove", Tokens.TokenType.Remove },
+        { "Shuffle", Tokens.TokenType.Shuffle },
+        { "card", Tokens.TokenType.card },
+        { "Type", Tokens.TokenType.Type },
+        { "Faction", Tokens.TokenType.Faction },
+        { "Power", Tokens.TokenType.Power },
+        { "Range", Tokens.TokenType.Range },
+        { "OnActivation", Tokens.TokenType.OnActivation },
+        { "Effect", Tokens.TokenType.Effect },
+        { "Selector", Tokens.TokenType.Selector },
+        { "Source", Tokens.TokenType.Source },
+        { "Single", Tokens.TokenType.Single },
+        { "Predicate", Tokens.TokenType.Predicate },
+        { "PostAction", Tokens.TokenType.PostAction },
         {"in", Tokens.TokenType.In },
         {"for", Tokens.TokenType.For },
         {"while", Tokens.TokenType.While },
@@ -159,6 +159,28 @@ namespace Gwent_Create_Card_Lexer
                     else
                         tokens.Add(new Tokens("+", Tokens.TokenType.Plus, row));
                 }
+                else if (token == "*")
+                {
+
+                    if (wordsAndRow[i + 1].Item1 == "=")
+                    {
+                        tokens.Add(new Tokens("*=", Tokens.TokenType.MultiFunc, row));
+                        i += 1;
+                    }
+                    else
+                        tokens.Add(new Tokens("*", Tokens.TokenType.Multi, row));
+                }
+                else if (token == "/")
+                {
+
+                    if (wordsAndRow[i + 1].Item1 == "=")
+                    {
+                        tokens.Add(new Tokens("/=", Tokens.TokenType.DivFunc, row));
+                        i += 1;
+                    }
+                    else
+                        tokens.Add(new Tokens("/", Tokens.TokenType.Division, row));
+                }
                 else if (token == "-")
                 {
                     if (wordsAndRow[i + 1].Item1 == "-")
@@ -269,10 +291,6 @@ namespace Gwent_Create_Card_Lexer
             {
                 switch (token)
                 {
-                    case "*":
-                        return Tokens.TokenType.Multi;
-                    case "/":
-                        return Tokens.TokenType.Division;
                     case "^":
                         return Tokens.TokenType.Potencia;
                     case "for":

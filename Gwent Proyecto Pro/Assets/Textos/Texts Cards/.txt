@@ -1,0 +1,8 @@
+card  {
+	        Type: "Oro",
+            Name: "Beluga",
+            Faction: "Warrior",
+            Power: 10+34,
+            Range: ["Melee", "Ranged"],
+  
+        }

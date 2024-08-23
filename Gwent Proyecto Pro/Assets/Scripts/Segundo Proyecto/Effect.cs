@@ -9,12 +9,12 @@ namespace Gwent_Create_Card_Expression
     public class Effect
     {
         public string Name {  get; set; }
+
         public Dictionary<string,string> Params { get; set; }
 
-        #region NEW
-        public Selector Selector { get; set; }
-        public Effect PostAction { get; set; }
-        #endregion
+        public Expression Action { get; set; } // Propiedad para la acción
+
+        public string Classification { get; set; } // Nueva propiedad para la clasificación
 
         public Effect() 
         { 

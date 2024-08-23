@@ -25,7 +25,7 @@ namespace Gwent_Create_Card_Token
             Number, Identifier, String,
 
             // Operadores Matemáticos
-            Plus, PlusPlus, PlusFunc, Menos, MenosMenos, MenosFunc, Multi, Potencia, Division,
+            Plus, PlusPlus, PlusFunc, Menos, MenosMenos, MenosFunc, Multi, MultiFunc, Potencia, Division, DivFunc,
 
             // Operadores Booleanos
             And, Or, MenorQ, MenorIgualQ, MayorQ, MayorIgualQ, Igual,
@@ -56,5 +56,4 @@ namespace Gwent_Create_Card_Token
             EOF
         }
     }
-
 }

@@ -68,9 +68,9 @@ namespace Gwent_Create_Card_ParserCard
                         case "Range":
                             card.Range = ParseRange();
                             break;
-                        case "OnActivation":
-                            card.OnActivation = ParseOnActivation();
-                            break;
+                        //case "OnActivation":
+                        //    card.OnActivation = ParseOnActivation();
+                        //    break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
                     }

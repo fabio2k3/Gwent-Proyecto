@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 namespace Gwent_Create_Card_Selector
@@ -9,7 +10,7 @@ namespace Gwent_Create_Card_Selector
     {
         public List<string> Source { get; set; }
         public string Single { get; set; }
-        public string Predicate { get; set; }
+        public Expression Predicate { get; set; }
     }
 }
 

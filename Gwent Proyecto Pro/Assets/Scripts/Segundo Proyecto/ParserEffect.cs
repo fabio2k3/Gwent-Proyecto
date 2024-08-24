@@ -46,10 +46,10 @@ namespace Gwent_Create_Card_ParserEffect
                         case "Params":
                             effect.Params = ParseParams();
                             break;
-                        //case "Action":
-                        //    ClassifyEffect();
-                        //    effect.Action = ParseAction();
-                        //    break;
+                        case "Action":
+                            ClassifyEffect();
+                            effect.Action = ParseAction();
+                            break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
                     }

@@ -29,6 +29,108 @@ namespace Gwent_Create_Card_Expression
                 Value = value;
             }
         }
+
+        // Expresión para manejar asignaciones
+        public class AssignmentExpression : Expression
+        {
+            public AssignmentExpression(Expression left, Expression right)
+            {
+                Left = left;
+                Right = right;
+            }
+
+            public Expression Left { get; }
+            public Expression Right { get; }
+        }
+
+        // Expresión para manejar bucles while
+        public class WhileExpression : Expression
+        {
+            public WhileExpression(Expression condition, Expression body)
+            {
+                Condition = condition;
+                Body = body;
+            }
+
+            public Expression Condition { get; }
+            public Expression Body { get; }
+        }
+
+        // Expresión para manejar bloques de código
+        public class BlockExpression : Expression
+        {
+            public BlockExpression(List<Expression> expressions)
+            {
+                Expressions = expressions;
+            }
+
+            public List<Expression> Expressions { get; }
+        }
+
+        // Expresión para manejar identificadores (nombres de variables)
+        public class IdentifierExpression : Expression
+        {
+            public IdentifierExpression(string name)
+            {
+                Name = name;
+            }
+
+            public string Name { get; }
+        }
+
+        // Expresión para manejar el acceso a propiedades de 'targets'
+        public class TargetPropertyExpression : Expression
+        {
+            public TargetPropertyExpression(string propertyName, string identifier)
+            {
+                PropertyName = propertyName;
+                Identifier = identifier;
+            }
+
+            public string PropertyName { get; }
+            public string Identifier { get; }
+        }
+
+        // Expresión para manejar el acceso a propiedades de 'context'
+        public class ContextPropertyExpression : Expression
+        {
+            public ContextPropertyExpression(string propertyName, string identifier)
+            {
+                PropertyName = propertyName;
+                Identifier = identifier;
+            }
+
+            public string PropertyName { get; }
+            public string Identifier { get; }
+        }
+
+        // Expresión para manejar el acceso a propiedades en general (opcional)
+        public class PropertyAccessExpression : Expression
+        {
+            public PropertyAccessExpression(Expression target, string property)
+            {
+                Target = target;
+                Property = property;
+            }
+
+            public Expression Target { get; }
+            public string Property { get; }
+        }
+
+        // Expresión para manejar llamadas a métodos (opcional)
+        public class MethodCallExpression : Expression
+        {
+            public MethodCallExpression(Expression target, string method, List<Expression> arguments)
+            {
+                Target = target;
+                Method = method;
+                Arguments = arguments;
+            }
+
+            public Expression Target { get; }
+            public string Method { get; }
+            public List<Expression> Arguments { get; }
+        }
     }
 }
 

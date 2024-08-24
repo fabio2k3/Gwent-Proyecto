@@ -6,12 +6,12 @@ using Gwent_Create_Card_PostAction;
 using Gwent_Create_Card_Selector;
 using Gwent_Create_Card_Token;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Gwent_Create_Card_Lexer;
 using Gwent_Create_Card_ParserEffect;
+
 
 namespace Gwent_Create_Card_ParserCard
 {
@@ -68,9 +68,9 @@ namespace Gwent_Create_Card_ParserCard
                         case "Range":
                             card.Range = ParseRange();
                             break;
-                        //case "OnActivation":
-                        //    card.OnActivation = ParseOnActivation();
-                        //    break;
+                        case "OnActivation":
+                            card.OnActivation = ParseOnActivation();
+                            break;
                         default:
                             throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
                     }
@@ -423,9 +423,9 @@ namespace Gwent_Create_Card_ParserCard
                     case "Single": // Parsear el Single
                         selector.Single = ParseSingle();
                         break;
-                    //case "Predicate":  // Parsear el Predicate
-                    //    selector.Predicate = ParsePredicate();
-                    //    break;
+                    case "Predicate":  // Parsear el Predicate
+                        selector.Predicate = ParsePredicate();
+                        break;
                     default:
                         throw new Exception($"Unexpected identifier {token.Value} at line {token.Row}");
                 }
@@ -496,11 +496,89 @@ namespace Gwent_Create_Card_ParserCard
             return singleValue;
         }
 
-        // REVISAR
-        private string ParsePredicate()
+        private Expression ParsePredicate()
         {
-            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Predicate'");
-            return Consume(Tokens.TokenType.String, "Expected predicate string").Value;
+            Consume(Tokens.TokenType.DoblePunto, "Expected '(' at the start of predicate");
+            Consume(Tokens.TokenType.ParentesisOpen, "Expected '(' after ':'");
+
+            // 2. Consumir el Identificador
+            string identifier = Consume(Tokens.TokenType.Identifier, "Expected identifier after '('").Value;
+
+            // 3. Consumir ')'
+            Consume(Tokens.TokenType.ParentisisClose, "Expected ')' after identifier");
+
+            // 4. Consumir '=>'
+            Consume(Tokens.TokenType.Arrow, "Expected '=>' after ')'");
+
+            // 5. Consumir Identificador del campo de la carta
+            string field = Consume(Tokens.TokenType.Identifier, "Expected field name after '->'").Value;
+
+            // 6. Consumir '.'
+            Consume(Tokens.TokenType.Punto, "Expected '.' after field name");
+
+            // 7. Consumir Propiedad
+            string property = Consume(Tokens.TokenType.Identifier, "Expected 'Power' or 'Faction' after '.'").Value;
+
+            if (property != "Power" && property != "Faction")
+            {
+                throw new Exception($"Invalid property: {property}. Expected 'Power' or 'Faction'.");
+            }
+
+            // 8. Consumir Operador booleano
+            string booleanOperator = ConsumeBooleanOperator();
+
+            // 9. Consumir el Valor correspondiente
+            Expression right;
+            if (property == "Power")
+            {
+                // Si es 'Power', esperar un número
+                int number = int.Parse(Consume(Tokens.TokenType.Number, "Expected number after boolean operator").Value);
+                right = new Expression.LiteralExpression(number);
+            }
+            else
+            {
+                // Si es 'Faction', esperar una cadena de texto
+                string faction = Consume(Tokens.TokenType.String, "Expected string after boolean operator").Value;
+                right = new Expression.StringLiteralExpression(faction.Trim('"')); // Eliminamos las comillas de la cadena
+            }
+
+            // Crear la expresión para el acceso a la propiedad del identificador
+            var targetExpression = new Expression.IdentifierExpression(identifier);
+            var propertyExpression = new Expression.PropertyAccessExpression(targetExpression, property);
+
+            // Consumir la coma al final de la expresión(si está presente)
+            if (Peek().Type == Tokens.TokenType.Coma)
+            {
+                Consume(Tokens.TokenType.Coma, "Expected ',' after predicate expression");
+            }
+
+            // Crear y devolver la expresión binaria del predicado
+            return new Expression.BinaryExpression(propertyExpression, booleanOperator, right);
+        }
+        private string ConsumeBooleanOperator()
+        {
+            // Definir los operadores booleanos válidos
+            var validOperators = new Dictionary<string, string>
+             {
+                { "MenorQ", "<" },
+                { "MenorIgualQ", "<=" },
+                { "MayorQ", ">" },
+                { "MayorIgualQ", ">=" },
+                { "Igual", "==" }
+             };
+
+            Tokens.TokenType tokenType = Peek().Type;
+
+            // Consumir el operador booleano
+            string op = Consume(tokenType, "Expected boolean operator").Value;
+
+            // Verificar si el operador es válido
+            if (!validOperators.ContainsKey(tokenType.ToString()))
+            {
+                throw new Exception($"Invalid boolean operator: {op}. Expected one of 'MenorQ', 'MenorIgualQ', 'MayorQ', 'MayorIgualQ', 'Igual'.");
+            }
+
+            return op;
         }
 
         // Parsear mi PostAction

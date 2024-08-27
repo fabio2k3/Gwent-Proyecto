@@ -334,18 +334,361 @@ namespace Gwent_Create_Card_ParserEffect
         }
         #endregion
 
+        #region Parser Card Manipulation
         private Expression ParseCardManipulationAction()
         {
-            // Implementar el parsing específico para CardManipulation aquí
-            // Por ejemplo, buscar tokens relacionados con manipulación de cartas
-            throw new NotImplementedException("Error: CardManipulationAction");
-        }
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Action'");
+            Consume(Tokens.TokenType.ParentesisOpen, "Expected '(' after ':'");
 
+            // Validación de 'targets'
+            var targetsToken = Consume(Tokens.TokenType.Identifier, "Expected 'targets' after '('");
+            if (targetsToken.Value != "targets")
+            {
+                throw new Exception("Expected 'targets' after '(', found: " + targetsToken.Value);
+            }
+
+            Consume(Tokens.TokenType.Coma, "Expected ',' after 'targets'");
+
+            // Validación de 'context'
+            var contextToken = Consume(Tokens.TokenType.Identifier, "Expected 'context' after ','");
+            if (contextToken.Value != "context")
+            {
+                throw new Exception("Expected 'context' after ',', found: " + contextToken.Value);
+            }
+
+            Consume(Tokens.TokenType.ParentisisClose, "Expected ')' after 'context'");
+            Consume(Tokens.TokenType.Arrow, "Expected '=>' after ')'");
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' after '=>'");
+
+            List<Expression> expressions = new List<Expression>();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                if (Check(Tokens.TokenType.For))
+                {
+                    Consume(Tokens.TokenType.For, "Expected 'for' after '{'");
+                    Consume(Tokens.TokenType.Identifier, "Expected 'target' after 'for'");
+                    Consume(Tokens.TokenType.In, "Expected 'in' after 'target'");
+                    Consume(Tokens.TokenType.Identifier, "Expected 'targets' after 'in'");
+
+                    Consume(Tokens.TokenType.LlaveOpen, "Expected '{' after 'targets'");
+
+                    while (!Check(Tokens.TokenType.LlaveClose))
+                    {
+                        var currentToken = Advance();
+
+                        // Si el token es un identificador distinto de 'targets' o 'context'
+                        if (currentToken.Type == Tokens.TokenType.Identifier &&
+                            currentToken.Value != "target" &&
+                            currentToken.Value != "context")
+                        {
+                            var identifier = currentToken.Value;
+
+                            if (Check(Tokens.TokenType.Asignacion))
+                            {
+                                Advance(); // Consume '='
+
+                                var leftToken = Consume(Tokens.TokenType.Identifier, "Expected 'target' or 'context' after '='");
+                                if (leftToken.Value != "target" && leftToken.Value != "context")
+                                {
+                                    throw new Exception("Expected 'target' or 'context' after '=', found: " + leftToken.Value);
+                                }
+
+                                Consume(Tokens.TokenType.Punto, "Expected '.' after 'targets' or 'context'");
+                                var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                                // Manejo de propiedades de 'targets'
+                                if (leftToken.Value == "target")
+                                {
+                                    ParseTargetsProperty(propertyToken, expressions);
+                                }
+                                // Manejo de propiedades de 'context'
+                                else if (leftToken.Value == "context")
+                                {
+                                    ParseContextProperty(propertyToken, expressions);
+                                }
+
+                                Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                            }
+                            else if (Check(Tokens.TokenType.Punto))
+                            {
+                                Advance(); // Consume '.'
+
+                                var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                                ParseTargetsProperty(propertyToken, expressions);
+
+                                Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                            }
+                            else
+                            {
+                                throw new Exception($"Unexpected token '{currentToken.Value}' in action block");
+                            }
+                        }
+                        else if (currentToken.Type == Tokens.TokenType.Identifier &&
+                                 (currentToken.Value == "target" || currentToken.Value == "context"))
+                        {
+                            Consume(Tokens.TokenType.Punto, "Expected '.' after 'target' or 'context'");
+                            var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                            if (currentToken.Value == "target")
+                            {
+                                ParseTargetsProperty(propertyToken, expressions);
+                            }
+                            else if (currentToken.Value == "context")
+                            {
+                                ParseContextProperty(propertyToken, expressions);
+                            }
+
+                            Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                        }
+                    }
+                    Consume(Tokens.TokenType.LlaveClose, "Expected '}' after Body of the for of my Effect");
+                    Consume(Tokens.TokenType.PuntoComa, "Expected ';' after '}'");
+                }
+                else
+                {
+                    var currentToken = Advance();
+
+                    // Si el token es un identificador distinto de 'targets' o 'context'
+                    if (currentToken.Type == Tokens.TokenType.Identifier &&
+                        currentToken.Value != "target" &&
+                        currentToken.Value != "context")
+                    {
+                        var identifier = currentToken.Value;
+
+                        if (Check(Tokens.TokenType.Asignacion))
+                        {
+                            Advance(); // Consume '='
+
+                            var leftToken = Consume(Tokens.TokenType.Identifier, "Expected 'target' or 'context' after '='");
+                            if (leftToken.Value != "target" && leftToken.Value != "context")
+                            {
+                                throw new Exception("Expected 'targets' or 'context' after '=', found: " + leftToken.Value);
+                            }
+
+                            Consume(Tokens.TokenType.Punto, "Expected '.' after 'targets' or 'context'");
+                            var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                            // Manejo de propiedades de 'targets'
+                            if (leftToken.Value == "target")
+                            {
+                                ParseTargetsProperty(propertyToken, expressions);
+                            }
+                            // Manejo de propiedades de 'context'
+                            else if (leftToken.Value == "context")
+                            {
+                                ParseContextProperty(propertyToken, expressions);
+                            }
+
+                            Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                        }
+                        else if (Check(Tokens.TokenType.Punto))
+                        {
+                            Advance(); // Consume '.'
+
+                            var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                            ParseTargetsProperty(propertyToken, expressions);
+
+                            Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                        }
+                        else
+                        {
+                            throw new Exception($"Unexpected token '{currentToken.Value}' in action block");
+                        }
+                    }
+                    else if (currentToken.Type == Tokens.TokenType.Identifier &&
+                             (currentToken.Value == "target" || currentToken.Value == "context"))
+                    {
+                        Consume(Tokens.TokenType.Punto, "Expected '.' after 'target' or 'context'");
+                        var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                        if (currentToken.Value == "target")
+                        {
+                            ParseTargetsProperty(propertyToken, expressions);
+                        }
+                        else if (currentToken.Value == "context")
+                        {
+                            ParseContextProperty(propertyToken, expressions);
+                        }
+
+                        Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                    }
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "Expected '}' after Body of the Action of my Effect");
+
+            return new Expression.BlockExpression(expressions); // Assuming you have a block expression to group them
+        }
+        #endregion
+
+        #region Target Movement 
         private Expression ParseTargetMovementAction()
         {
-            // Implementar el parsing específico para TargetMovement aquí
-            // Por ejemplo, buscar tokens relacionados con movimiento de objetivos
-            throw new NotImplementedException("Error: TargetMovementAction");
+            Consume(Tokens.TokenType.DoblePunto, "Expected ':' after 'Action'");
+            Consume(Tokens.TokenType.ParentesisOpen, "Expected '(' after ':'");
+            // Validación de 'targets'
+            var targetsToken = Consume(Tokens.TokenType.Identifier, "Expected 'target' after '('");
+            if (targetsToken.Value != "target")
+            {
+                throw new Exception("Expected 'target' after '(', found: " + targetsToken.Value);
+            }
+
+            Consume(Tokens.TokenType.Coma, "Expected ',' after 'targets'");
+
+            // Validación de 'context'
+            var contextToken = Consume(Tokens.TokenType.Identifier, "Expected 'context' after ','");
+            if (contextToken.Value != "context")
+            {
+                throw new Exception("Expected 'context' after ',', found: " + contextToken.Value);
+            }
+
+            Consume(Tokens.TokenType.ParentisisClose, "Expected ')' after 'context'");
+            Consume(Tokens.TokenType.Arrow, "Expected '=>' after ')'");
+            Consume(Tokens.TokenType.LlaveOpen, "Expected '{' after '=>'");
+
+            List<Expression> expressions = new List<Expression>();
+
+            while (!Check(Tokens.TokenType.LlaveClose))
+            {
+                var currentToken = Advance();
+
+                // Si el token es un identificador distinto de 'targets' o 'context'
+                if (currentToken.Type == Tokens.TokenType.Identifier &&
+                    currentToken.Value != "target" &&
+                    currentToken.Value != "context")
+                {
+                    var identifier = currentToken.Value;
+
+                    if (Check(Tokens.TokenType.Asignacion))
+                    {
+                        Advance(); // Consume '='
+
+                        var leftToken = Consume(Tokens.TokenType.Identifier, "Expected 'target' or 'context' after '='");
+                        if (leftToken.Value != "target" && leftToken.Value != "context")
+                        {
+                            throw new Exception("Expected 'target' or 'context' after '=', found: " + leftToken.Value);
+                        }
+
+                        Consume(Tokens.TokenType.Punto, "Expected '.' after 'targets' or 'context'");
+                        var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                        // Manejo de propiedades de 'targets'
+                        if (leftToken.Value == "target")
+                        {
+                            ParseTargetsProperty(propertyToken, expressions);
+                        }
+                        // Manejo de propiedades de 'context'
+                        else if (leftToken.Value == "context")
+                        {
+                            ParseContextProperty(propertyToken, expressions);
+                        }
+
+                        Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                    }
+                    else if (Check(Tokens.TokenType.Punto))
+                    {
+                        Advance(); // Consume '.'
+
+                        var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                        ParseTargetsProperty(propertyToken, expressions);
+
+                        Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                    }
+                    else
+                    {
+                        throw new Exception($"Unexpected token '{currentToken.Value}' in action block");
+                    }
+                }
+                else if (currentToken.Type == Tokens.TokenType.Identifier &&
+                         (currentToken.Value == "target" || currentToken.Value == "context"))
+                {
+                    Consume(Tokens.TokenType.Punto, "Expected '.' after 'target' or 'context'");
+                    var propertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+
+                    if (currentToken.Value == "target")
+                    {
+                        ParseTargetsProperty(propertyToken, expressions);
+                    }
+                    else if (currentToken.Value == "context")
+                    {
+                        ParseContextProperty(propertyToken, expressions);
+                    }
+
+                    Consume(Tokens.TokenType.PuntoComa, "Expected ';' after statement");
+                }
+            }
+
+            Consume(Tokens.TokenType.LlaveClose, "Expected '}' after Body of the Action of my Effect");
+
+            return new Expression.BlockExpression(expressions); // Assuming you have a block expression to group them
         }
+
+        private void ParseTargetsProperty(Tokens propertyToken, List<Expression> expressions)
+        {
+            // Manejo de propiedades del Bloque 1
+            switch (propertyToken.Value)
+            {
+                case "Push":
+                case "SendBottom":
+                case "Add":
+                case "Remove":
+                    Consume(Tokens.TokenType.ParentesisOpen, $"Expected '(' after '{propertyToken.Value}'");
+                    var identifier = Consume(Tokens.TokenType.Identifier, $"Expected identifier inside '({propertyToken.Value})'").Value;
+                    Consume(Tokens.TokenType.ParentisisClose, $"Expected ')' after identifier");
+                    expressions.Add(new Expression.TargetPropertyExpression(propertyToken.Value, identifier));
+                    break;
+                case "Pop":
+                case "Shuffle":
+                case "Owner":
+                    Consume(Tokens.TokenType.ParentesisOpen, $"Expected '(' after '{propertyToken.Value}'");
+                    Consume(Tokens.TokenType.ParentisisClose, $"Expected ')' after '{propertyToken.Value}'");
+                    expressions.Add(new Expression.TargetPropertyExpression(propertyToken.Value, null));
+                    break;
+                default:
+                    throw new Exception($"Unexpected target property '{propertyToken.Value}'");
+            }
+        }
+
+        private void ParseContextProperty(Tokens propertyToken, List<Expression> expressions)
+        {
+            // Manejo de propiedades del Bloque 2
+            switch (propertyToken.Value)
+            {
+                case "TriggerPlayer":
+                case "Board":
+                case "HandOfPlayer":
+                case "Hand":
+                case "FieldOfPlayer":
+                case "Field":
+                case "Graveyard":
+                case "DeckOfPlayer":
+                case "Deck":
+                    if (Check(Tokens.TokenType.ParentesisOpen))
+                    {
+                        Advance(); // Consume '('
+                        var identifier = Consume(Tokens.TokenType.Identifier, $"Expected identifier inside '({propertyToken.Value})'").Value;
+                        Consume(Tokens.TokenType.ParentisisClose, $"Expected ')' after identifier");
+                        expressions.Add(new Expression.ContextPropertyExpression(propertyToken.Value, identifier));
+                    }
+                    else if (Check(Tokens.TokenType.Punto))
+                    {
+                        Advance(); // Consume '.'
+                        var nextPropertyToken = Consume(Tokens.TokenType.Identifier, "Expected property after '.'");
+                        ParseTargetsProperty(nextPropertyToken, expressions);
+                    }
+                    else
+                    {
+                        throw new Exception($"Unexpected token after context property '{propertyToken.Value}'");
+                    }
+                    break;
+                default:
+                    throw new Exception($"Unexpected context property '{propertyToken.Value}'");
+            }
+        }
+        #endregion
     }
 }

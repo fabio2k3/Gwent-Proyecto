@@ -20,7 +20,6 @@ namespace Gwent_Create_Card_Expression
             }
         }
 
-
         public class LiteralExpression : Expression 
         { 
             public int Value { get; }
@@ -28,6 +27,16 @@ namespace Gwent_Create_Card_Expression
             {
                 Value = value;
             }
+        }
+
+        public class StringLiteralExpression : Expression
+        {
+            public StringLiteralExpression(string value)
+            {
+                Value = value;
+            }
+
+            public string Value { get; }
         }
 
         // Expresión para manejar asignaciones

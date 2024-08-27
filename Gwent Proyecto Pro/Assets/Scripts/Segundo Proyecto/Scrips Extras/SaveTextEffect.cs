@@ -28,7 +28,7 @@ public class SaveTextEffect : MonoBehaviour
 
         fileName = effect.Name + ".txt";
 
-        string folderPath = Path.Combine(Application.dataPath, "Textos/Texts Effects");
+        string folderPath = Path.Combine(Application.dataPath, "Texts/TextsEffects");
 
         if (!Directory.Exists(folderPath))
         {

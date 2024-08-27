@@ -29,7 +29,7 @@ public class SaveTextCard : MonoBehaviour
 
         fileName = cardText.Name + ".txt";
 
-        string folderPath = Path.Combine(Application.dataPath, "Textos/Texts Cards");
+        string folderPath = Path.Combine(Application.dataPath, "Texts/TextsCards");
 
         if (!Directory.Exists(folderPath))
         {

@@ -11,9 +11,9 @@ using UnityEditor;
 public class CreatePrefabsCards : MonoBehaviour
 {
     // Ruta Carpeta Textos Cartas
-    string textFolder = "Assets/Textos/Texts Cards";
+    string textFolder = "Assets/Texts/TextsCards";
     // Ruta Carpeta Destino Textos Cartas
-    string newTextFolder = "Assets/Textos/Used";
+    string newTextFolder = "Assets/Texts/Used";
 
     // Rutas Carpetas Prefabs
     string prefabsFolderOrc = "Assets/Prefabs/2nd Project/For Use/Orc";
@@ -27,6 +27,7 @@ public class CreatePrefabsCards : MonoBehaviour
     {
         // Array de todos los txt
         string[] textCards = Directory.GetFiles(textFolder, "*.txt");
+        Debug.Log($"Cantidad de elementos: {textCards.Length}");
    
         // Por cada Carta Crear un Prefa (una Carta)
         foreach (string textCard in textCards)

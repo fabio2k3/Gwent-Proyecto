@@ -581,6 +581,69 @@ namespace Gwent_Create_Card_ParserCard
             return op;
         }
 
+        #region Evaluar mi Predicate
+        public bool EvaluatePredicate(Expression.BinaryExpression binary, string cardName, int cardAttack)
+        {
+
+
+            // Determinar si el operando derecho es un entero o una cadena
+            bool isRightOperandString = binary.Right is Expression.StringLiteralExpression;
+
+            // Usar la lógica adecuada según el tipo del operando derecho
+            if (isRightOperandString)
+            {
+                string rightStringValue = (binary.Right as Expression.StringLiteralExpression).Value;
+
+                // Comparar ambos valores como cadenas
+                string leftStringValue = cardName;
+                return EvaluateStringComparison(cardName, rightStringValue, binary.Operator);
+            }
+            else
+            {
+                // Comparar ambos valores como enteros
+                return EvaluateIntegerComparison(cardAttack, (binary.Right as Expression.LiteralExpression).Value, binary.Operator);
+            }
+        }
+
+        private bool EvaluateStringComparison(string leftValue, string rightValue, string booleanOperator)
+        {
+            switch (booleanOperator)
+            {
+                case "==":
+                    return leftValue == rightValue;
+                case "!=":
+                    return leftValue != rightValue;
+                default:
+                    throw new Exception($"Unknown string comparison operator {booleanOperator}");
+            }
+        }
+
+        private bool EvaluateIntegerComparison(int leftValue, int rightValue, string booleanOperator)
+        {
+            switch (booleanOperator)
+            {
+                case "==":
+                    return leftValue == rightValue;
+                case "!=":
+                    return leftValue != rightValue;
+                case "<":
+                    return leftValue < rightValue;
+                case "<=":
+                    return leftValue <= rightValue;
+                case ">":
+                    return leftValue > rightValue;
+                case ">=":
+                    return leftValue >= rightValue;
+                case "&&":
+                    return leftValue != 0 && rightValue != 0; // Asumiendo que los valores distintos de cero son verdaderos
+                case "||":
+                    return leftValue != 0 || rightValue != 0; // Asumiendo que los valores distintos de cero son verdaderos
+                default:
+                    throw new Exception($"Unknown integer comparison operator {booleanOperator}");
+            }
+        }
+        #endregion
+
         // Parsear mi PostAction
         private PostAction ParsePostAction()
         {

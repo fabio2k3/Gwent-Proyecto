@@ -6,15 +6,20 @@ using UnityEngine;
 
 namespace Gwent_Create_Card_Expression
 {
+    // Definicion de Efecto en mi Juego (Propiedades)
     public class Effect
     {
+        // Nombre de Mi Efecto
         public string Name {  get; set; }
 
+        // Parametros de mi Efecto (Nombre - Tipo)
         public Dictionary<string,string> Params { get; set; }
 
-        public Expression Action { get; set; } // Propiedad para la acción
+        // Propiedad Action 
+        public Expression Action { get; set; } 
 
-        public string Classification { get; set; } // Nueva propiedad para la clasificación
+        // Clasificacion de mi Carta
+        public string Classification { get; set; } 
 
         public Effect() 
         { 

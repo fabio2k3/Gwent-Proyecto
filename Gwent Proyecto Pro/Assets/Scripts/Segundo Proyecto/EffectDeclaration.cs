@@ -10,7 +10,7 @@ namespace Gwent_Create_Card_EffectDeclaration
         // Nombre del Efecto
         public string Name { get; set; }
 
-        // Diccionario de los Parametros (Nombre - Valor)
+        // Parametros declarados (Nombre - (Valor y Tipo))
         public Dictionary<string, ParameterValue> Params { get; set; }
 
         public EffectDeclaration()

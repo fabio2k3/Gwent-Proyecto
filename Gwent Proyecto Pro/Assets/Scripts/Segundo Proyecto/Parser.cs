@@ -73,12 +73,14 @@ namespace Gwent_Create_Card_Expression
             Consume(Tokens.TokenType.LlaveOpen, "Expected '{' to start params list");
             var parameters = new Dictionary<string, string>();
 
+            // Mientras no se llegue al final de la lista de parametros
             while (!Check(Tokens.TokenType.LlaveClose))
             {
                 string paramName = Consume(Tokens.TokenType.Identifier, "Expected parameter name").Value;
                 Consume(Tokens.TokenType.DoblePunto, "Expected ':' after parameter name");
                 string paramType = Consume(Tokens.TokenType.Identifier, "Expected parameter type").Value;
 
+                // Verificar si el parametro es valido
                 if (paramType != "Number" && paramType != "String" && paramType != "Bool")
                 {
                     throw new Exception($"Invalid parameter type: {paramType} at line {Previous().Row}");

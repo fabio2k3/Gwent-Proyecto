@@ -45,13 +45,6 @@ namespace Gwent_Create_Card_Token
             // Signos
             Punto, PuntoComa, Coma, DoblePunto, ParentesisOpen, ParentisisClose, LlaveOpen, LlaveClose, CorcheteOpen, CorcheteClose, Comillas,
 
-            // Palabras Claves Effect
-            effect, Name, Params, Action, TriggerPlayer, Board, HandOfPlayer, Hand, FieldOfPlayer, Field,
-            GraveyardOfPlayer, Graveyard, DeckOfPlayer, Find, Push, SendBottom, Pop, Remove, Shuffle,
-
-            // Palabras Claves Card
-            card, Type, Faction, Power, Range, OnActivation, Effect, Selector, Source, Single, Predicate, PostAction,
-
             // Final
             EOF
         }

@@ -9,8 +9,10 @@ namespace Gwent_Create_Card_Lexer
 {
     public class Lexer
     {
+        // Caracteres Especiales
         public static string[] specialCaracter = { "+", "-", "*", "/", "^", "{", "}", "(", ")", "|", "\"", "@", ";", ":", "=", "<", ">", ",", "[", "]", "." };
 
+        // Diccionario de palabras Claves
         private static Dictionary<string, Tokens.TokenType> keyWordsOfDSL = new Dictionary<string, Tokens.TokenType> {
         { "effect", Tokens.TokenType.Identifier },
         { "Name", Tokens.TokenType.Identifier },
@@ -45,16 +47,18 @@ namespace Gwent_Create_Card_Lexer
         { "Single", Tokens.TokenType.Identifier },
         { "Predicate", Tokens.TokenType.Identifier },
         { "PostAction", Tokens.TokenType.Identifier },
-        {"in", Tokens.TokenType.In },
-        {"for", Tokens.TokenType.For },
-        {"while", Tokens.TokenType.While },
+        { "in", Tokens.TokenType.In },
+        { "for", Tokens.TokenType.For },
+        { "while", Tokens.TokenType.While },
     };
 
+        // Metodo para obtener las palabras y el numero de la linea donde se encuentras
         public static List<(string, int)> GetWordsAndRow(string input, string[] special)
         {
             List<(string, int)> tokensAndLines = new List<(string, int)>();
             int line = 1;
 
+            // Eleminamos espacios innecesarios y separamos lo caracteres especiales
             string newInput = Lexer.Spaces(input, specialCaracter);
 
             for (int i = 0; i < newInput.Length; i++)
@@ -94,6 +98,7 @@ namespace Gwent_Create_Card_Lexer
             return tokensAndLines;
         }
 
+        // Metodo para eleminar espacios innecesarios y separar caracteres especiales
         private static string Spaces(string input, string[] specialCaracter)
         {
             StringBuilder sb = new StringBuilder();
@@ -101,6 +106,7 @@ namespace Gwent_Create_Card_Lexer
 
             foreach (char c in input)
             {
+                // Se añaden espacios antes y despues de mis caracteres especiales
                 if (Array.Exists(specialCaracter, element => element == c.ToString()))
                 {
                     if (!lastSpace)
@@ -113,6 +119,7 @@ namespace Gwent_Create_Card_Lexer
                 }
                 else if (char.IsWhiteSpace(c))
                 {
+                    // Maneja los salfots de Línea y Espacios en blanco
                     if (c == '\n' || c == '\r')
                     {
                         sb.Append(c);
@@ -130,11 +137,12 @@ namespace Gwent_Create_Card_Lexer
                     lastSpace = false;
                 }
             }
-
+            // Reemplazar los espacios consecutivos en uno solo
             string result = sb.ToString().Replace("  ", " ");
             return result.Trim();
         }
 
+        // Metodo para obtener mis Tokens
         public static List<Tokens> GetTokens(List<(string, int)> wordsAndRow)
         {
             List<Tokens> tokens = new List<Tokens>();
@@ -144,8 +152,11 @@ namespace Gwent_Create_Card_Lexer
                 string token = wordsAndRow[i].Item1;
                 int row = wordsAndRow[i].Item2;
 
+                // Caso de la palabra pertenezca al diccionario
                 if (Lexer.keyWordsOfDSL.ContainsKey(token))
                     tokens.Add(new Tokens(token, Lexer.keyWordsOfDSL[token], row));
+
+                // Manejamos los casos de operadores matematicos, booleanos combinados y de concatenacion
                 else if (token == "+")
                 {
                     if (wordsAndRow[i + 1].Item1 == "+")
@@ -282,6 +293,7 @@ namespace Gwent_Create_Card_Lexer
             return tokens;
         }
 
+        // Metodo para clasificar los tokens
         private static Tokens.TokenType ClassifyTokens(string token)
         {
             try

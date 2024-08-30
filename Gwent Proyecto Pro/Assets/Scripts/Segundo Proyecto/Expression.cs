@@ -7,6 +7,8 @@ namespace Gwent_Create_Card_Expression
 {
     public abstract class Expression
     {
+
+        // Clase Para manejar expresiones binarias (operaciones aritméticas y Booleanas)
         public class BinaryExpression : Expression
         {
             public Expression Left { get; }
@@ -20,6 +22,8 @@ namespace Gwent_Create_Card_Expression
             }
         }
 
+
+        // Clase para manejar expresiones literales de enteros
         public class LiteralExpression : Expression 
         { 
             public int Value { get; }
@@ -29,6 +33,8 @@ namespace Gwent_Create_Card_Expression
             }
         }
 
+
+        // Similar al anteior pero literales de cadenas de texto
         public class StringLiteralExpression : Expression
         {
             public StringLiteralExpression(string value)
@@ -39,7 +45,8 @@ namespace Gwent_Create_Card_Expression
             public string Value { get; }
         }
 
-        // Expresión para manejar asignaciones
+
+        // Clase para manejar asignaciones (un valor se asigna a una variable)
         public class AssignmentExpression : Expression
         {
             public AssignmentExpression(Expression left, Expression right)
@@ -52,7 +59,9 @@ namespace Gwent_Create_Card_Expression
             public Expression Right { get; }
         }
 
-        // Expresión para manejar bucles while
+
+        // Clase para manejar bucles while
+        // Una expression while posee una COndicon y un Cuerpo (Body)
         public class WhileExpression : Expression
         {
             public WhileExpression(Expression condition, Expression body)
@@ -65,7 +74,8 @@ namespace Gwent_Create_Card_Expression
             public Expression Body { get; }
         }
 
-        // Expresión para manejar bloques de código
+
+        // Clase para manejar bloques de código
         public class BlockExpression : Expression
         {
             public BlockExpression(List<Expression> expressions)
@@ -76,7 +86,8 @@ namespace Gwent_Create_Card_Expression
             public List<Expression> Expressions { get; }
         }
 
-        // Expresión para manejar identificadores (nombres de variables)
+
+        // Clase para manejar identificadores (nombres de variables)
         public class IdentifierExpression : Expression
         {
             public IdentifierExpression(string name)
@@ -87,7 +98,8 @@ namespace Gwent_Create_Card_Expression
             public string Name { get; }
         }
 
-        // Expresión para manejar el acceso a propiedades de 'targets'
+
+        // Clase para manejar el acceso a propiedades de 'targets'
         public class TargetPropertyExpression : Expression
         {
             public TargetPropertyExpression(string propertyName, string identifier)
@@ -100,7 +112,8 @@ namespace Gwent_Create_Card_Expression
             public string Identifier { get; }
         }
 
-        // Expresión para manejar el acceso a propiedades de 'context'
+
+        // Clase para manejar el acceso a propiedades de 'context'
         public class ContextPropertyExpression : Expression
         {
             public ContextPropertyExpression(string propertyName, string identifier)
@@ -113,7 +126,9 @@ namespace Gwent_Create_Card_Expression
             public string Identifier { get; }
         }
 
-        // Expresión para manejar el acceso a propiedades en general (opcional)
+
+        // Clase para manejar el acceso a propiedades en general 
+        // Contiene una expresión de destino (Target) y el nombre de la propiedad (Property).
         public class PropertyAccessExpression : Expression
         {
             public PropertyAccessExpression(Expression target, string property)
@@ -126,7 +141,9 @@ namespace Gwent_Create_Card_Expression
             public string Property { get; }
         }
 
-        // Expresión para manejar llamadas a métodos (opcional)
+
+        // Clase para manejar llamadas a métodos
+        // Contiene una expresión de destino (Target), el nombre del método (Method) y una lista de argumentos (Arguments).
         public class MethodCallExpression : Expression
         {
             public MethodCallExpression(Expression target, string method, List<Expression> arguments)

@@ -4,6 +4,7 @@ using UnityEngine;
 using Gwent_Create_Card_Expression;
 using Gwent_Create_Card_Token;
 using System;
+using Gwent_Create_Card_ParameterValue;
 
 namespace Gwent_Create_Card_ParserEffect
 {
@@ -690,5 +691,158 @@ namespace Gwent_Create_Card_ParserEffect
             }
         }
         #endregion
+
+        public int EvaluateAttributeModification(Expression expression, Dictionary<string, ParameterValue> parameters, int targetPower)
+        {
+            // Diccionario para variables locales
+            var localContext = new Dictionary<string, int>();
+            return EvaluateExpression(expression, parameters, localContext, targetPower);
+        }
+
+        private int EvaluateExpression(Expression expression, Dictionary<string, ParameterValue> parameters, Dictionary<string, int> localContext, int targetPower)
+        {
+            if (expression is Expression.BlockExpression blockExpression)
+            {
+                foreach (var expr in blockExpression.Expressions)
+                {
+                    targetPower = EvaluateExpression(expr, parameters, localContext, targetPower);
+                }
+            }
+            else if (expression is Expression.AssignmentExpression assignmentExpression)
+            {
+                var value = EvaluateExpression(assignmentExpression.Right, parameters, localContext, targetPower);
+                if (assignmentExpression.Left is Expression.IdentifierExpression identifier)
+                {
+                    if (identifier.Name == "target.Power")
+                    {
+                        targetPower = value;
+                    }
+                    else
+                    {
+                        // Asignación a una variable local
+                        localContext[identifier.Name] = value;
+                    }
+                }
+            }
+            else if (expression is Expression.BinaryExpression binaryExpression)
+            {
+                var leftValue = EvaluateExpression(binaryExpression.Left, parameters, localContext, targetPower);
+                var rightValue = EvaluateExpression(binaryExpression.Right, parameters, localContext, targetPower);
+
+                switch (binaryExpression.Operator)
+                {
+                    case "+":
+                        return leftValue + rightValue;
+                    case "-":
+                        return leftValue - rightValue;
+                    case "*":
+                        return leftValue * rightValue;
+                    case "/":
+                        return leftValue / rightValue;
+                    case "+=":
+                        leftValue += rightValue;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue;
+                    case "-=":
+                        leftValue -= rightValue;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue;
+                    case "*=":
+                        leftValue *= rightValue;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue;
+                    case "/=":
+                        leftValue /= rightValue;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue;
+                    case "++":
+                        leftValue++;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue; // Retorna el valor incrementado
+                    case "--":
+                        leftValue--;
+                        UpdateVariable(binaryExpression.Left, leftValue, localContext, ref targetPower);
+                        return leftValue; // Retorna el valor decrementado
+                    default:
+                        throw new Exception("Unknown operator: " + binaryExpression.Operator);
+                }
+            }
+            else if (expression is Expression.IdentifierExpression identifierExpression)
+            {
+                if (parameters.TryGetValue(identifierExpression.Name, out var parameterValue))
+                {
+                    return Convert.ToInt32(parameterValue.Value);
+                }
+                else if (localContext.TryGetValue(identifierExpression.Name, out var localValue))
+                {
+                    return localValue;
+                }
+                else if (identifierExpression.Name == "target.Power")
+                {
+                    return targetPower;
+                }
+                else
+                {
+                    throw new Exception("Unknown identifier: " + identifierExpression.Name);
+                }
+            }
+            else if (expression is Expression.LiteralExpression literalExpression)
+            {
+                return literalExpression.Value;
+            }
+            else if (expression is Expression.WhileExpression whileExpression)
+            {
+                while (EvaluateBooleanExpression(whileExpression.Condition, parameters, localContext, targetPower))
+                {
+                    targetPower = EvaluateExpression(whileExpression.Body, parameters, localContext, targetPower);
+                }
+            }
+
+            return targetPower;
+        }
+
+        private bool EvaluateBooleanExpression(Expression expression, Dictionary<string, ParameterValue> parameters, Dictionary<string, int> localContext, int targetPower)
+        {
+            if (expression is Expression.BinaryExpression binaryExpression)
+            {
+                var leftValue = EvaluateExpression(binaryExpression.Left, parameters, localContext, targetPower);
+                var rightValue = EvaluateExpression(binaryExpression.Right, parameters, localContext, targetPower);
+
+                switch (binaryExpression.Operator)
+                {
+                    case "<":
+                        return leftValue < rightValue;
+                    case ">":
+                        return leftValue > rightValue;
+                    case "==":
+                        return leftValue == rightValue;
+                    case "!=":
+                        return leftValue != rightValue;
+                    case "<=":
+                        return leftValue <= rightValue;
+                    case ">=":
+                        return leftValue >= rightValue;
+                    default:
+                        throw new Exception("Unknown boolean operator: " + binaryExpression.Operator);
+                }
+            }
+
+            throw new Exception("Expected a boolean expression, found: " + expression.GetType());
+        }
+
+        private void UpdateVariable(Expression expression, int newValue, Dictionary<string, int> localContext, ref int targetPower)
+        {
+            if (expression is Expression.IdentifierExpression identifier)
+            {
+                if (identifier.Name == "target.Power")
+                {
+                    targetPower = newValue;
+                }
+                else
+                {
+                    localContext[identifier.Name] = newValue;
+                }
+            }
+        }
     }
 }

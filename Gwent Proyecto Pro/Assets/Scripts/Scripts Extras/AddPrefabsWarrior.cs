@@ -15,19 +15,23 @@ public class AddPrefabsWarrior : MonoBehaviour
     {
         // Obtener los prefabs de la carpeta
         string[] prefaFiles = Directory.GetFiles(prefabWarriorPath, "*.prefab");
+        Debug.Log($"Cartas creadas de Orcos {prefaFiles.Length}");
 
-        foreach (string prefab in prefaFiles)
+        if(prefaFiles.Length > 0)
         {
-            // Cargar mi prefab como un GameObject
-            GameObject myPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefab);
-
-            if(myPrefab != null)
+            foreach (string prefab in prefaFiles)
             {
-                // Añadir mi Carta creada (Prefab) para la lista de Deck
-                listDeck.AddCard(myPrefab);
-            }
-        }
+                // Cargar mi prefab como un GameObject
+                GameObject myPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefab);
 
-        listDeck.enabled = true;
+                if (myPrefab != null)
+                {
+                    // Añadir mi Carta creada (Prefab) para la lista de Deck
+                    listDeck.AddCard(myPrefab);
+                }
+            }
+
+            listDeck.enabled = true;
+        } 
     }
 }

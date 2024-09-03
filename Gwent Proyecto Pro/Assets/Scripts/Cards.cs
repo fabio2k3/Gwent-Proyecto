@@ -8,6 +8,8 @@ public class Cards : MonoBehaviour
 
     public string type; // Tipo de la carta
 
+    public string faction; // Faccion de mi carta
+
     public int attack; // propiedad de ataque
     public int attackAux;
 

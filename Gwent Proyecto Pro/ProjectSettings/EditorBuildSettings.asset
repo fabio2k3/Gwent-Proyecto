@@ -17,5 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreateCards.unity
     guid: c7b77c7286c071846bfadc33260517b8
+  - enabled: 1
+    path: Assets/Scenes/SampleScene 1.unity
+    guid: 5e4f99b3628ced24799333fb46380c90
+  - enabled: 1
+    path: Assets/Scenes/SelectCharacter.unity
+    guid: acbac1e3ec66e7d4e97dc515c6fb425b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

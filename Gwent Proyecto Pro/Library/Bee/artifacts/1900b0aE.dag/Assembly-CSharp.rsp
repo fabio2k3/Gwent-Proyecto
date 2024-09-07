@@ -475,6 +475,8 @@
 "Assets/Scripts/Scripts Extras/ComeBackScene.cs"
 "Assets/Scripts/Scripts Extras/ExpanderEscala.cs"
 "Assets/Scripts/Scripts Extras/LoadSceneCreateCards.cs"
+"Assets/Scripts/Scripts Extras/LoadSceneOrc.cs"
+"Assets/Scripts/Scripts Extras/LoadSceneSelectCaracter.cs"
 "Assets/Scripts/Scripts Extras/LoadScensOnClick.cs"
 "Assets/Scripts/Scripts Extras/OpenPDF.cs"
 "Assets/Scripts/Segundo Proyecto/ActivatedEffect.cs"

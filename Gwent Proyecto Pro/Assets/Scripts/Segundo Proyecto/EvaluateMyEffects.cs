@@ -33,7 +33,6 @@ public class EvaluateMyEffects : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Entre");
         EvaluateEffectCards(pathPrefabsOrc);
         EvaluateEffectCards(pathPrefabsWarrior);
     }
@@ -44,7 +43,6 @@ public class EvaluateMyEffects : MonoBehaviour
     //  encuentran mis cartas)
     void EvaluateEffectCards(string path)
     {
-        Debug.Log("Entre2");
         // Obtener los prefabs de la carpeta
         string[] prefaFiles = Directory.GetFiles(path, "*.prefab");
 
@@ -68,10 +66,8 @@ public class EvaluateMyEffects : MonoBehaviour
       
                 if(!myPrefab.GetComponent<Cards>().invocated)
                 {
-                    Debug.Log("Entre");
                     if (myPrefab != null)
                     {
-                        Debug.Log("No es NULO");
                         // Iterar por cada texto de las cartas
                         foreach (string textCard in textCards)
                         {
@@ -128,14 +124,11 @@ public class EvaluateMyEffects : MonoBehaviour
     {
         if(card.Faction == "Warrior")
         {
-            Debug.Log("1");
             foreach(string place in effectOfCard.Selector.Source)
             {
                 if(place == "hand")
-                {
-                    Debug.Log("2");
+                { 
                     ApplyEffectToCards(warriors.hand, parserCard, parserEffect, effect, effectOfCard);
-                    Debug.Log("3");
                 }
 
                 if(place == "otherHand")

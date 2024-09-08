@@ -45,6 +45,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
      
     // Para invocar efecto cartas Despeje
     public ClearEffect clearEffect;
+
+    public EffectActivated effectActivated;
     #endregion
 
 
@@ -252,6 +254,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 
         if(gameObject.GetComponent<Cards>().invocated && (gameObject.GetComponent<Cards>().name == "Clear1" || gameObject.GetComponent<Cards>().name == "Clear2" || gameObject.GetComponent<Cards>().name == "Clear3" || gameObject.GetComponent<Cards>().name == "ClearW1" || gameObject.GetComponent<Cards>().name == "ClearW2" || gameObject.GetComponent<Cards>().name == "ClearW3" ))
             clearEffect.enabled = true;
+
+        if (gameObject.name.StartsWith("WarriorNew") || gameObject.name.StartsWith("OrcNew"))
+        {
+            gameObject.GetComponent<Cards>().invocated = true;
+            effectActivated.enabled = true;
+        }
+            
         #endregion
 
 

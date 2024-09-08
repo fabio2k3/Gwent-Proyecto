@@ -473,6 +473,7 @@
 "Assets/Scripts/Scripts Extras/ChangeImageOrc.cs"
 "Assets/Scripts/Scripts Extras/ChangeImageWarrior.cs"
 "Assets/Scripts/Scripts Extras/ComeBackScene.cs"
+"Assets/Scripts/Scripts Extras/EffectActivated.cs"
 "Assets/Scripts/Scripts Extras/ExpanderEscala.cs"
 "Assets/Scripts/Scripts Extras/LoadSceneCreateCards.cs"
 "Assets/Scripts/Scripts Extras/LoadSceneOrc.cs"

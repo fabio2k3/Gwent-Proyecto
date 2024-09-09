@@ -844,5 +844,97 @@ namespace Gwent_Create_Card_ParserEffect
                 }
             }
         }
+
+        public List<(string, string)> ExtractActionsFromExpression(Expression expression)
+        {
+            var actions = new List<(string, string)>();
+
+            switch (expression)
+            {
+                case Expression.BlockExpression block:
+                    foreach (var expr in block.Expressions)
+                    {
+                        actions.AddRange(ExtractActionsFromExpression(expr));
+                    }
+                    break;
+
+                case Expression.TargetPropertyExpression targetProperty:
+                    var action = DetermineAction(targetProperty.PropertyName);
+                    var location = DetermineLocation(targetProperty.Identifier);
+                    actions.Add((action, location));
+                    break;
+
+                case Expression.ContextPropertyExpression contextProperty:
+                    var contextAction = DetermineAction(contextProperty.PropertyName);
+                    var contextLocation = DetermineLocation(contextProperty.Identifier);
+                    actions.Add((contextAction, contextLocation));
+                    break;
+
+                case Expression.AssignmentExpression assignment:
+                    actions.AddRange(ExtractActionsFromExpression(assignment.Right));
+                    break;
+
+                case Expression.BinaryExpression binary:
+                    actions.AddRange(ExtractActionsFromExpression(binary.Left));
+                    actions.AddRange(ExtractActionsFromExpression(binary.Right));
+                    break;
+
+                case Expression.LiteralExpression:
+                case Expression.StringLiteralExpression:
+                    // No actions to process for literals or strings
+                    break;
+
+                default:
+                    Console.WriteLine($"Unsupported expression type encountered: {expression.GetType().Name}");
+                    throw new Exception($"Unsupported expression type: {expression.GetType().Name}");
+            }
+
+            return actions;
+        }
+
+        private string DetermineAction(string property)
+        {
+            // Maps property names to actions
+            return property switch
+            {
+                "Pop" => "Pop",
+                "Add" => "Add",
+                "SendBottom" => "SendBottom",
+                "Remove" => "Remove",
+                "Shuffle" => "Shuffle",
+                _ => "Unknown"
+            };
+        }
+
+        private string DetermineLocation(string identifier)
+        {
+            // Maps identifiers to locations
+            return identifier switch
+            {
+                "TriggerPlayer" => "TriggerPlayer",
+                "Board" => "Board",
+                "Hand" => "HandOfPlayer(context.TriggerPlayer)",
+                "Field" => "FieldOfPlayer(context.TriggerPlayer)",
+                "Graveyard" => "GraveyardOfPlayer(context.TriggerPlayer)",
+                "Deck" => "DeckOfPlayer(context.TriggerPlayer)",
+                _ => identifier
+            };
+        }
+
+        public List<(string, string)> MyInstrucTions(List<(string, string)> firstInstrucciones, List<Tokens> myTokens)
+        {
+            List<(string, string)> instrucciones = new List<(string, string)>();
+
+            foreach ((string, string) elements in firstInstrucciones)
+            {
+                for (int i = 0; i < myTokens.Count; i++)
+                {
+                    if (myTokens[i].Value == elements.Item1)
+                        instrucciones.Add((elements.Item1, myTokens[i - 2].Value));
+                }
+            }
+
+            return instrucciones;
+        }
     }
 }
